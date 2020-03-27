@@ -13,7 +13,6 @@ scihub_dl <- function(doi, scihub = 'sci-hub.tw', download=TRUE) {
     url <- paste0('https://', scihub, '/', doi)
     x <- readLines(url)
     i <- grep('id = "pdf"', x)
-
     pdf_url <-sub(".*(//.*\\.pdf).*", "https:\\1", x[i])
     
     if (download) {
