@@ -13,7 +13,7 @@ install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") 
     url <- paste0('https://codeload.github.com/', repo, '/zip/', ref)
     f <- tempfile(fileext=".zip")
     method <- "auto"
-    if (Sys.info()[["sysname"]] == "Windows") method <- "curl"
+    if (.Platform$OS.type == "windows") method <- "curl"
     download.file(url, destfile=f, method = method)
     install_zip(f, args=args)
 }
