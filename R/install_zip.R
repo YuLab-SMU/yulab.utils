@@ -37,5 +37,5 @@ install_zip <- function(file, args = "--no-build-vignettes") {
     ## dir <- paste0(dir, '/', basename(repo), '-master')
     ## remotes::install_local(path=dir, ..., force=TRUE)
     pkg <- pkgbuild::build(dir, args=args)
-    install.packages(pkg)
+    install.packages(pkg, repos=NULL)
 }
