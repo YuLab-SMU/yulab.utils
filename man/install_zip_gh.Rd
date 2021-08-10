@@ -17,7 +17,7 @@ install_zip_gh(repo, ref = "master", args = "--no-build-vignettes")
 install github package
 }
 \details{
-it download the zip file first and use `install_zip` to install it
+it download the zip file first and use \code{install_zip} to install it
 }
 \author{
 Guangchuang Yu

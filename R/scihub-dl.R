@@ -17,7 +17,8 @@ scihub_dl <- function(doi, scihub = 'sci-hub.tw', download=TRUE) {
     
     if (download) {
         outfile <- sub(".*/", "", pdf_url)
-        download.file(pdf_url, destfile = outfile)
+        utils::download.file(pdf_url, destfile = outfile)
     }
     invisible(pdf_url)
 }
+
