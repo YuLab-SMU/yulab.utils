@@ -11,6 +11,9 @@ install_zip(file, args = "--no-build-vignettes")
 
 \item{args}{argument to build package}
 }
+\value{
+No return value, called for install R package from zip file of source codes
+}
 \description{
 install R package from zip file of source codes
 }

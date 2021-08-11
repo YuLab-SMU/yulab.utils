@@ -1,9 +1,9 @@
-##' open working directory
+##' open selected directory or file
 ##'
 ##'
 ##' @title o
 ##' @param file to be open; open workding directory by default
-##' @return NULL
+##' @return No return value, called for opening specific directory or file
 ##' @author Guangchuang Yu
 ##' @examples
 ##' \dontrun{

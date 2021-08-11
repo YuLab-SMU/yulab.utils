@@ -5,7 +5,7 @@
 ##' @param repo github repo
 ##' @param ref github branch, default is master
 ##' @param args argument to build package
-##' @return NULL
+##' @return No return value, called for installing github package
 ##' @importFrom utils download.file
 ##' @export
 ##' @author Guangchuang Yu
@@ -25,7 +25,7 @@ install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") 
 ##' @title install_zip
 ##' @param file zip file
 ##' @param args argument to build package
-##' @return NULL
+##' @return No return value, called for install R package from zip file of source codes
 ##' @export
 ##' @author Guangchuang Yu
 install_zip <- function(file, args = "--no-build-vignettes") {

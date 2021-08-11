@@ -9,8 +9,11 @@ o(file = ".")
 \arguments{
 \item{file}{to be open; open workding directory by default}
 }
+\value{
+No return value, called for opening specific directory or file
+}
 \description{
-open working directory
+open selected directory or file
 }
 \examples{
 \dontrun{

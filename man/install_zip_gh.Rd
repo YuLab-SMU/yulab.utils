@@ -13,6 +13,9 @@ install_zip_gh(repo, ref = "master", args = "--no-build-vignettes")
 
 \item{args}{argument to build package}
 }
+\value{
+No return value, called for installing github package
+}
 \description{
 install github package
 }
