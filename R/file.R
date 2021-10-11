@@ -55,3 +55,10 @@ is.rserver <- function(){
     if(!is.function(RStudio.Version)) return(FALSE)
     RStudio.Version()$mode == 'server'
 }
+
+show_in_excel <- function(.data) {
+    f <- tempfile(fileext = '.csv')
+    write.csv(.data, file=f)
+    o(f)
+    invisible(.data)
+}
