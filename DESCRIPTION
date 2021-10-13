@@ -5,8 +5,6 @@ Authors@R: c(person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role
 Description: Miscellaneous functions commonly used by 'YuLab-SMU'.
 Imports:
   utils
-Suggests:
-  pkgbuild
 ByteCompile: true
 License: Artistic-2.0
 Encoding: UTF-8
