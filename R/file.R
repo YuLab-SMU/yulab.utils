@@ -4,13 +4,13 @@
 ##' @title o
 ##' @param file to be open; open workding directory by default
 ##' @return No return value, called for opening specific directory or file
-##' @author Guangchuang Yu
 ##' @examples
 ##' \dontrun{
 ##' ## to open current working directory
 ##' o()
 ##' }
 ##' @export
+##' @author Guangchuang Yu
 o <- function(file=".") {
     os <- Sys.info()[1]
     if (is.rserver()) {
@@ -56,9 +56,17 @@ is.rserver <- function(){
     RStudio.Version()$mode == 'server'
 }
 
+##' Open data frame in Excel. It can be used in pipe.
+##'
+##'
+##' @title show_in_excel
+##' @param .data a data frame to be open
+##' @return original .data
+##' @export
+##' @author Guangchuang Yu
 show_in_excel <- function(.data) {
     f <- tempfile(fileext = '.csv')
-    write.csv(.data, file=f)
+    utils::write.csv(.data, file=f)
     o(f)
     invisible(.data)
 }

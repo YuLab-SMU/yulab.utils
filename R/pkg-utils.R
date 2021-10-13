@@ -40,3 +40,45 @@ get_fun_from_pkg <- function(pkg, fun) {
 
     utils::getFromNamespace(fun, pkg)
 }
+
+
+
+##' print md text of package with link to homepage (CRAN or Bioconductor)
+##'
+##'
+##' @rdname cran-bioc-pkg
+##' @param pkg package name
+##' @return string
+##' @export
+##' @author Guangchuang Yu
+CRANpkg <- function (pkg) {
+    cran <- "https://CRAN.R-project.org/package"
+    fmt <- "[%s](%s=%s)"
+    sprintf(fmt, pkgfmt(pkg), cran, pkg)
+}
+
+##' @rdname cran-bioc-pkg
+##' @export
+Biocpkg <- function (pkg) {
+    sprintf("[%s](http://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
+}
+
+##' print md text of package with link to github repo
+##'
+##'
+##' @title Githubpkg
+##' @param user github user
+##' @param pkg package name
+##' @return string
+##' @export
+##' @author Guangchuang Yu
+Githubpkg <- function (user, pkg) {
+    gh <- "https://github.com"
+    fmt <- "[%s](%s/%s/%s)"
+    sprintf(fmt, pkgfmt(pkg), gh, user, pkg)
+}
+
+pkgfmt <- function(pkg) {
+  fmt <- getOption('yulab.utils_pkgfmt', default="%s")
+  sprintf(fmt, pkg)
+}
