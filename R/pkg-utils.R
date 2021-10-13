@@ -48,7 +48,7 @@ get_fun_from_pkg <- function(pkg, fun) {
 ##'
 ##' @rdname cran-bioc-pkg
 ##' @param pkg package name
-##' @return string
+##' @return md text string
 ##' @export
 ##' @author Guangchuang Yu
 CRANpkg <- function (pkg) {
@@ -69,7 +69,7 @@ Biocpkg <- function (pkg) {
 ##' @title Githubpkg
 ##' @param user github user
 ##' @param pkg package name
-##' @return string
+##' @return md text string
 ##' @export
 ##' @author Guangchuang Yu
 Githubpkg <- function (user, pkg) {
@@ -77,6 +77,21 @@ Githubpkg <- function (user, pkg) {
     fmt <- "[%s](%s/%s/%s)"
     sprintf(fmt, pkgfmt(pkg), gh, user, pkg)
 }
+
+##' print md text of link to a pakcage
+##' 
+##'
+##' @title mypkg
+##' @param pkg package name
+##' @param url package url
+##' @return md text string
+##' @export
+##' @author Guangchuang Yu
+mypkg <- function(pkg, url) {
+    fmt <- "[%s](%s)"
+    sprintf(fmt, pkgfmt(pkg), url)
+}
+
 
 pkgfmt <- function(pkg) {
   fmt <- getOption('yulab.utils_pkgfmt', default="%s")

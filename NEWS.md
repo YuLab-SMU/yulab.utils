@@ -1,6 +1,6 @@
 # yulab.utils 0.0.4.900
 
-+ `show_in_excel()`, `CRANpkg()`, `Biocpkg()` and `Githubpkg()` (2021-10-13, Wed)
++ `show_in_excel()`, `CRANpkg()`, `Biocpkg()`, `Githubpkg()`, `mypkg()` (2021-10-13, Wed)
 
 # yulab.utils 0.0.4
 

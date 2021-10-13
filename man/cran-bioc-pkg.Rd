@@ -13,7 +13,7 @@ Biocpkg(pkg)
 \item{pkg}{package name}
 }
 \value{
-string
+md text string
 }
 \description{
 print md text of package with link to homepage (CRAN or Bioconductor)
