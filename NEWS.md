@@ -1,5 +1,6 @@
-# yulab.utils 0.0.4.900
+# yulab.utils 0.0.4.901
 
++ `get_fun_from_pkg()` outputs friendly message if the pkg is not installed (2022-06-08, Wed)
 + `show_in_excel()`, `CRANpkg()`, `Biocpkg()`, `Githubpkg()`, `mypkg()` (2021-10-13, Wed)
 
 # yulab.utils 0.0.4

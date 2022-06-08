@@ -37,7 +37,10 @@ get_fun_from_pkg <- function(pkg, fun) {
     ##
     ## require(pkg, character.only = TRUE)
     ## eval(parse(text = fun))
-
+    if (!is.installed(pkg)) {
+      stop(pkg, " is not installed, please install it before running this function")
+    }
+    
     utils::getFromNamespace(fun, pkg)
 }
 
