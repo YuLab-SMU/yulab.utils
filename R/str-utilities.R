@@ -56,3 +56,36 @@ str_wrap <- function(string, width = getOption("width")) {
     names(result) <- NULL
     result
 }
+
+##' Detect the presence or absence of a pattern at the beginning or end of a string or string vector.
+##'
+##' 
+##' @title str_starts
+##' @rdname str-starts-ends
+##' @param string input string
+##' @param pattern pattern with which the string starts or ends
+##' @param negate if TRUE, return non-matching elements
+##' @return a logical vector
+##' @export
+##' @author Guangchuang Yu
+str_starts <- function(string, pattern, negate=FALSE) {
+    pattern <- paste0('^', pattern)
+    str_detect(string, pattern, negate)
+}
+
+##' @rdname str-starts-ends
+##' @export
+str_ends <- function(string, pattern, negate=FALSE) {
+    pattern <- paste0(pattern, '$')
+    str_detect(string, pattern, negate)
+}
+
+##' @importFrom stats setNames
+str_detect <- function(string, pattern, negate) {
+    res <- setNames(
+        vapply(string, grepl, pattern=pattern, 
+                FUN.VALUE=logical(1)),
+        NULL)
+    if (negate) res <- !res
+    return(res)            
+}
