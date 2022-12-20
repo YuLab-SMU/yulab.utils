@@ -10,10 +10,12 @@ mat2df(x)
 \item{x}{the input matrix}
 }
 \value{
-a data.frame in long format with the 'value' column stores the original values and 'row' and 'col' columns stored in row and column index as in x
+a data.frame in long format with the 'value' column stores the original values
+and 'row' and 'col' columns stored in row and column index as in x
 }
 \description{
-convert a matrix to a tidy data frame (from wide to long format as described in the tidyverse concetp)
+convert a matrix to a tidy data frame
+(from wide to long format as described in the tidyverse concept)
 }
 \examples{
 x <- matrix(1:15, nrow = 3)
