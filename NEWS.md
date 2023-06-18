@@ -1,3 +1,7 @@
+# yulab.utils 0.0.6.001
+
++ `scale_range()` to normalize data by range (2023-06-18, Sun)
+
 # yulab.utils 0.0.6
 
 + `mat2df()` to convert matrix to a tidy data frame (2022-12-20, Tue)

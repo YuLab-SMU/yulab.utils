@@ -14,7 +14,13 @@ is.installed <- function(packages) {
   }, logical(1))
 }
 
-
+check_pkg <- function(pkg) {
+    if (!is.installed(pkg)) {
+        msg <- sprintf("%s is required, please install it first", pkg)
+        stop(msg)
+    }
+    return(NULL)
+}
 
 ##' load function from package
 ##'
@@ -37,11 +43,9 @@ get_fun_from_pkg <- function(pkg, fun) {
     ##
     ## require(pkg, character.only = TRUE)
     ## eval(parse(text = fun))
-    if (!is.installed(pkg)) {
-      stop(pkg, " is not installed, please install it before running this function")
-    }
-    
-    utils::getFromNamespace(fun, pkg)
+
+  check_pkg(pkg)    
+  utils::getFromNamespace(fun, pkg)
 }
 
 
@@ -100,3 +104,4 @@ pkgfmt <- function(pkg) {
   fmt <- getOption('yulab.utils_pkgfmt', default="%s")
   sprintf(fmt, pkg)
 }
+

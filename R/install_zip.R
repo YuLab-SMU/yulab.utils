@@ -29,9 +29,7 @@ install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") 
 ##' @export
 ##' @author Guangchuang Yu
 install_zip <- function(file, args = "--no-build-vignettes") {
-    if (!is.installed('pkgbuild')) {
-        stop("pkgbuild is required, please install it first")
-    }
+    build <- get_fun_from_pkg('pkgbuild', 'build')
 
     dir <- tempfile()
     utils::unzip(file, exdir=dir)
@@ -41,7 +39,7 @@ install_zip <- function(file, args = "--no-build-vignettes") {
     } 
     ## dir <- paste0(dir, '/', basename(repo), '-master')
     ## remotes::install_local(path=dir, ..., force=TRUE)
-    build <- get_fun_from_pkg('pkgbuild', 'build')
+    
     ## pkg <- pkgbuild::build(dir, args=args)
     pkg <- build(dir, args=args)
     utils::install.packages(pkg, repos=NULL)
