@@ -1,5 +1,6 @@
-# yulab.utils 0.0.6.001
+# yulab.utils 0.0.6.002
 
++ `exec()` to run system command (2023-06-19, Mon)
 + `scale_range()` to normalize data by range (2023-06-18, Sun)
 
 # yulab.utils 0.0.6
