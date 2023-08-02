@@ -1,3 +1,49 @@
+#' @rdname read-with-cache
+read_tsv_with_cache <- function(file_url, reader = utils::read.delim, 
+                params = list(sep="\t", header = FALSE), 
+                cache_dir = tempdir()) {
+    
+    read_with_cache(file_url, 
+        reader = reader, 
+        params=params,
+        cache_dir = cache_dir
+    )
+}
+
+
+#' read file with caching
+#' 
+#' This function read a file (local or url) and cache the content.
+#' @title read_with_cache
+#' @rdname read-with-cache
+#' @param file_url a file or url
+#' @param reader a function to read the 'file_url'
+#' @param params a list of parameters that passed to the 'reader'
+#' @param cache_dir a folder to store cache files
+#' @return the output of using the 'reader' to read the 'file_url' with parameters specified by the 'params'
+#' @author Yonghe Xia and Guangchuang Yu 
+#' @export
+read_with_cache <- function(file_url, reader = readLines, params = list(), 
+                    cache_dir = tempdir()) {
+
+    # Generate a unique cache filename based on the file URL
+    cache_filename <- fs::path_join(c(cache_dir, paste0(digest::digest(file_url), ".rds")))
+    
+    # Check if the cached file exists
+    if (file.exists(cache_filename)) {
+        # If cached file exists, load and return the cached data
+        cached_data <- readRDS(cache_filename)
+        return(cached_data)
+    } else {
+        # If cached file does not exist, download and cache the data
+        #data <- read.delim(url(file_url), sep = "\t", header = header)
+        data <- do.call(reader, args = c(file_url, params))
+        saveRDS(data, cache_filename)
+        return(data)
+    }
+}
+
+
 ##' open selected directory or file
 ##'
 ##'

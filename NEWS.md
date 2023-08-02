@@ -1,6 +1,7 @@
-# yulab.utils 0.0.6.003
+# yulab.utils 0.0.6.004
 
-+ `rbindlist()` to rbind a list (2023-08-02, Wed)
++ `read_with_cache()` and `read_tsv_with_cache()` (2023-08-02, Wed) 
++ `rbindlist()` to rbind a list (2023-08-01, Tue)
 + `exec()` to run system command (2023-06-19, Mon)
 + `scale_range()` to normalize data by range (2023-06-18, Sun)
 
