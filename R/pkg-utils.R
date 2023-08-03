@@ -34,7 +34,7 @@ check_pkg <- function(pkg, reason=NULL, ...) {
   # }
 
   if (is.null(reason)) {
-    call=sys.call(1L)
+    call <- sys.call(1L)
     reason <- sprintf("for %s()", as.character(call)[1])
   }
   rlang::check_installed(pkg, reason, ...)
