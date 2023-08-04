@@ -63,7 +63,7 @@ get_fun_from_pkg <- function(pkg, fun) {
     ## require(pkg, character.only = TRUE)
     ## eval(parse(text = fun))
 
-  check_pkg(pkg)    
+  # check_pkg(pkg)
   utils::getFromNamespace(fun, pkg)
 }
 
