@@ -1,4 +1,4 @@
-# yulab.utils 0.0.6.006
+# yulab.utils 0.0.7
 
 + update `check_pkg()` to call `rlang::check_installed()` with reason set automatically (2023-08-03, Thu)
 + `yread()` and `yread_tsv()` that read file with caching (2023-08-02, Wed) 
