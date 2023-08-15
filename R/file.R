@@ -1,13 +1,14 @@
 #' @rdname yread
 #' @export
 yread_tsv <- function(file, reader = utils::read.delim, 
-                params = list(sep="\t", header = FALSE),
+                params = list(),
                 cache_dir = tempdir()
             ) {
+    # e.g. params = list(sep = "\t", header = FALSE)
     
     yread(file, 
         reader = reader, 
-        params=params,
+        params = params,
         cache_dir = cache_dir
     )
 }
