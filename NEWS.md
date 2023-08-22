@@ -1,5 +1,6 @@
-# yulab.utils 0.0.7.001
+# yulab.utils 0.0.8
 
++ `mat2list()` and `combinations()` (2023-08-22, Tue)
 + remove default 'params' setting in `yread_tsv()` (2023-08-15, Tue)
 
 # yulab.utils 0.0.7

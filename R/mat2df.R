@@ -22,3 +22,16 @@ mat2df <- function(x) {
     return(d)
 }
 
+##' convert a matrix to a list
+##'
+##'
+##' @title mat2list
+##' @param x the input matrix
+##' @return a list that contains matrix columns as its elements
+##' @examples
+##' x <- matrix(1:15, nrow = 3)
+##' mat2list(x)
+##' @export
+mat2list <- function(x){
+  lapply(seq_len(ncol(x)), function(i) x[,i])
+}

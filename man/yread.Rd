@@ -8,7 +8,7 @@
 yread_tsv(
   file,
   reader = utils::read.delim,
-  params = list(sep = "\\t", header = FALSE),
+  params = list(),
   cache_dir = tempdir()
 )
 
