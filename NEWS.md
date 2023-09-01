@@ -1,3 +1,7 @@
+# yulab.utils 0.0.9
+
++ `ls2df()` convert list of vector to a data.frame (2023-09-01, Fri)
+
 # yulab.utils 0.0.8
 
 + `mat2list()` and `combinations()` (2023-08-22, Tue)
