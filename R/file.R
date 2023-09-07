@@ -26,6 +26,8 @@ yread_tsv <- function(file, reader = utils::read.delim,
 #' @param cache_dir a folder to store cache files
 #' @return the output of using the 'reader' to read the 'file_url' with parameters specified by the 'params'
 #' @author Yonghe Xia and Guangchuang Yu 
+#' @importFrom fs path_join
+#' @importFrom digest digest
 #' @export
 yread <- function(file, reader = readLines, params = list(), 
                     cache_dir = tempdir()) {

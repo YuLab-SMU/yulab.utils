@@ -1,16 +1,15 @@
 Package: yulab.utils
 Title: Supporting Functions for Packages Maintained by 'YuLab-SMU'
-Version: 0.0.9
+Version: 0.0.9.001
 Authors@R: c(person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")))
 Description: Miscellaneous functions commonly used by 'YuLab-SMU'.
 Imports:
+  digest,
+  fs,
   memoise,
   rlang,
   stats,
   utils
-Suggests:
-  digest,
-  fs
 ByteCompile: true
 URL: https://yulab-smu.top/
 License: Artistic-2.0
