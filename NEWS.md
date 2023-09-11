@@ -1,5 +1,6 @@
-# yulab.utils 0.0.9.001
+# yulab.utils 0.0.9.002
 
++ `get_dependencies()` and `packageTitle()` (2023-09-11, Mon)
 + import 'fs' and 'digest' (2023-09-07, Thu)
 
 # yulab.utils 0.0.9
