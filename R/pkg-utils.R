@@ -1,3 +1,37 @@
+##' loading a package
+##'
+##' The function use 'library()' to load the package. 
+##' If the package is not installed, the function will try to install it before loading it.
+##' @title pload
+##' @param package package name
+##' @param action function used to install package. 
+##' If 'action = "auto"', it will try to use 'BiocManager::install()' if it is available.
+##' @return the selected package loaded to the R session
+##' @importFrom rlang as_name
+##' @importFrom rlang enquo
+##' @importFrom rlang check_installed
+##' @importFrom cli cli_h2
+##' @importFrom utils getFromNamespace
+##' @export
+##' @author Guangchuang Yu
+pload <- function(package, action = "auto") {
+    pkg <- as_name(enquo(package))
+    if (action == "auto") {
+        if (is.installed("BiocManager")) {
+            install <- getFromNamespace("install", "BiocManager")
+            action <- function(package, ask=FALSE, update=FALSE, ...){
+                install(package, ask=ask, update = update, ...)
+            }
+        } else {
+            action <- NULL
+        }
+    }
+    check_installed(pkg, action = action)
+    cli::cli_h2(sprintf("loading the package: %s", pkg))
+    library(pkg, character.only = TRUE)
+}
+
+
 ##' get reverse dependencies
 ##'
 ##'
