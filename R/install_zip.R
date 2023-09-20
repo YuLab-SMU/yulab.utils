@@ -56,7 +56,7 @@ install_zip <- function(file, args = "--no-build-vignettes") {
 
 
 is_valid_zip <- function(zipfile) {
-    fs <- tryCatch(unzip(zipfile, list=TRUE), error = function(e) NULL)
+    fs <- tryCatch(utils::unzip(zipfile, list=TRUE), error = function(e) NULL)
     if (is.null(fs)) return(FALSE)
     return(TRUE)
 }
