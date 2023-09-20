@@ -16,6 +16,9 @@ install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") 
     method <- "auto"
     if (.Platform$OS.type == "windows") method <- "curl"
     utils::download.file(url, destfile=f, method = method)
+    if (!is_valid_zip(f)) {
+        stop("Invalid zip file downloaded, please check the 'ref' parameter to set a correct github branch.")
+    }
     install_zip(f, args=args)
 }
 
@@ -29,18 +32,32 @@ install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") 
 ##' @export
 ##' @author Guangchuang Yu
 install_zip <- function(file, args = "--no-build-vignettes") {
-    build <- get_fun_from_pkg('pkgbuild', 'build')
-
     dir <- tempfile()
     utils::unzip(file, exdir=dir)
     fs <- list.files(path=dir, full.names=T)
-    if (length(fs) == 1 && dir.exists(fs)) {
-        dir <- fs
-    } 
+    #if (length(fs) == 1 && dir.exists(fs)) {
+    #    dir <- fs
+    #}
     ## dir <- paste0(dir, '/', basename(repo), '-master')
-    ## remotes::install_local(path=dir, ..., force=TRUE)
-    
-    ## pkg <- pkgbuild::build(dir, args=args)
-    pkg <- build(dir, args=args)
+    dir <- fs[which.max(file.info(fs)$atime)]
+
+    if ("INDEX" %in% list.files(dir)) {
+        # file is binary package
+        pkg <- file
+    } else {  
+        # file is zip of package source
+        ## remotes::install_local(path=dir, ..., force=TRUE)
+        ## pkg <- pkgbuild::build(dir, args=args)
+        build <- get_fun_from_pkg('pkgbuild', 'build')
+        pkg <- build(dir, args=args)
+    }
     utils::install.packages(pkg, repos=NULL)
 }
+
+
+is_valid_zip <- function(zipfile) {
+    fs <- tryCatch(unzip(zipfile, list=TRUE), error = function(e) NULL)
+    if (is.null(fs)) return(FALSE)
+    return(TRUE)
+}
+
