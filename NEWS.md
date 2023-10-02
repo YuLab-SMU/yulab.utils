@@ -1,3 +1,8 @@
+
+# yulab.utils 0.1.0.001
+
++ change the default parameter, `ref = "master"` to `ref = "HEAD"` in the `install_zip_gh()` function to use the default branch of the GitHub repo (2023-10-02, Mon)
+
 # yulab.utils 0.1.0
 
 + `install_zip()` allows both binary and source zip files (2023-09-20, Wed)

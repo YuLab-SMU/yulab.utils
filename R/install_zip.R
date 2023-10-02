@@ -3,13 +3,13 @@
 ##' it download the zip file first and use `install_zip` to install it
 ##' @title install_zip_gh
 ##' @param repo github repo
-##' @param ref github branch, default is master
+##' @param ref github branch, default is HEAD, which means the default branch of the GitHub repo
 ##' @param args argument to build package
 ##' @return No return value, called for installing github package
 ##' @importFrom utils download.file
 ##' @export
 ##' @author Guangchuang Yu
-install_zip_gh <- function(repo, ref = "master", args = "--no-build-vignettes") {
+install_zip_gh <- function(repo, ref = "HEAD", args = "--no-build-vignettes") {
     ## repo <- 'GuangchuangYu/nCov2019'
     url <- paste0('https://codeload.github.com/', repo, '/zip/', ref)
     f <- tempfile(fileext=".zip")

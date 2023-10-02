@@ -4,12 +4,12 @@
 \alias{install_zip_gh}
 \title{install_zip_gh}
 \usage{
-install_zip_gh(repo, ref = "master", args = "--no-build-vignettes")
+install_zip_gh(repo, ref = "HEAD", args = "--no-build-vignettes")
 }
 \arguments{
 \item{repo}{github repo}
 
-\item{ref}{github branch, default is master}
+\item{ref}{github branch, default is HEAD, which means the default branch of the GitHub repo}
 
 \item{args}{argument to build package}
 }
