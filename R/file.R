@@ -73,7 +73,6 @@ read.cb <- function(reader = read.table, ...) {
 ##'
 ##'
 ##' @title o
-##' @param file to be open; open workding directory by default
 ##' @param file to be open; open working directory by default
 ##' @return No return value, called for opening specific directory or file
 ##' @examples
