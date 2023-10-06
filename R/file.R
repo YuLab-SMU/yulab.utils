@@ -82,15 +82,15 @@ read.cb <- function(reader = read.table, ...) {
 ##' }
 ##' @export
 ##' @author Guangchuang Yu
-o <- function(file=".") {
+o <- function(file = ".", rserver_ip = NULL, rserver_port = NULL) {
     os <- Sys.info()[1]
     if (is.rserver()) {
         if (dir.exists(file)) {
             stop("open directory in RStudio Server is not supported.")
         }
-        rserver_ip <- getOption("rserver_ip")
+         rserver_ip <- getOption("rserver_ip") %||% rserver_ip
         if (!is.null(rserver_ip)) {
-            rserver_port <- getOption("rserver_port") %||% '8787' 
+            rserver_port <-  getOption("rserver_port") %||% rserver_port %||% '8787'
             if (!startsWith(rserver_ip, "http")) {
                 rserver_ip = paste0("http://", rserver_ip)
             }
