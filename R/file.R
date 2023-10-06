@@ -73,7 +73,7 @@ read.cb <- function(reader = read.table, ...) {
 ##'
 ##'
 ##' @title o
-##' @param file to be open; open workding directory by default
+##' @param file to be open; open working directory by default
 ##' @return No return value, called for opening specific directory or file
 ##' @examples
 ##' \dontrun{
@@ -83,6 +83,7 @@ read.cb <- function(reader = read.table, ...) {
 ##' @export
 ##' @author Guangchuang Yu
 o <- function(file=".") {
+    file <- normalizePath(file)
     os <- Sys.info()[1]
     if (is.rserver()) {
         if (dir.exists(file)) {
