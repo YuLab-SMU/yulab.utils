@@ -1,6 +1,7 @@
 
-# yulab.utils 0.1.0.002
+# yulab.utils 0.1.1
 
++ `baidu_translate()` to translate sentences (2023-12-11, Mon)
 + use `normalizePath()` in `o()` to convert file paths to canonical form (2023-10-06, Fri, #4)
 + change the default parameter, `ref = "master"` to `ref = "HEAD"` in the `install_zip_gh()` function to use the default branch of the GitHub repo (2023-10-02, Mon)
 

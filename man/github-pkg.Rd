@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg-utils.R
 \name{Githubpkg}
 \alias{Githubpkg}
-\title{Githubpkg}
+\title{print md text of package with link to github repo}
 \usage{
 Githubpkg(user, pkg)
 }

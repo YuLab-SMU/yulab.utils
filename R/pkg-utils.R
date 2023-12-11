@@ -200,7 +200,7 @@ get_fun_from_pkg <- function(pkg, fun) {
 ##' @return md text string
 ##' @export
 ##' @author Guangchuang Yu
-CRANpkg <- function (pkg) {
+CRANpkg <- function(pkg) {
     cran <- "https://CRAN.R-project.org/package"
     fmt <- "[%s](%s=%s)"
     sprintf(fmt, pkgfmt(pkg), cran, pkg)
@@ -208,20 +208,20 @@ CRANpkg <- function (pkg) {
 
 ##' @rdname cran-bioc-pkg
 ##' @export
-Biocpkg <- function (pkg) {
+Biocpkg <- function(pkg) {
     sprintf("[%s](http://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
 }
 
 ##' print md text of package with link to github repo
 ##'
 ##'
-##' @title Githubpkg
+##' @rdname github-pkg
 ##' @param user github user
 ##' @param pkg package name
 ##' @return md text string
 ##' @export
 ##' @author Guangchuang Yu
-Githubpkg <- function (user, pkg) {
+Githubpkg <- function(user, pkg) {
     gh <- "https://github.com"
     fmt <- "[%s](%s/%s/%s)"
     sprintf(fmt, pkgfmt(pkg), gh, user, pkg)
