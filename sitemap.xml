@@ -13,7 +13,7 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/Githubpkg.html</loc>
+    <loc>/reference/baidu-translate.html</loc>
   </url>
   <url>
     <loc>/reference/check_pkg.html</loc>
@@ -32,6 +32,9 @@
   </url>
   <url>
     <loc>/reference/get_fun_from_pkg.html</loc>
+  </url>
+  <url>
+    <loc>/reference/github-pkg.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
