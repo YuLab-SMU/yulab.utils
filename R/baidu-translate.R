@@ -4,10 +4,16 @@ en2cn <- function (x) {
     baidu_translate(x, from = 'en', to = 'zh')
 }
 
+#' @rdname baidu-translate
+#' @export
+cn2en <- function (x) {
+    baidu_translate(x, from = 'zh', to = 'en')
+}
+
 
 #' Translate query sentence
 #' 
-#' This function use the Baidu fanyi API to translate query sentence
+#' This function use the Baidu fanyi API to translate query sentences
 #' @title baidu_translate
 #' @rdname baidu-translate
 #' @param x query sentence

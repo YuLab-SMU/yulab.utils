@@ -2,10 +2,13 @@
 % Please edit documentation in R/baidu-translate.R
 \name{en2cn}
 \alias{en2cn}
+\alias{cn2en}
 \alias{baidu_translate}
 \title{baidu_translate}
 \usage{
 en2cn(x)
+
+cn2en(x)
 
 baidu_translate(x, from = "en", to = "zh")
 }
@@ -23,7 +26,7 @@ the translated sentence
 Translate query sentence
 }
 \details{
-This function use the Baidu fanyi API to translate query sentence
+This function use the Baidu fanyi API to translate query sentences
 }
 \author{
 Guangchuang Yu
