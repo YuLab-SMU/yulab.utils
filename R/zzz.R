@@ -7,7 +7,8 @@
 
 
 .onAttach <- function(libname, pkgname) {
-    options(.baidu_translate = list(appid = "20231211001907382", key = "UM3Z6c5iQMOYNkkN5dzV"))
+    set_translate_source("baidu")
+    set_translate_option(appid = "20231211001907382", key = "UM3Z6c5iQMOYNkkN5dzV")
 }
 
 

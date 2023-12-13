@@ -10,6 +10,36 @@ cn2en <- function (x) {
     baidu_translate(x, from = 'zh', to = 'en')
 }
 
+#' set appid and key of translation engine
+#' 
+#' This function allows users to use their own appid and key
+#' @title set_translate_option
+#' @rdname set-translate-option
+#' @param appid appid
+#' @param key app key
+#' @param source translation engine, currently only 'baidu' is supported
+#' @return NULL
+#' @author Guangchuang Yu 
+#' @export
+set_translate_option <- function(appid, key, source = "baidu") {
+    if (source != "baidu") stop ("currently, only baidu is supported")
+
+    set_translate_source(source)
+    set_translate_appkey(appid, key)
+}
+
+set_translate_source <- function(source) {
+    options(yulab_translate_source = source)
+}
+
+set_translate_appkey <- function(appid, key) {
+    options(yulab_translate = list(appid = appid, key = key))
+}
+
+get_translate_appkey <- function() {
+    getOption('yulab_translate')
+}
+
 
 #' Translate query sentence
 #' 
@@ -38,7 +68,7 @@ baidu_translate <- function(x, from = 'en', to = 'zh') {
 
 baidu_translate_query <- function(x, from, to) {
     salt <- sample.int(1e+05, 1) 
-    .info <- getOption('.baidu_translate')
+    .info <- get_translate_appkey()
     sign <- sprintf("%s%s%s%s", .info$appid, x, salt, .info$key)
     .sign <- openssl::md5(sign)
 

@@ -1,6 +1,7 @@
 
-# yulab.utils 0.1.1.002
+# yulab.utils 0.1.1.003
 
++ `set_translate_option()` allows users to use their own appid and key (2023-12-13, Wed)
 + tools to switch from PCRE or TRE in regular expression (2023-12-13, Wed)
 + `cn2en()` (2023-12-12, Tue)
 
