@@ -1,5 +1,7 @@
 
-# yulab.utils 0.1.1.001
+# yulab.utils 0.1.1.002
+
++ tools to switch from PCRE or TRE in regular expression (2023-12-13, Wed)
 + `cn2en()` (2023-12-12, Tue)
 
 # yulab.utils 0.1.1
