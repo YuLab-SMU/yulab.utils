@@ -37,6 +37,9 @@ The functions are just set a global option to store the user's choice of whether
 
 Users can access the option via \code{use_perl()} and pass the return value to \code{gusb()} or \code{regexpr()} to specify the style in use.
 }
+\references{
+\url{https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre}
+}
 \author{
 Guangchuang Yu
 }

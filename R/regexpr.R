@@ -34,7 +34,7 @@ use_perl <- function() {
 ##' @rdname regexpr-style
 ##' @param style one of 'PCRE' or 'TRE'
 ##' @return logical value of whether use perl
-##' @reference <https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre>
+##' @references <https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre>
 ##' @export
 ##' @author Guangchuang Yu
 set_regexpr_style <- function(style) {
