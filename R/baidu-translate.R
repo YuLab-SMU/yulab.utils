@@ -36,9 +36,22 @@ set_translate_appkey <- function(appid, key) {
     options(yulab_translate = list(appid = appid, key = key))
 }
 
-get_translate_appkey <- function() {
-    getOption('yulab_translate')
+get_translate_source <- function() {
+    getOption('yulab_translate_source', "baidu")
 }
+
+get_translate_appkey <- function() {
+    res <- getOption('yulab_translate')
+    if (!is.null(res)) return(res)
+
+    src <- get_translate_source()
+    if (src == "baidu") {
+        res <- getOption('yulab_translate', .baidu_appkey)
+    }
+    return(res)
+}
+
+
 
 
 #' Translate query sentence
