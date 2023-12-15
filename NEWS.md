@@ -1,13 +1,11 @@
 
-# yulab.utils 0.1.1.003
+# yulab.utils 0.1.1.004
 
-+ `set_translate_option()` allows users to use their own appid and key (2023-12-13, Wed)
++ mv translate functions to the 'fanyi' package (2023-12-14, Thu)
 + tools to switch from PCRE or TRE in regular expression (2023-12-13, Wed)
-+ `cn2en()` (2023-12-12, Tue)
 
 # yulab.utils 0.1.1
 
-+ `baidu_translate()` and `en2cn()` to translate sentences (2023-12-11, Mon)
 + use `normalizePath()` in `o()` to convert file paths to canonical form (2023-10-06, Fri, #4)
 + change the default parameter, `ref = "master"` to `ref = "HEAD"` in the `install_zip_gh()` function to use the default branch of the GitHub repo (2023-10-02, Mon)
 
