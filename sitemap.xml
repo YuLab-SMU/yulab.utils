@@ -13,9 +13,6 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/baidu-translate.html</loc>
-  </url>
-  <url>
     <loc>/reference/check_pkg.html</loc>
   </url>
   <url>
@@ -83,9 +80,6 @@
   </url>
   <url>
     <loc>/reference/scihub-dl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set-translate-option.html</loc>
   </url>
   <url>
     <loc>/reference/show_in_excel.html</loc>
