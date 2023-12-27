@@ -1,5 +1,15 @@
+# yulab.utils 0.1.2.001
 
-# yulab.utils 0.1.1.004
++ with cache ability (2023-12-27, Wed)
+    - `initial_yulab_cache()`
+    - `initial_yulab_cache_item()`
+    - `get_yulab_cache()`
+    - `get_yulab_cache_item()`
+    - `get_yulab_cache_element()`
+    - `rm_yulab_cache_item()`
+    - `rm_yulab_cache()`
+
+# yulab.utils 0.1.2
 
 + mv translate functions to the 'fanyi' package (2023-12-14, Thu)
 + tools to switch from PCRE or TRE in regular expression (2023-12-13, Wed)
