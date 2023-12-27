@@ -71,9 +71,10 @@ rm_yulab_cache_item <- function(item) {
 ##'  fast_fib <- function(x) {
 ##'      if (x < 2) return(1)
 ##'      res <- get_yulab_cache_element('fibonacci', as.character(x))
-##'      if (is.null(res)) { 
-##'          res <- fast_fib(x-2) + fast_fib(x-1)
+##'      if (!is.null(res)) { 
+##'          return(res)
 ##'      }
+##'      res <- fast_fib(x-2) + fast_fib(x-1)
 ##'      e <- list()
 ##'      e[[as.character(x)]] <- res
 ##'      update_yulab_cache_item('fibonacci', e)
