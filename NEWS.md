@@ -1,13 +1,13 @@
 # yulab.utils 0.1.2.001
 
 + with cache ability (2023-12-27, Wed)
-    - `initial_yulab_cache()`
-    - `initial_yulab_cache_item()`
-    - `get_yulab_cache()`
-    - `get_yulab_cache_item()`
-    - `get_yulab_cache_element()`
-    - `rm_yulab_cache_item()`
-    - `rm_yulab_cache()`
+    - `initial_cache()`
+    - `initial_cache_item()`
+    - `get_cache()`
+    - `get_cache_item()`
+    - `get_cache_element()`
+    - `rm_cache_item()`
+    - `rm_cache()`
 
 # yulab.utils 0.1.2
 
