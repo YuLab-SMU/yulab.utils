@@ -103,7 +103,7 @@ str_detect <- function(string, pattern, negate) {
 str_extract <- function(string, pattern) {
     i <- regexpr(pattern, string)
     j <- attr(i, 'match.length')
-    res <- substring(string, i, i+j)
+    res <- substring(string, i, i+j-1)
     res[res == ""] <- NA
     return(res)
 }
