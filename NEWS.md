@@ -1,3 +1,7 @@
+# yulab.utils 0.1.3.001
+
++ `str_extract()` to extract substring using a regular expression pattern (2024--01-25, Thu)
+
 # yulab.utils 0.1.3
 
 + with cache ability (2023-12-27, Wed)
