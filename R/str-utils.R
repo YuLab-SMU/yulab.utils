@@ -8,6 +8,10 @@
 ##' @export
 ##' @author Guangchuang Yu and Erqiang Hu
 str_wrap <- function(string, width = getOption("width")) {
+    ##
+    ## actually, there is a base::strwrap() function available
+    ##
+    
     # x <- gregexpr(' ', string)
     # vapply(seq_along(x),
     #        FUN = function(i) {
