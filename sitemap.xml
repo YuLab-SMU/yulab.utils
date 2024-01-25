@@ -85,6 +85,9 @@
     <loc>/reference/show_in_excel.html</loc>
   </url>
   <url>
+    <loc>/reference/str-extract.html</loc>
+  </url>
+  <url>
     <loc>/reference/str-starts-ends.html</loc>
   </url>
   <url>
@@ -92,5 +95,8 @@
   </url>
   <url>
     <loc>/reference/yread.html</loc>
+  </url>
+  <url>
+    <loc>/reference/yulab-cache.html</loc>
   </url>
 </urlset>
