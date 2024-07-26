@@ -1,105 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_pkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/combinations.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cran-bioc-pkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/exec.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_dependencies.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_fun_from_pkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/github-pkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/install_zip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/install_zip_gh.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is.installed.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ls2df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mat2df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mat2list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mypkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/o.html</loc>
-  </url>
-  <url>
-    <loc>/reference/packageTitle.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pload.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rbindlist.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read.cb.html</loc>
-  </url>
-  <url>
-    <loc>/reference/regexpr-style.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_range.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scihub-dl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_in_excel.html</loc>
-  </url>
-  <url>
-    <loc>/reference/str-extract.html</loc>
-  </url>
-  <url>
-    <loc>/reference/str-starts-ends.html</loc>
-  </url>
-  <url>
-    <loc>/reference/str_wrap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/yread.html</loc>
-  </url>
-  <url>
-    <loc>/reference/yulab-cache.html</loc>
-  </url>
-  <url>
-    <loc>/reference/yulab.utils-package.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/check_pkg.html</loc></url>
+<url><loc>/reference/combinations.html</loc></url>
+<url><loc>/reference/cran-bioc-pkg.html</loc></url>
+<url><loc>/reference/exec.html</loc></url>
+<url><loc>/reference/get_dependencies.html</loc></url>
+<url><loc>/reference/get_fun_from_pkg.html</loc></url>
+<url><loc>/reference/github-pkg.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/install_zip.html</loc></url>
+<url><loc>/reference/install_zip_gh.html</loc></url>
+<url><loc>/reference/is.installed.html</loc></url>
+<url><loc>/reference/ls2df.html</loc></url>
+<url><loc>/reference/mat2df.html</loc></url>
+<url><loc>/reference/mat2list.html</loc></url>
+<url><loc>/reference/mypkg.html</loc></url>
+<url><loc>/reference/o.html</loc></url>
+<url><loc>/reference/packageTitle.html</loc></url>
+<url><loc>/reference/pload.html</loc></url>
+<url><loc>/reference/rbindlist.html</loc></url>
+<url><loc>/reference/read.cb.html</loc></url>
+<url><loc>/reference/regexpr-style.html</loc></url>
+<url><loc>/reference/scale_range.html</loc></url>
+<url><loc>/reference/scihub-dl.html</loc></url>
+<url><loc>/reference/show_in_excel.html</loc></url>
+<url><loc>/reference/str-extract.html</loc></url>
+<url><loc>/reference/str-starts-ends.html</loc></url>
+<url><loc>/reference/str_wrap.html</loc></url>
+<url><loc>/reference/yread.html</loc></url>
+<url><loc>/reference/yulab-cache.html</loc></url>
+<url><loc>/reference/yulab.utils-package.html</loc></url>
+<url><loc>/reference/yulab_msg.html</loc></url>
 </urlset>
+
