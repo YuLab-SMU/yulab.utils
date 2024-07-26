@@ -1,3 +1,7 @@
+# yulab.utils 0.1.5.001
+
++ prototype of `bib_ggtree()` (2024-07-26, Fri)
+
 # yulab.utils 0.1.5
 
 + `yulab_msg()` for startup message of packages developed by YuLab (2024-07-26, Fri)
