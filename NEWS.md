@@ -1,6 +1,6 @@
-# yulab.utils 0.1.5.001
+# yulab.utils 0.1.5.002
 
-+ prototype of `bib_ggtree()` (2024-07-26, Fri)
++ `bib_ggtree()` and `bib_knowledge()` (2024-07-27, Sat)
 
 # yulab.utils 0.1.5
 
