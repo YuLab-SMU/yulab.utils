@@ -1,6 +1,6 @@
-# yulab.utils 0.1.5.003
+# yulab.utils 0.1.5.004
 
-+ remove memory caching in `yread()` and `yread_tsv()` (2024-07-27, Sat)
++ remove memory caching and disable file cache by default in `yread()` and `yread_tsv()` (2024-07-27, Sat)
 + `bib_ggtree()` and `bib_knowledge()` (2024-07-27, Sat)
 
 # yulab.utils 0.1.5

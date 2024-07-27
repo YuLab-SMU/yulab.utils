@@ -1,6 +1,6 @@
 Package: yulab.utils
 Title: Supporting Functions for Packages Maintained by 'YuLab-SMU'
-Version: 0.1.5.003
+Version: 0.1.5.004
 Authors@R: c(person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")))
 Description: Miscellaneous functions commonly used by 'YuLab-SMU'.
 Imports:
