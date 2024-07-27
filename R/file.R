@@ -23,27 +23,33 @@ yread_tsv <- function(file, reader = utils::read.delim,
 #' @param file a file or url
 #' @param reader a function to read the 'file_url'
 #' @param params a list of parameters that passed to the 'reader'
-#' @param cache_dir a folder to store cache files
+#' @param cache_dir a folder to store cache files. If set to NULL will disable cache.
 #' @return the output of using the 'reader' to read the 'file_url' with parameters specified by the 'params'
 #' @author Yonghe Xia and Guangchuang Yu 
 #' @importFrom fs path_join
 #' @importFrom digest digest
 #' @export
 yread <- function(file, reader = readLines, params = list(), 
-                    cache_dir = tempdir()) {
+                cache_dir = NULL) {
 
-    # Generate a unique cache filename based on the file URL
-    cache_filename <- fs::path_join(c(cache_dir, paste0(digest::digest(file), ".rds")))
-    
+    if (!is.null(cache_dir)) {
+        # Generate a unique cache filename based on the file URL
+        cache_filename <- fs::path_join(c(cache_dir, paste0(digest::digest(file), ".rds")))
+    } else {
+        cache_filename <- NULL
+    }
+
     # Check if the cached file exists
-    if (file.exists(cache_filename)) {
+    if (!is.null(cache_filename) && file.exists(cache_filename)) {
         # If cached file exists, load and return the cached data
         cached_data <- readRDS(cache_filename)
         return(cached_data)
     } else {
         # If cached file does not exist, read and cache the data
         data <- do.call(reader, args = c(file, params))
-        saveRDS(data, cache_filename)
+        if (!is.null(cache_filename)) {
+            saveRDS(data, cache_filename)
+        }
         return(data)
     }
 }

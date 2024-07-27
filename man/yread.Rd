@@ -12,7 +12,7 @@ yread_tsv(
   cache_dir = tempdir()
 )
 
-yread(file, reader = readLines, params = list(), cache_dir = tempdir())
+yread(file, reader = readLines, params = list(), cache_dir = NULL)
 }
 \arguments{
 \item{file}{a file or url}
@@ -21,7 +21,7 @@ yread(file, reader = readLines, params = list(), cache_dir = tempdir())
 
 \item{params}{a list of parameters that passed to the 'reader'}
 
-\item{cache_dir}{a folder to store cache files}
+\item{cache_dir}{a folder to store cache files. If set to NULL will disable cache.}
 }
 \value{
 the output of using the 'reader' to read the 'file_url' with parameters specified by the 'params'
