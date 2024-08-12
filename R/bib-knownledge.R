@@ -2,7 +2,14 @@ bib_knownledge <- function(id) {
     bib <- c(
         np2024 = bib_clusterProfiler_np2024,
         innovation2021 = bib_clusterProfiler_innovation2021,
-        omics2012 = bib_clusterProfiler_omics2012
+        omics2012 = bib_clusterProfiler_omics2012,
+        chipseeker2022 = bib_chipseeker_cp2022,
+        chipseeker2015 = bib_chipseeker_bioinfo2015,
+        gosemsim2020 = bib_gosemsim_mmb2020,
+        gosemsim2010 = bib_gosemsim_bioinfo2010,
+        meshes2018 = bib_meshes_bioinfo2018,
+        reactome2016 = bib_reactomepa_mbs20016,
+        dose2015 = bib_dose_bioinfo2015
     )
 
     if (!id %in% names(bib)) return(NULL)
@@ -138,3 +145,135 @@ bib_clusterProfiler_omics2012 <- citEntry(entry  ="ARTICLE",
          doi     = "10.1089/omi.2011.0118",
          textVersion = ref2['clusterProfiler']
          )
+
+
+bib_meshes_bioinfo2018 <- citEntry(entry  ="ARTICLE",
+         title  = "Using meshes for MeSH term enrichment and semantic analyses ",
+         author = as.person("Guangchuang Yu"),
+         journal = "Bioinformatics",
+         year    = "2018",
+         volume  = "34",
+         number  = "21",
+         pages   = "3766-3767",
+         PMID    = "29790928",
+         doi     = "10.1093/bioinformatics/bty410",
+         textVersion = ref2["meshes"]
+         )
+
+bib_reactomepa_mbs20016 <- citEntry(entry  = "ARTICLE",
+         title  = "ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization",
+         author = c(
+             person("Guangchuang", "Yu"),
+             person("Qing-Yu", "He")
+             ),
+         journal = "Molecular BioSystems",
+         year    = "2016",
+         volume  = "12",
+         number  = "12",
+         pages   = "477-479",
+         PMID    = "26661513",
+         url     = "http://pubs.rsc.org/en/Content/ArticleLanding/2015/MB/C5MB00663E",
+         doi     = "10.1039/C5MB00663E",
+         textVersion = ref2['ReactomePA']
+         )
+
+bib_dose_bioinfo2015 <- citEntry(entry  = "ARTICLE",
+         title  = "DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis",
+         author = c(
+             person("Guangchuang", "Yu"),
+             person("Li-Gen", "Wang"),
+             person("Guang-Rong", "Yan"),
+             person("Qing-Yu", "He")
+             ),
+         journal = "Bioinformatics",
+         year    = "2015",
+         volume  = "31",
+         number  = "4",
+         pages   = "608-609",
+         PMID    = "",
+         url     = "http://bioinformatics.oxfordjournals.org/content/31/4/608",
+         doi     = "10.1093/bioinformatics/btu684",
+         textVersion = ref2['DOSE']
+         )
+
+
+bib_chipseeker_cp2022 <- citEntry(entry  ="ARTICLE",
+         title  = "Exploring epigenomic datasets by ChIPseeker",
+         author = c(
+             person("Qianwen", "Wang"),
+             person("Ming", "Li"),
+             person("Tianzhi", "Wu"),
+             person("Li", "Zhan"),
+             person("Lin", "Li"),
+             person("Meijun", "Chen"),
+             person("Wenqin", "Xie"),
+             person("Zijing", "Xie"),
+             person("Erqiang", "Hu"),
+             person("Shuangbin", "Xu"),
+             person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com")
+             ),
+         journal = "Current Protocols",
+         year    = "2022",
+         volume  = "2",
+         number  = "10",
+         pages   = "e585",
+         PMID    = "36286622",
+         doi     = "10.1002/cpz1.585",
+         url     = "https://onlinelibrary.wiley.com/share/author/GYJGUBYCTRMYJFN2JFZZ?target=10.1002/cpz1.585",
+         textVersion = ref2['ChIPseeker_CP']
+         )
+
+
+bib_chipseeker_bioinfo2015 <- citEntry(entry  ="ARTICLE",
+         title  = "ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization",
+         author = personList(
+             as.person("Guangchuang Yu"),
+             as.person("Li-Gen Wang"),
+             as.person("Qing-Yu He")
+             ),
+         journal = "Bioinformatics",
+         year    = "2015",
+         volume  = "31",
+         number  = "14",
+         pages   = "2382-2383",
+         PMID    = "25765347",
+         doi     = "10.1093/bioinformatics/btv145",
+         textVersion = ref2['ChIPseeker']
+         )
+
+
+bib_gosemsim_mmb2020 <- citEntry(entry  ="ARTICLE",
+         title = "Gene Ontology Semantic Similarity Analysis Using GOSemSim",
+         author = person("Guangchuang", "Yu"),
+         journal = "Methods in Molecular Biology",
+         shortjournal = "Methods Mol. Biol.",
+         year = "2020",
+         volume = "2117",
+         pages = "207-215",
+         PMID = "31960380",
+         issn = "1940-6029",
+         doi = "10.1007/978-1-0716-0301-7_11",
+         textVersion = ref2['GOSemSim_MMB']
+)
+
+bib_gosemsim_bioinfo2010 <- citEntry(entry  ="ARTICLE",
+         title  = "GOSemSim: an R package for measuring semantic similarity among GO terms and gene products",
+         author = personList(
+             as.person("Guangchuang Yu"),
+             as.person("Fei Li"),
+             as.person("Yide Qin"),
+             as.person("Xiaochen Bo"),
+             as.person("Yibo Wu"),
+             as.person("Shengqi Wang")
+             ),
+         journal = "Bioinformatics",
+         year    = "2010",
+         volume  = "26",
+         number  = "7",
+         pages   = "976-978",
+         PMID    = "20179076",
+         doi     = "10.1093/bioinformatics/btq064",
+         textVersion = ref2['GOSemSim']
+         )
+
+
