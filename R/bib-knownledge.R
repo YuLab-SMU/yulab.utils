@@ -22,29 +22,29 @@ ref_knownledge <- function() {
         ChIPseeker_CP = paste(
             "Qianwen Wang, Ming Li, Tianzhi Wu, Li Zhan, Lin Li, Meijun Chen, Wenqin Xie, Zijing Xie, Erqiang Hu, Shuangbin Xu, Guangchuang Yu.",
             "Exploring epigenomic datasets by ChIPseeker.",
-            "Current Protocols 2022, 2(10): e585"),
+            "Current Protocols. 2022, 2(10): e585"),
         ChIPseeker = paste(
             "Guangchuang Yu, Li-Gen Wang, and Qing-Yu He.",
             "ChIPseeker: an R/Bioconductor package for ChIP peak annotation, comparison and visualization.",
-            "Bioinformatics 2015, 31(14):2382-2383"),
+            "Bioinformatics. 2015, 31(14):2382-2383"),
         GOSemSim_MMB = paste(
             "Guangchuang Yu.",
             "Gene Ontology Semantic Similarity Analysis Using GOSemSim.",
             "In: Kidder B. (eds) Stem Cell Transcriptional Networks.",
-            "Methods in Molecular Biology, 2020, 2117:207-215.",
+            "Methods in Molecular Biology. 2020, 2117:207-215.",
             "Humana, New York, NY."),
         GOSemSim = paste(
             "Guangchuang Yu, Fei Li, Yide Qin, Xiaochen Bo, Yibo Wu and Shengqi Wang.",
             "GOSemSim: an R package for measuring semantic similarity among GO terms and gene products.",
-            "Bioinformatics 2010 26(7):976-978"),
+            "Bioinformatics. 2010, 26(7):976-978"),
         DOSE = paste(
             "Guangchuang Yu, Li-Gen Wang, Guang-Rong Yan, Qing-Yu He.",
             "DOSE: an R/Bioconductor package for Disease Ontology Semantic and Enrichment analysis.",
-            "Bioinformatics 2015 31(4):608-609"),         
+            "Bioinformatics. 2015, 31(4):608-609"),         
         ReactomePA = paste(
             "Guangchuang Yu, Qing-Yu He.",
             "ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization.",
-            "Molecular BioSystems 2016, 12(2):477-479"),
+            "Molecular BioSystems. 2016, 12(2):477-479"),
         clusterProfiler_NP = paste(
             "S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang,",
             "Q Wang, B Liu, R Wang, W Xie, T Wu, L Xie, G Yu.", 
@@ -58,11 +58,11 @@ ref_knownledge <- function() {
         clusterProfiler = paste(
             "Guangchuang Yu, Li-Gen Wang, Yanyan Han and Qing-Yu He.",
             "clusterProfiler: an R package for comparing biological themes among gene clusters.",
-            "OMICS: A Journal of Integrative Biology 2012, 16(5):284-287"),
+            "OMICS: A Journal of Integrative Biology. 2012, 16(5):284-287"),
         meshes = paste(
             "Guangchuang Yu.",
             "Using meshes for MeSH term enrichment and semantic analyses.",
-            "Bioinformatics 2018, 34(21):3766-3767, doi:10.1093/bioinformatics/bty410")        
+            "Bioinformatics. 2018, 34(21):3766-3767, doi:10.1093/bioinformatics/bty410")        
          )
          
     return(refs)
