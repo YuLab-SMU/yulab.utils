@@ -1,6 +1,7 @@
 # yulab.utils 0.1.6
 
 + `mydownload()` for downloading online file (2024-08-17, Sat)
+    - internally use 'httr2' and is 'https' friendly
 + update `bib_ggtree()` and `bib_knowledge()` with all previous related publications (2024-08-12, Mon)
 + remove memory caching and disable file cache by default in `yread()` and `yread_tsv()` (2024-07-27, Sat)
 + `bib_ggtree()` and `bib_knowledge()` (2024-07-27, Sat)
