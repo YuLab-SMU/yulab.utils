@@ -65,7 +65,7 @@ yread <- function(file, reader = readLines, params = list(),
 ##' @importFrom utils read.table
 ##' @export
 read.cb <- function(reader = read.table, ...) {
-    os <- Sys.info()[1]
+    os <- which_os()
     if (os == "Darwin") {
         clip <- pipe("pbpaste")
     } else {
