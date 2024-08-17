@@ -38,9 +38,14 @@ as.vector.chunked_array <- function(x, mode = "any") {
 
 #' @method print chunked_array
 print.chunked_array <- function(x) {
-    n <- x$idx[length(x$idx)] + x$last_size
+    n <- length(x)
     msg <- sprintf("chunked array with size of %d\n", n)
     cat(msg)
+}
+
+#' @method length chunked_array
+length.chunked_array <- function(x) {
+    x$idx[length(x$idx)] + x$last_size
 }
 
 #' @method [ chunked_array
