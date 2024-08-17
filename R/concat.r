@@ -24,12 +24,13 @@ c2 <- function(x, y) {
     }
 
 
-    x$vector_list <- c(x$vector_list, list(y))
+    x$vector_list[[length(x$vector_list) + 1]] <- list(y)
     x$idx <- c(x$idx, length(x))
     x$last_size <- length(y)
 
     return(x)
 }
+
 
 #' @method as.vector chunked_array
 as.vector.chunked_array <- function(x, mode = "any") {
