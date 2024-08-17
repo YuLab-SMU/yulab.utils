@@ -13,12 +13,12 @@ install_zip_gh <- function(repo, ref = "HEAD", args = "--no-build-vignettes") {
     ## repo <- 'GuangchuangYu/nCov2019'
     url <- paste0('https://codeload.github.com/', repo, '/zip/', ref)
     f <- tempfile(fileext=".zip")
-    method <- "auto"
-    if (.Platform$OS.type == "windows") method <- "curl"
-    utils::download.file(url, destfile=f, method = method)
+    mydownload(url, destfile = f)
+
     if (!is_valid_zip(f)) {
         stop("Invalid zip file downloaded, please check the 'ref' parameter to set a correct github branch.")
     }
+    
     install_zip(f, args=args)
 }
 
