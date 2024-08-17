@@ -1,3 +1,9 @@
+# yulab.utils 0.1.6.001
+
++ `user_dir()` to setup user data dir (20024-08-17, Sat)
++ `which_os()` to return the system name
++ `has_bin()` to check whether a command is exist in the system 
+
 # yulab.utils 0.1.6
 
 + `mydownload()` for downloading online file (2024-08-17, Sat)

@@ -90,7 +90,7 @@ read.cb <- function(reader = read.table, ...) {
 ##' @author Guangchuang Yu
 o <- function(file=".") {
     file <- normalizePath(file)
-    os <- Sys.info()[1]
+    os <- which_os()
     if (is.rserver()) {
         if (dir.exists(file)) {
             stop("open directory in RStudio Server is not supported.")
