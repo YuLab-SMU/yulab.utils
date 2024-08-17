@@ -25,7 +25,7 @@ c2 <- function(x, y) {
 
 
     x$vector_list <- c(x$vector_list, list(y))
-    x$idx <- c(x$idx, x$idx[length(x$idx)] + x$last_size)
+    x$idx <- c(x$idx, length(x))
     x$last_size <- length(y)
 
     return(x)
@@ -57,7 +57,7 @@ length.chunked_array <- function(x) {
 
     pos <- i - x$idx[j]
 
-    sapply(seq_along(pos), function(k) {
+    sapply(seq_along(i), function(k) {
         x$vector_list[[j[k]]][pos[k]]
     })
 }
