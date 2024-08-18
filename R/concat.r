@@ -1,40 +1,56 @@
 c2 <- function(x, y) {
-    # copy values without actually combining them.
-    # todo: without copy values :)
-
     same_mode <- (is.numeric(x) && is.numeric(y)) ||
         (is.character(x) && is.character(y))
 
     if (!same_mode) stop("x and y should be both numeric or character vector.")
 
-    if (!inherits(x, "chunked_array")) {
-        vector_list <- list(x, y)
-        n <- sapply(vector_list, length)
-        last_size <- n[length(n)]
-        idx <- cumsum(c(0, n[-length(n)]))
-        res <- structure(
-            list(
-                vector_list = vector_list,
-                is_numeric = is.numeric(y),
-                idx = idx,
-                last_size = last_size
-            ),
-            class = "chunked_array")
-        return(res)        
+    X <- as_chunked_array(x)
+    Y <- as_chunked_array(y)
+    
+    res <- structure(
+        list(
+            vector_list = c(X$vector_list, Y$vector_list),
+            idx = c(X$idx, Y$idx + length(X))
+        ),
+        class = "chunked_array"
+    )
+
+    return(res)
+}
+
+as_chunked_array <- function(x) {
+    if (inherits(x, "chunked_array")) return(x)
+
+    if (!is.numeric(x) && !is.character(x)) {
+        stop("only numeric/character vector supported")
     }
 
-
-    x$vector_list[[length(x$vector_list) + 1]] <- list(y)
-    x$idx <- c(x$idx, length(x))
-    x$last_size <- length(y)
-
-    return(x)
+    structure(
+        list(
+            vector_list = list(x),
+            idx = 0
+        ),
+        class = "chunked_array"
+    )
 }
 
 
 #' @method as.vector chunked_array
 as.vector.chunked_array <- function(x, mode = "any") {
-    do.call('c', x$vector_list)
+    # do.call('c', x$vector_list)
+    
+    n <- length(x)
+    if (is.numeric(x)) {
+        output <- numeric(n)
+    } else {
+        output <- character(n)
+    }
+
+    for (i in seq_along(x$idx)) {
+        vec <- x$vector_list[[i]]
+        output[seq_along(vec) + x$idx[i]] <- vec
+    }
+    return(output)
 }
 
 #' @method print chunked_array
@@ -46,30 +62,32 @@ print.chunked_array <- function(x) {
 
 #' @method length chunked_array
 length.chunked_array <- function(x) {
-    x$idx[length(x$idx)] + x$last_size
+    last_item(x$idx) + length(last_item(x$vector_list))
+}
+
+last_item <- function(x) {
+    if (is.list(x)) return(x[[length(x)]])
+
+    x[length(x)]
 }
 
 #' @method [ chunked_array
 `[.chunked_array` <- function(x, i, ...) {
-    j <- sapply(i, function(ii) {
-        nn <- which(ii > x$idx)
-        nn[length(nn)]
-    })
+    array_idx <- vapply(i, \(ii) last_item(which(ii > x$idx)), numeric(1))
 
-    pos <- i - x$idx[j]
+    pos <- i - x$idx[array_idx]
 
-    sapply(seq_along(i), function(k) {
-        x$vector_list[[j[k]]][pos[k]]
-    })
+    output <- ifelse(is.numeric(x), numeric(1), character(1))
+    vapply(seq_along(i), \(j) x$vector_list[[array_idx[j]]][pos[j]], output)
 }
 
 
 #' @method is.numeric chunked_array
 is.numeric.chunked_array <- function(x) {
-    x$is_numeric
+    is.numeric(x$vector_list[[1]])
 }
 
 #' @method is.character chunked_array
 is.character.chunked_array <- function(x) {
-    !is.numeric(x)
+    is.character(x$vector_list[[1]])
 }
