@@ -37,20 +37,7 @@ as_chunked_array <- function(x) {
 
 #' @method as.vector chunked_array
 as.vector.chunked_array <- function(x, mode = "any") {
-    # do.call('c', x$vector_list)
-    
-    n <- length(x)
-    if (is.numeric(x)) {
-        output <- numeric(n)
-    } else {
-        output <- character(n)
-    }
-
-    for (i in seq_along(x$idx)) {
-        vec <- x$vector_list[[i]]
-        output[seq_along(vec) + x$idx[i]] <- vec
-    }
-    return(output)
+    unlist(x$vector_list)
 }
 
 #' @method print chunked_array
