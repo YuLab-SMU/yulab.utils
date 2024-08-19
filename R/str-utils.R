@@ -6,41 +6,21 @@
 ##' @param width the maximum number of characters before wrapping to a new line
 ##' @return update strings with new line character inserted
 ##' @export
-##' @author Guangchuang Yu and Erqiang Hu
+##' @author Guangchuang Yu
 str_wrap <- function(string, width = getOption("width")) {
     ##
-    ## actually, there is a base::strwrap() function available
+    ## speed comparison
+    ##   str_wrap() > stringr::str_wrap() > paste0(base::strwrap(), collapse = "\n")
     ##
-    
-    # x <- gregexpr(' ', string)
-    # vapply(seq_along(x),
-    #        FUN = function(i) {
-    #            y <- x[[i]]
-    #            n <- nchar(string[i])
-    #            len <- (c(y,n) - c(0, y)) ## length + 1
-    #            idx <- len > width
-    #            j <- which(!idx)
-    #            if (length(j) && max(j) == length(len)) {
-    #                j <- j[-length(j)]
-    #            }
-    #            if (length(j)) {
-    #                idx[j] <- len[j] + len[j+1] > width
-    #            }
-    #            idx <- idx[-length(idx)] ## length - 1
-    #            start <- c(1, y[idx] + 1)
-    #            end <- c(y[idx] - 1, n)
-    #            words <- substring(string[i], start, end)
-    #            paste0(words, collapse="\n")
-    #        },
-    #        FUN.VALUE = character(1)
-    # )
+
     result <- vapply(string,
            FUN = function(st) {
                words <- list()
                i <- 1
                while(nchar(st) > width) {
-                   if (length(grep(" ", st)) == 0) break
-                   y <- gregexpr(' ', st)[[1]]                  
+                   if (length(grep(pattern = " ", x = st, perl = use_perl())) == 0) break
+                   y <- gregexpr(pattern = ' ', text = st, perl = use_perl())
+                   y <- y[[1]]                  
                    n <- nchar(st)
                    y <- c(y,n)
                    idx <- which(y < width)
@@ -60,6 +40,7 @@ str_wrap <- function(string, width = getOption("width")) {
     names(result) <- NULL
     result
 }
+
 
 ##' Detect the presence or absence of a pattern at the beginning or end of a string or string vector.
 ##'
@@ -84,12 +65,22 @@ str_ends <- function(string, pattern, negate=FALSE) {
     str_detect(string, pattern, negate)
 }
 
-##' @importFrom stats setNames
-str_detect <- function(string, pattern, negate) {
-    res <- setNames(
-        vapply(string, grepl, pattern=pattern, 
-                FUN.VALUE=logical(1)),
-        NULL)
+
+##' Detect the presentce/absence of a match
+##' 
+##' 
+##' @title str_detect
+##' @rdname str-detect
+##' @param string input string
+##' @param pattern pattern to look for
+##' @param negate if TRUE, inverts the resulting boolen vector
+##' @return logical vector
+##' @export
+##' @author Guangchuang Yu
+str_detect <- function(string, pattern, negate = FALSE) {
+    ## faster than stringr::str_detect
+
+    res <- grepl(pattern = pattern, x = string, perl = use_perl())
     if (negate) res <- !res
     return(res)            
 }
@@ -105,7 +96,7 @@ str_detect <- function(string, pattern, negate) {
 ##' @export
 ##' @author Guangchuang Yu
 str_extract <- function(string, pattern) {
-    i <- regexpr(pattern, string)
+    i <- regexpr(pattern = pattern, text = string, perl = use_perl())
     j <- attr(i, 'match.length')
     res <- substring(string, i, i+j-1)
     res[res == ""] <- NA

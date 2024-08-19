@@ -18,5 +18,5 @@ update strings with new line character inserted
 wraping long string to multiple lines
 }
 \author{
-Guangchuang Yu and Erqiang Hu
+Guangchuang Yu
 }

@@ -1,6 +1,6 @@
-# yulab.utils 0.1.6.002
+# yulab.utils 0.1.6.003
 
-+ `c2()` to combine two vectors (20024-08-17, Sat)
++ export `str_detect()` (20024-08-19, Mon)
 + `user_dir()` to setup user data dir (20024-08-17, Sat)
 + `which_os()` to return the system name
 + `has_bin()` to check whether a command is exist in the system 
