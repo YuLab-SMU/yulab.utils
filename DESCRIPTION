@@ -16,8 +16,9 @@ Suggests:
   openssl,
   rappdirs
 ByteCompile: true
-URL: https://yulab-smu.top/
 License: Artistic-2.0
+URL: https://yulab-smu.top/
+BugReports: https://github.com/YuLab-SMU/yulab.utils/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

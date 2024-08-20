@@ -56,8 +56,7 @@ set_regexpr_style <- function(style) {
 ##' @rdname regexpr-style
 ##' @export
 auto_set_regexpr_style <- function() {
-    os <- Sys.info()[1]
-    if (os == "Windows") {
+    if (which_os() == "Windows") {
         set_TRE()
         res <- FALSE
     } else {

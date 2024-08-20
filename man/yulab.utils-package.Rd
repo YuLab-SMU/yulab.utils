@@ -12,6 +12,7 @@ Miscellaneous functions commonly used by 'YuLab-SMU'.
 Useful links:
 \itemize{
   \item \url{https://yulab-smu.top/}
+  \item Report bugs at \url{https://github.com/YuLab-SMU/yulab.utils/issues}
 }
 
 }
