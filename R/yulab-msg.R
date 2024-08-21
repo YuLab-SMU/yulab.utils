@@ -41,7 +41,7 @@ yulab_msg <- function(pkgname = NULL, n = 1) {
     } else if (id == 2) {
         citation_msg <- random_ref(pkgname, ref_ggtree(), random_n = n)
     } else {
-        citation_msg <- NULL
+        citation_msg <- pkg_ref(pkgname)
     }
 
     if (is.null(citation_msg)) return(header_msg)
@@ -83,6 +83,21 @@ random_ref <- function(pkgname, refs, random_n) {
 
 }
 
+pkg_ref <- function(pkgname) {
+    refs <- c(
+        fanyi = 
+            paste("D Wang, G Chen, L Li, S Wen, Z Xie, X Luo, L Zhan, S Xu, J Li, R Wang, Q Wang, G Yu.",
+                "Reducing language barriers, promoting information absorption, and communication using fanyi.",
+                "Chinese Medical Journal. 2024, 137(16):1950-1956. doi: 10.1097/CM9.0000000000003242")
+    )
+
+    ref <- refs[pkgname]
+
+    if (is.null(ref)) return(NULL)
+
+    msg <- "Please cite:\n\n" 
+    str_wrap(paste0(msg, refs, "\n"))
+}
 
 
 
