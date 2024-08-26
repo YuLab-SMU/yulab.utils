@@ -1,3 +1,7 @@
+# yulab.utils 0.1.7.001
+
++ bug fixed in `pkg_ref()` (2024-08-26, Mon)
+
 # yulab.utils 0.1.7
 
 + `has_internet()` for testing internet connection (2024-08-26, Mon)

@@ -93,7 +93,7 @@ pkg_ref <- function(pkgname) {
 
     ref <- refs[pkgname]
 
-    if (is.null(ref)) return(NULL)
+    if (is.null(ref) || is.na(ref)) return(NULL)
 
     msg <- "Please cite:\n\n" 
     str_wrap(paste0(msg, refs, "\n"))
