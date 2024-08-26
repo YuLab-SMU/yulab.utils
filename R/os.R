@@ -36,6 +36,14 @@ has_bin <- function(bin) {
     return(exit_code == 0)    
 }
 
+has_internet <- function(site = "https://www.baidu.com/") {
+    ret <- tryCatch(
+        suppressWarnings(readLines(site, n = 1)),
+        error = function(e) NULL
+    )
+    
+    return(!is.null(ret))
+}
 
 which_os <- function() {
     Sys.info()[1]

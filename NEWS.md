@@ -1,5 +1,6 @@
-# yulab.utils 0.1.6.004
+# yulab.utils 0.1.6.005
 
++ `has_internet()` for testing internet connection (2024-08-26, Mon)
 + `pkg_ref()` to access textVersion of package reference (2024-08-21, Wed)
 + export `str_detect()` (20024-08-19, Mon)
 + `user_dir()` to setup user data dir (20024-08-17, Sat)
