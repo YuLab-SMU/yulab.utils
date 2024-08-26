@@ -36,6 +36,14 @@ has_bin <- function(bin) {
     return(exit_code == 0)    
 }
 
+##' test for internect connection via reading lines from a URL
+##'
+##'
+##' @title has_internet
+##' @param site URL to test connection
+##' @return logical value
+##' @export
+##' @author Guangchuang Yu
 has_internet <- function(site = "https://www.baidu.com/") {
     ret <- tryCatch(
         suppressWarnings(readLines(site, n = 1)),

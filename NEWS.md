@@ -1,4 +1,4 @@
-# yulab.utils 0.1.6.005
+# yulab.utils 0.1.7
 
 + `has_internet()` for testing internet connection (2024-08-26, Mon)
 + `pkg_ref()` to access textVersion of package reference (2024-08-21, Wed)
