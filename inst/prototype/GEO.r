@@ -7,9 +7,10 @@ get_gse <- function(gseID) {
     GEOquery::getGEO(filename = gsesoft)
 }
 
-get_gsm <- function(gse) {
-    lapply(GEOquery::GSMList(gse), function(x) x@header$supplementary_file)
+get_gsm <- function(gse, item = "supplementary_file_1") {
+    lapply(GEOquery::GSMList(gse), function(x) x@header[item])
 }
+
 
 
 
@@ -23,7 +24,10 @@ download_gsm <- function(gsm) {
 gseID <- "GSE123904"
 
 gse <- get_gse(gseID)
+
 gsm <- get_gsm(gse)
+
+get_gsm(gse, 'extract_protocol_ch1') |> head(2)
 
 download_gsm(gsm)
 
