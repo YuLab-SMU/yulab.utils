@@ -19,7 +19,7 @@ pload <- function(package, action = "auto") {
     if (action == "auto") {
         if (is.installed("BiocManager")) {
             install <- getFromNamespace("install", "BiocManager")
-            action <- function(package, ask=FALSE, update=FALSE, ...){
+            action <- function(package, ask=FALSE, update=FALSE, ...) {
                 install(package, ask=ask, update = update, ...)
             }
         } else {
@@ -27,6 +27,7 @@ pload <- function(package, action = "auto") {
         }
     }
     check_installed(pkg, action = action)
+    pkg <- sub("\\w+/", "", pkg) # for github pkg: repo/pkg
     cli::cli_h2(sprintf("loading the package: %s", pkg))
     library(pkg, character.only = TRUE)
 }

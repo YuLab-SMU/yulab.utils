@@ -1,5 +1,6 @@
-# yulab.utils 0.1.7.001
+# yulab.utils 0.1.7.002
 
++ `pload()` now supports github package (2024-11-06, Wed)
 + bug fixed in `pkg_ref()` (2024-08-26, Mon)
 
 # yulab.utils 0.1.7
