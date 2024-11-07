@@ -50,7 +50,7 @@ ref_knownledge <- function() {
             "S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang,",
             "Q Wang, B Liu, R Wang, W Xie, T Wu, L Xie, G Yu.", 
             "Using clusterProfiler to characterize multiomics data.", 
-            "Nature Protocols. 2024, doi:10.1038/s41596-024-01020-z"),
+            "Nature Protocols. 2024, 19(11):3292-3320"),
         clusterProfiler_Innovation2024 = paste(
             "G Yu.", 
             "Thirteen years of clusterProfiler.", 
@@ -90,6 +90,8 @@ bib_clusterProfiler_innovation2024 <- citEntry(
     pages = "100722",
     textVersion = ref2['clusterProfiler_Innovation2024']
 )
+
+
 bib_clusterProfiler_np2024 <- citEntry(
     entry  ="ARTICLE",
 	title = "Using clusterProfiler to characterize multiomics data",
