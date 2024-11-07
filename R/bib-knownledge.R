@@ -1,5 +1,6 @@
 bib_knownledge <- function(id) {
     bib <- c(
+        innovation2024 = bib_clusterProfiler_innovation2024,
         np2024 = bib_clusterProfiler_np2024,
         innovation2021 = bib_clusterProfiler_innovation2021,
         omics2012 = bib_clusterProfiler_omics2012,
@@ -50,6 +51,10 @@ ref_knownledge <- function() {
             "Q Wang, B Liu, R Wang, W Xie, T Wu, L Xie, G Yu.", 
             "Using clusterProfiler to characterize multiomics data.", 
             "Nature Protocols. 2024, doi:10.1038/s41596-024-01020-z"),
+        clusterProfiler_Innovation2024 = paste(
+            "G Yu.", 
+            "Thirteen years of clusterProfiler.", 
+            "The Innovation. 2024, 5(6):100722"),
         clusterProfiler_Innovation = paste(
             "T Wu, E Hu, S Xu, M Chen, P Guo, Z Dai, T Feng, L Zhou,",
             "W Tang, L Zhan, X Fu, S Liu, X Bo, and G Yu.", 
@@ -71,33 +76,49 @@ ref_knownledge <- function() {
 
 ref2 <- ref_knownledge()
 
-
-bib_clusterProfiler_np2024 <- citEntry(entry  ="ARTICLE",
-	    title = "Using clusterProfiler to characterize multiomics data",
-	    author = c(
-            person("Shuangbin", "Xu"),
-            person("Erqiang", "Hu"),
-            person("Yantong", "Cai"),
-            person("Zijing", "Xie"),
-            person("Xiao", "Luo"),
-            person("Li", "Zhan"),
-            person("Wenli", "Tang"),
-            person("Qianwen", "Wang"),
-            person("Bingdong", "Liu"),
-            person("Rui", "Wang"),
-            person("Wenqin", "Xie"),
-            person("Tianzhi", "Wu"),
-            person("Liwei", "Xie"),
-            person("Guangchuang", "Yu")
-            ),
-    	issn = "1750-2799",
-	    url = "https://www.nature.com/articles/s41596-024-01020-z",
-    	doi = "10.1038/s41596-024-01020-z",
-    	journal = "Nature Protocols",
-    	month = "Jul",
-	    year = "2024",
-    	pages = "",
-        textVersion = ref2['clusterProfiler_NP']
+bib_clusterProfiler_innovation2024 <- citEntry(
+    entry  ="ARTICLE",
+	title = "Thirteen years of clusterProfiler",
+	author = c(person("Guangchuang", "Yu")),
+	url = "https://doi.org/10.1016/j.xinn.2024.100722",
+    doi = "10.1016/j.xinn.2024.100722",
+    journal = "The Innovation",
+    month = "Nov",
+	year = "2024",
+    volume  = "5",
+    number  = "6",
+    pages = "100722",
+    textVersion = ref2['clusterProfiler_Innovation2024']
+)
+bib_clusterProfiler_np2024 <- citEntry(
+    entry  ="ARTICLE",
+	title = "Using clusterProfiler to characterize multiomics data",
+	author = c(
+        person("Shuangbin", "Xu"),
+        person("Erqiang", "Hu"),
+        person("Yantong", "Cai"),
+        person("Zijing", "Xie"),
+        person("Xiao", "Luo"),
+        person("Li", "Zhan"),
+        person("Wenli", "Tang"),
+        person("Qianwen", "Wang"),
+        person("Bingdong", "Liu"),
+        person("Rui", "Wang"),
+        person("Wenqin", "Xie"),
+        person("Tianzhi", "Wu"),
+        person("Liwei", "Xie"),
+        person("Guangchuang", "Yu")
+        ),
+    issn = "1750-2799",
+	url = "https://www.nature.com/articles/s41596-024-01020-z",
+    doi = "10.1038/s41596-024-01020-z",
+    journal = "Nature Protocols",
+    month = "Nov",
+	year = "2024",
+    volume  = "19",
+    number  = "11",
+    pages = "3292-3320",
+    textVersion = ref2['clusterProfiler_NP']
 )
 
 bib_clusterProfiler_innovation2021 <- citEntry(entry  ="ARTICLE",

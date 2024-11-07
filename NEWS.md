@@ -1,5 +1,6 @@
-# yulab.utils 0.1.7.002
+# yulab.utils 0.1.7.003
 
++ add new citation (The Innovation 2024) (2024-11-07, Thu)
 + `pload()` now supports github package (2024-11-06, Wed)
 + bug fixed in `pkg_ref()` (2024-08-26, Mon)
 
