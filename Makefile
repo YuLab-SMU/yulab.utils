@@ -16,9 +16,10 @@ readme2:
 	Rscript -e 'rmarkdown::render("README.Rmd", "html_document")'
 
 build:
-	cd ..;\
-	R CMD build $(PKGSRC)
-
+	#cd ..;\
+	#R CMD build $(PKGSRC)
+	Rscript -e 'devtools::build()'
+	
 build2:
 	cd ..;\
 	R CMD build --no-build-vignettes $(PKGSRC)
