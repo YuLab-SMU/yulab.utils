@@ -1,4 +1,4 @@
-# yulab.utils 0.1.8.001
+# yulab.utils 0.1.9
 
 + `c2()` to concate two vectors into a 'chunked_array' object (2024-12-03, Tue)
 
