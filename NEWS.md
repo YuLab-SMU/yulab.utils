@@ -1,3 +1,7 @@
+# yulab.utils 0.1.9.001
+
++ bug fixed in `get_caller_package()` (2025-01-08, Wed)
+
 # yulab.utils 0.1.9
 
 + `c2()` to concate two vectors into a 'chunked_array' object (2024-12-03, Tue)
