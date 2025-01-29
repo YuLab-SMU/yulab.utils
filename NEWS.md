@@ -1,4 +1,4 @@
-# yulab.utils 0.1.9.001
+# yulab.utils 0.2.0
 
 + bug fixed in `get_caller_package()` (2025-01-08, Wed)
 
