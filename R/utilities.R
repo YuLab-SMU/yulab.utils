@@ -23,3 +23,17 @@ get_caller_package <- function(caller) {
 
     return(environmentName(environment(fn)))
 }
+
+.called_by_package <- function(package) {
+  call_stack <- sys.calls()
+  pattern <- sprintf("^package:%s", package)
+  for (call in call_stack) {
+    call <- as.character(as.expression(call))
+    if (grepl(pattern, call)) {
+      return(TRUE)
+    }
+  }
+  return(FALSE)
+}
+
+

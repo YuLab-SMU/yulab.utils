@@ -163,8 +163,8 @@ bib_ggtree_mee2017 <- bibentry(
     textVersion = refs['ggtree']
 )
 
-
-bib_shinyTempSignal_jgg2024 <-bibentry(
+#' @importFrom utils bibentry
+bib_shinyTempSignal_jgg2024 <- bibentry(
     bibtype  = "article",
     title  = "shinyTempSignal: an R shiny application for exploring temporal and other phylogenetic signals.",
     author = c(
