@@ -57,10 +57,20 @@ which_os <- function() {
     Sys.info()[1]
 }
 
+#' get the user dir to save app caches, logs and data (a wrapper function of `rappdirs::user_cache_dir()`)
+#' 
+#' @title user_dir
+#' @param appname App name
+#' @param appauthor App author
+#' @param ... additional parameters
+#' @return a directory (created if not exists)
+#' @importFrom rappdirs user_data_dir
+#' @export
+#' @author Guangchuang Yu
 user_dir <- function(appname = NULL, appauthor = NULL, ...) {
     dir <- rappdirs::user_data_dir(
         appname = appname, 
-        appauthor=appauthor, 
+        appauthor = appauthor, 
         ...)
 
     if (!dir.exists(dir)) dir.create(dir, recursive = TRUE)

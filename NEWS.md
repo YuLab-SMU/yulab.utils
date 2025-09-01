@@ -1,3 +1,7 @@
+# yulab.utils 0.2.1 
+
++ export `user_dir()` (2025-08-16, Sat)
+
 # yulab.utils 0.2.0
 
 + bug fixed in `get_caller_package()` (2025-01-08, Wed)

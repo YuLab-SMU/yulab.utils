@@ -1,3 +1,11 @@
+# caching mechanism
+# - get_cache_item() auto-initializes cache items if they don't exist
+# - get_cache_element() retrieves specific elements from cache items
+# - update_cache_item() stores data in cache items
+# - rm_cache_item() removes cache items
+
+
+
 ##' @rdname yulab-cache
 ##' @export
 initial_cache <- function() {
