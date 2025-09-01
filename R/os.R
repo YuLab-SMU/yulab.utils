@@ -20,7 +20,8 @@ print.exec <- function(x, ...) {
 }
     
 
-has_bin <- function(bin) {
+
+which_cmd <- function(bin) {
     os <- which_os()
     which <- "which"
     if (os == "Windows") {
@@ -29,11 +30,25 @@ has_bin <- function(bin) {
 
     command <- sprintf("%s %s", which, bin)
 
+    return(command)
+}
+
+has_bin <- function(bin) {
+    command <- which_cmd(bin)
+
     exit_code <- system(command, 
         ignore.stdout = TRUE, 
         ignore.stderr = TRUE)
 
     return(exit_code == 0)    
+}
+
+
+where <- function(bin) {
+    if (!has_bin(bin)) return("")
+    
+    command <- which_cmd(bin)
+    exec(command)
 }
 
 ##' test for internect connection via reading lines from a URL

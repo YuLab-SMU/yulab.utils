@@ -1,3 +1,8 @@
+# yulab.utils 0.2.1.001
+
++ `where` return the full path of a command, "" if not found (2025-09-01, Mon)
+    - internally call `which` for OSX and Linux and `where` for Windows
+
 # yulab.utils 0.2.1 
 
 + export `user_dir()` (2025-08-16, Sat)
