@@ -4,10 +4,12 @@
 \alias{install_zip}
 \title{install_zip}
 \usage{
-install_zip(file, args = "--no-build-vignettes")
+install_zip(file, subdir = NULL, args = "--no-build-vignettes")
 }
 \arguments{
 \item{file}{zip file}
+
+\item{subdir}{sub directory that contains R package files, default is NULL}
 
 \item{args}{argument to build package}
 }

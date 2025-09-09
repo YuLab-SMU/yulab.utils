@@ -1,5 +1,6 @@
-# yulab.utils 0.2.1.001
+# yulab.utils 0.2.1.002
 
++ add `subdir` parameter in `install_zip` and `install_zip_gh` (2025-09-09, Tue)
 + `where` return the full path of a command, "" if not found (2025-09-01, Mon)
     - internally call `which` for OSX and Linux and `where` for Windows
 
