@@ -2,9 +2,12 @@
 % Please edit documentation in R/error-utils.r
 \name{check_packages}
 \alias{check_packages}
+\alias{check_pkg}
 \title{Check if required packages are installed with informative errors}
 \usage{
 check_packages(packages, reason = "for this functionality")
+
+check_pkg(packages, reason = "for this functionality")
 }
 \arguments{
 \item{packages}{Character vector of package names}

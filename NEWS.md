@@ -1,3 +1,7 @@
+# yulab.utils 0.2.2.001
+
++ set `check_pkg` as an alias of `check_packages` (2025-12-01, Mon)
+
 # yulab.utils 0.2.2
 
 + add error handling functions  (2025-12-01, Mon)

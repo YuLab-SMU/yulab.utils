@@ -143,6 +143,7 @@ check_input <- function(x, type = NULL, length = NULL, min_length = NULL,
 #' Check if required packages are installed with informative errors
 #'
 #' Enhanced package checking with better error messages and validation
+#' @rdname check_packages
 #' @param packages Character vector of package names
 #' @param reason Reason why these packages are needed
 #' @return Invisible TRUE if all packages are available, throws error otherwise
@@ -153,6 +154,12 @@ check_packages <- function(packages, reason = "for this functionality") {
     if (!is.character(packages) || length(packages) == 0) {
         yulab_abort("packages must be a non-empty character vector", class = "parameter_error")
     }
+
+    if (is.null(reason)) {
+        call <- sys.call(1L)
+        reason <- sprintf("for %s()", as.character(call)[1])
+    }
+
     if (!is.character(reason) || length(reason) != 1) {
         yulab_abort("reason must be a single character string", class = "parameter_error")
     }
@@ -166,8 +173,10 @@ check_packages <- function(packages, reason = "for this functionality") {
     }
     
     # Check for missing packages
-    missing_pkgs <- packages[!sapply(packages, requireNamespace, quietly = TRUE)]
+    # missing_pkgs <- packages[!sapply(packages, requireNamespace, quietly = TRUE)]
     
+    missing_pkgs <- packages[!vapply(packages, is.installed, logical(1))]
+
     if (length(missing_pkgs) > 0) {
         pkg_list <- paste(missing_pkgs, collapse = ", ")
         yulab_abort(
@@ -180,6 +189,10 @@ check_packages <- function(packages, reason = "for this functionality") {
     
     invisible(TRUE)
 }
+
+#' @rdname check_packages
+#' @export
+check_pkg <- check_packages
 
 #' Handle file operations with proper error messages
 #'

@@ -138,31 +138,6 @@ is.installed <- function(packages) {
   }, logical(1))
 }
 
-#' Check whether the input packages are installed
-#'
-#' This function check whether the input packages are installed. If not, it asks the user whether to install the missing packages. 
-#' @title check_pkg
-#' @param pkg package names
-#' @param reason the reason to check the pkg. If NULL, it will set the reason to the parent call.
-#' @param ... additional parameters that passed to `rlang::check_installed()`
-#' @return see also [check_installed][rlang::check_installed]
-#' @export
-#' @importFrom rlang check_installed
-#' @author Guangchuang Yu
-check_pkg <- function(pkg, reason=NULL, ...) {
-  # v1
-  #
-  # if (!is.installed(pkg)) {
-  #    msg <- sprintf("%s is required, please install it first", pkg)
-  #    stop(msg)
-  # }
-
-  if (is.null(reason)) {
-    call <- sys.call(1L)
-    reason <- sprintf("for %s()", as.character(call)[1])
-  }
-  rlang::check_installed(pkg, reason, ...)
-}
 
 
 #' load function from package
