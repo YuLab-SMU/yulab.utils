@@ -1,5 +1,16 @@
-# yulab.utils 0.2.1.002
+# yulab.utils 0.2.2
 
++ add error handling functions  (2025-12-01, Mon)
+    - `yulab_abort()`
+    - `yulab_warn()`
+    - `yulab_inform()`
++ check input validity with detailed error messages  (2025-12-01, Mon)
+    - `check_input()`
+    - `check_package()`
+    - `check_file()`
+    - `check_range()`
+    - `check_directory()`
++ `quiet()` to suppress messages and output from `x`  (2025-12-01, Mon)
 + add `subdir` parameter in `install_zip` and `install_zip_gh` (2025-09-09, Tue)
 + `where` return the full path of a command, "" if not found (2025-09-01, Mon)
     - internally call `which` for OSX and Linux and `where` for Windows

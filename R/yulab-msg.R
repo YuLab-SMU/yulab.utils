@@ -1,12 +1,12 @@
-##' Messages for R package developed by YuLab
-##'
-##' 
-##' @title yulab_msg
-##' @param pkgname package name
-##' @param n number of citation messages 
-##' @return package message
-##' @export
-##' @author Guangchuang Yu
+#' Messages for R package developed by YuLab
+#'
+#' 
+#' @title yulab_msg
+#' @param pkgname package name
+#' @param n number of citation messages 
+#' @return package message
+#' @export
+#' @author Guangchuang Yu
 yulab_msg <- function(pkgname = NULL, n = 1) {
     
     pkgs_knownledge <- c("GOSemSim",
@@ -49,7 +49,7 @@ yulab_msg <- function(pkgname = NULL, n = 1) {
     sprintf("%s%s", header_msg, citation_msg)
 }
 
-##' @importFrom utils packageDescription
+#' @importFrom utils packageDescription
 yulab_msg_header <- function(pkgname = NULL, id = 3) {
     if (is.null(pkgname)) return(NULL)
 

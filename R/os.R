@@ -1,11 +1,11 @@
-##' run system command
-##'
-##'
-##' @title exec
-##' @param command system command to run
-##' @return An `exec` instance that stores system command outputs
-##' @export
-##' @author Guangchuang Yu
+#' run system command
+#'
+#'
+#' @title exec
+#' @param command system command to run
+#' @return An `exec` instance that stores system command outputs
+#' @export
+#' @author Guangchuang Yu
 exec <- function(command) {
     res <- system(command, intern=TRUE)
     structure(res, class = "exec")
@@ -13,8 +13,8 @@ exec <- function(command) {
 
 
 
-##' @method print exec
-##' @export
+#' @method print exec
+#' @export
 print.exec <- function(x, ...) {
     cat(x, sep='\n')
 }
@@ -51,14 +51,14 @@ where <- function(bin) {
     exec(command)
 }
 
-##' test for internect connection via reading lines from a URL
-##'
-##'
-##' @title has_internet
-##' @param site URL to test connection
-##' @return logical value
-##' @export
-##' @author Guangchuang Yu
+#' test for internect connection via reading lines from a URL
+#'
+#'
+#' @title has_internet
+#' @param site URL to test connection
+#' @return logical value
+#' @export
+#' @author Guangchuang Yu
 has_internet <- function(site = "https://www.baidu.com/") {
     ret <- tryCatch(
         suppressWarnings(readLines(site, n = 1)),

@@ -1,19 +1,19 @@
-##' loading a package
-##'
-##' The function use 'library()' to load the package. 
-##' If the package is not installed, the function will try to install it before loading it.
-##' @title pload
-##' @param package package name
-##' @param action function used to install package. 
-##' If 'action = "auto"', it will try to use 'BiocManager::install()' if it is available.
-##' @return the selected package loaded to the R session
-##' @importFrom rlang as_name
-##' @importFrom rlang enquo
-##' @importFrom rlang check_installed
-##' @importFrom cli cli_h2
-##' @importFrom utils getFromNamespace
-##' @export
-##' @author Guangchuang Yu
+#' loading a package
+#'
+#' The function use 'library()' to load the package. 
+#' If the package is not installed, the function will try to install it before loading it.
+#' @title pload
+#' @param package package name
+#' @param action function used to install package. 
+#' If 'action = "auto"', it will try to use 'BiocManager::install()' if it is available.
+#' @return the selected package loaded to the R session
+#' @importFrom rlang as_name
+#' @importFrom rlang enquo
+#' @importFrom rlang check_installed
+#' @importFrom cli cli_h2
+#' @importFrom utils getFromNamespace
+#' @export
+#' @author Guangchuang Yu
 pload <- function(package, action = "auto") {
     pkg <- as_name(enquo(package))
     if (action == "auto") {
@@ -33,17 +33,17 @@ pload <- function(package, action = "auto") {
 }
 
 
-##' get reverse dependencies
-##'
-##'
-##' @title get_dependencies
-##' @param pkg package name
-##' @param repo 'CRAN' and/or 'BioC'
-##' @return reverse dependencies
+#' get reverse dependencies
+#'
+#'
+#' @title get_dependencies
+#' @param pkg package name
+#' @param repo 'CRAN' and/or 'BioC'
+#' @return reverse dependencies
 ## @importFrom BiocInstaller biocinstallRepos
-##' @importFrom tools package_dependencies
-##' @export
-##' @author Guangchuang Yu
+#' @importFrom tools package_dependencies
+#' @export
+#' @author Guangchuang Yu
 get_dependencies <- function(pkg, repo=c("CRAN", "BioC")) {
   rp <- get_repo(repo)
 
@@ -73,16 +73,16 @@ get_repo <- function(repo = c("CRAN", "BioC")) {
     sub("/$", "", rp)
 }
 
-##' Extract package title
-##'
-##'
-##' @title packageTitle
-##' @param pkg package name
-##' @param repo 'CRAN' and/or 'BioC'
-##' @return reverse dependencies
-##' @importFrom utils packageDescription
-##' @export
-##' @author Guangchuang Yu
+#' Extract package title
+#'
+#'
+#' @title packageTitle
+#' @param pkg package name
+#' @param repo 'CRAN' and/or 'BioC'
+#' @return reverse dependencies
+#' @importFrom utils packageDescription
+#' @export
+#' @author Guangchuang Yu
 packageTitle <- function(pkg, repo='CRAN') {
     title <- tryCatch(packageDescription(pkg)$Title, error=function(e) NULL)
 
@@ -122,33 +122,33 @@ packageTitle <- function(pkg, repo='CRAN') {
 }
 
 
-##' Check whether the input packages are installed
-##'
-##' This function check whether the input packages are installed
-##' @title is.installed
-##' @param packages package names
-##' @return logical vector
-##' @export
-##' @examples
-##' is.installed(c("dplyr", "ggplot2"))
-##' @author Guangchuang Yu
+#' Check whether the input packages are installed
+#'
+#' This function check whether the input packages are installed
+#' @title is.installed
+#' @param packages package names
+#' @return logical vector
+#' @export
+#' @examples
+#' is.installed(c("dplyr", "ggplot2"))
+#' @author Guangchuang Yu
 is.installed <- function(packages) {
   vapply(packages, function(package) {
     system.file(package=package) != ""
   }, logical(1))
 }
 
-##' Check whether the input packages are installed
-##'
-##' This function check whether the input packages are installed. If not, it asks the user whether to install the missing packages. 
-##' @title check_pkg
-##' @param pkg package names
-##' @param reason the reason to check the pkg. If NULL, it will set the reason to the parent call.
-##' @param ... additional parameters that passed to `rlang::check_installed()`
-##' @return see also [check_installed][rlang::check_installed]
-##' @export
-##' @importFrom rlang check_installed
-##' @author Guangchuang Yu
+#' Check whether the input packages are installed
+#'
+#' This function check whether the input packages are installed. If not, it asks the user whether to install the missing packages. 
+#' @title check_pkg
+#' @param pkg package names
+#' @param reason the reason to check the pkg. If NULL, it will set the reason to the parent call.
+#' @param ... additional parameters that passed to `rlang::check_installed()`
+#' @return see also [check_installed][rlang::check_installed]
+#' @export
+#' @importFrom rlang check_installed
+#' @author Guangchuang Yu
 check_pkg <- function(pkg, reason=NULL, ...) {
   # v1
   #
@@ -165,17 +165,17 @@ check_pkg <- function(pkg, reason=NULL, ...) {
 }
 
 
-##' load function from package
-##'
-##'
-##' @title get_fun_from_pkg
-##' @param pkg package
-##' @param fun function
-##' @return function
-##' @export
-##' @examples
-##' get_fun_from_pkg('utils', 'zip')
-##' @author Guangchuang Yu
+#' load function from package
+#'
+#'
+#' @title get_fun_from_pkg
+#' @param pkg package
+#' @param fun function
+#' @return function
+#' @export
+#' @examples
+#' get_fun_from_pkg('utils', 'zip')
+#' @author Guangchuang Yu
 get_fun_from_pkg <- function(pkg, fun) {
     ## v1
     ##
@@ -193,50 +193,50 @@ get_fun_from_pkg <- function(pkg, fun) {
 
 
 
-##' print md text of package with link to homepage (CRAN or Bioconductor)
-##'
-##'
-##' @rdname cran-bioc-pkg
-##' @param pkg package name
-##' @return md text string
-##' @export
-##' @author Guangchuang Yu
+#' print md text of package with link to homepage (CRAN or Bioconductor)
+#'
+#'
+#' @rdname cran-bioc-pkg
+#' @param pkg package name
+#' @return md text string
+#' @export
+#' @author Guangchuang Yu
 CRANpkg <- function(pkg) {
     cran <- "https://CRAN.R-project.org/package"
     fmt <- "[%s](%s=%s)"
     sprintf(fmt, pkgfmt(pkg), cran, pkg)
 }
 
-##' @rdname cran-bioc-pkg
-##' @export
+#' @rdname cran-bioc-pkg
+#' @export
 Biocpkg <- function(pkg) {
     sprintf("[%s](http://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
 }
 
-##' print md text of package with link to github repo
-##'
-##'
-##' @rdname github-pkg
-##' @param user github user
-##' @param pkg package name
-##' @return md text string
-##' @export
-##' @author Guangchuang Yu
+#' print md text of package with link to github repo
+#'
+#'
+#' @rdname github-pkg
+#' @param user github user
+#' @param pkg package name
+#' @return md text string
+#' @export
+#' @author Guangchuang Yu
 Githubpkg <- function(user, pkg) {
     gh <- "https://github.com"
     fmt <- "[%s](%s/%s/%s)"
     sprintf(fmt, pkgfmt(pkg), gh, user, pkg)
 }
 
-##' print md text of link to a pakcage
-##' 
-##'
-##' @title mypkg
-##' @param pkg package name
-##' @param url package url
-##' @return md text string
-##' @export
-##' @author Guangchuang Yu
+#' print md text of link to a pakcage
+#' 
+#'
+#' @title mypkg
+#' @param pkg package name
+#' @param url package url
+#' @return md text string
+#' @export
+#' @author Guangchuang Yu
 mypkg <- function(pkg, url) {
     fmt <- "[%s](%s)"
     sprintf(fmt, pkgfmt(pkg), url)

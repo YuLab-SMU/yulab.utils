@@ -1,12 +1,12 @@
-##' wraping long string to multiple lines
-##'
-##' 
-##' @title str_wrap
-##' @param string input string
-##' @param width the maximum number of characters before wrapping to a new line
-##' @return update strings with new line character inserted
-##' @export
-##' @author Guangchuang Yu
+#' wraping long string to multiple lines
+#'
+#' 
+#' @title str_wrap
+#' @param string input string
+#' @param width the maximum number of characters before wrapping to a new line
+#' @return update strings with new line character inserted
+#' @export
+#' @author Guangchuang Yu
 str_wrap <- function(string, width = getOption("width")) {
     ##
     ## speed comparison
@@ -42,41 +42,41 @@ str_wrap <- function(string, width = getOption("width")) {
 }
 
 
-##' Detect the presence or absence of a pattern at the beginning or end of a string or string vector.
-##'
-##' 
-##' @title str_starts
-##' @rdname str-starts-ends
-##' @param string input string
-##' @param pattern pattern with which the string starts or ends
-##' @param negate if TRUE, return non-matching elements
-##' @return a logical vector
-##' @export
-##' @author Guangchuang Yu
+#' Detect the presence or absence of a pattern at the beginning or end of a string or string vector.
+#'
+#' 
+#' @title str_starts
+#' @rdname str-starts-ends
+#' @param string input string
+#' @param pattern pattern with which the string starts or ends
+#' @param negate if TRUE, return non-matching elements
+#' @return a logical vector
+#' @export
+#' @author Guangchuang Yu
 str_starts <- function(string, pattern, negate=FALSE) {
     pattern <- paste0('^', pattern)
     str_detect(string, pattern, negate)
 }
 
-##' @rdname str-starts-ends
-##' @export
+#' @rdname str-starts-ends
+#' @export
 str_ends <- function(string, pattern, negate=FALSE) {
     pattern <- paste0(pattern, '$')
     str_detect(string, pattern, negate)
 }
 
 
-##' Detect the presentce/absence of a match
-##' 
-##' 
-##' @title str_detect
-##' @rdname str-detect
-##' @param string input string
-##' @param pattern pattern to look for
-##' @param negate if TRUE, inverts the resulting boolen vector
-##' @return logical vector
-##' @export
-##' @author Guangchuang Yu
+#' Detect the presentce/absence of a match
+#' 
+#' 
+#' @title str_detect
+#' @rdname str-detect
+#' @param string input string
+#' @param pattern pattern to look for
+#' @param negate if TRUE, inverts the resulting boolen vector
+#' @return logical vector
+#' @export
+#' @author Guangchuang Yu
 str_detect <- function(string, pattern, negate = FALSE) {
     ## faster than stringr::str_detect
 
@@ -85,16 +85,16 @@ str_detect <- function(string, pattern, negate = FALSE) {
     return(res)            
 }
 
-##' Extract a substring using a pattern
-##' 
-##' 
-##' @title str_extract
-##' @rdname str-extract
-##' @param string input string
-##' @param pattern a regular expression to describe the pattern to extracted from the 'string'
-##' @return substring
-##' @export
-##' @author Guangchuang Yu
+#' Extract a substring using a pattern
+#' 
+#' 
+#' @title str_extract
+#' @rdname str-extract
+#' @param string input string
+#' @param pattern a regular expression to describe the pattern to extracted from the 'string'
+#' @return substring
+#' @export
+#' @author Guangchuang Yu
 str_extract <- function(string, pattern) {
     i <- regexpr(pattern = pattern, text = string, perl = use_perl())
     j <- attr(i, 'match.length')

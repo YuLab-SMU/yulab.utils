@@ -54,16 +54,16 @@ yread <- function(file, reader = readLines, params = list(),
     }
 }
 
-##' read clipboard
-##'
-##'
-##' @title read.cb
-##' @param reader function to read the clipboard
-##' @param ... parameters for the reader
-##' @return clipboard content, output type depends on the output of the reader
-##' @author Guangchuang Yu
-##' @importFrom utils read.table
-##' @export
+#' read clipboard
+#'
+#'
+#' @title read.cb
+#' @param reader function to read the clipboard
+#' @param ... parameters for the reader
+#' @return clipboard content, output type depends on the output of the reader
+#' @author Guangchuang Yu
+#' @importFrom utils read.table
+#' @export
 read.cb <- function(reader = read.table, ...) {
     os <- which_os()
     if (os == "Darwin") {
@@ -75,19 +75,19 @@ read.cb <- function(reader = read.table, ...) {
 }
 
 
-##' open selected directory or file
-##'
-##'
-##' @title o
-##' @param file to be open; open working directory by default
-##' @return No return value, called for opening specific directory or file
-##' @examples
-##' \dontrun{
-##' ## to open current working directory
-##' o()
-##' }
-##' @export
-##' @author Guangchuang Yu
+#' open selected directory or file
+#'
+#'
+#' @title o
+#' @param file to be open; open working directory by default
+#' @return No return value, called for opening specific directory or file
+#' @examples
+#' \dontrun{
+#' ## to open current working directory
+#' o()
+#' }
+#' @export
+#' @author Guangchuang Yu
 o <- function(file=".") {
     file <- normalizePath(file)
     os <- which_os()
@@ -134,14 +134,14 @@ is.rserver <- function(){
     RStudio.Version()$mode == 'server'
 }
 
-##' Open data frame in Excel. It can be used in pipe.
-##'
-##'
-##' @title show_in_excel
-##' @param .data a data frame to be open
-##' @return original .data
-##' @export
-##' @author Guangchuang Yu
+#' Open data frame in Excel. It can be used in pipe.
+#'
+#'
+#' @title show_in_excel
+#' @param .data a data frame to be open
+#' @return original .data
+#' @export
+#' @author Guangchuang Yu
 show_in_excel <- function(.data) {
     f <- tempfile(fileext = '.csv')
     utils::write.csv(.data, file=f)
