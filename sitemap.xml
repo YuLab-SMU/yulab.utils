@@ -4,7 +4,12 @@
 <url><loc>/index.html</loc></url>
 <url><loc>/news/index.html</loc></url>
 <url><loc>/reference/c2.html</loc></url>
+<url><loc>/reference/check_directory.html</loc></url>
+<url><loc>/reference/check_file.html</loc></url>
+<url><loc>/reference/check_input.html</loc></url>
+<url><loc>/reference/check_packages.html</loc></url>
 <url><loc>/reference/check_pkg.html</loc></url>
+<url><loc>/reference/check_range.html</loc></url>
 <url><loc>/reference/combinations.html</loc></url>
 <url><loc>/reference/cran-bioc-pkg.html</loc></url>
 <url><loc>/reference/exec.html</loc></url>
@@ -23,6 +28,7 @@
 <url><loc>/reference/o.html</loc></url>
 <url><loc>/reference/packageTitle.html</loc></url>
 <url><loc>/reference/pload.html</loc></url>
+<url><loc>/reference/quiet.html</loc></url>
 <url><loc>/reference/rbindlist.html</loc></url>
 <url><loc>/reference/read.cb.html</loc></url>
 <url><loc>/reference/regexpr-style.html</loc></url>
@@ -37,6 +43,9 @@
 <url><loc>/reference/yread.html</loc></url>
 <url><loc>/reference/yulab-cache.html</loc></url>
 <url><loc>/reference/yulab.utils-package.html</loc></url>
+<url><loc>/reference/yulab_abort.html</loc></url>
+<url><loc>/reference/yulab_inform.html</loc></url>
 <url><loc>/reference/yulab_msg.html</loc></url>
+<url><loc>/reference/yulab_warn.html</loc></url>
 </urlset>
 

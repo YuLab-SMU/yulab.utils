@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">yulab.utils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.1.002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2</span>
       </span>
     </div>
 
@@ -48,8 +48,22 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="0.2.1.002" id="yulabutils-021002">yulab.utils 0.2.1.002<a class="anchor" aria-label="anchor" href="#yulabutils-021002"></a></h2>
-<ul><li>add <code>subdir</code> parameter in <code>install_zip</code> and <code>install_zip_gh</code> (2025-09-09, Tue)</li>
+<h2 class="page-header" data-toc-text="0.2.2" id="yulabutils-022">yulab.utils 0.2.2<a class="anchor" aria-label="anchor" href="#yulabutils-022"></a></h2>
+<ul><li>add error handling functions (2025-12-01, Mon)
+<ul><li><code><a href="../reference/yulab_abort.html">yulab_abort()</a></code></li>
+<li><code><a href="../reference/yulab_warn.html">yulab_warn()</a></code></li>
+<li><code><a href="../reference/yulab_inform.html">yulab_inform()</a></code></li>
+</ul></li>
+<li>check input validity with detailed error messages (2025-12-01, Mon)
+<ul><li><code><a href="../reference/check_input.html">check_input()</a></code></li>
+<li><code>check_package()</code></li>
+<li><code><a href="../reference/check_file.html">check_file()</a></code></li>
+<li><code><a href="../reference/check_range.html">check_range()</a></code></li>
+<li><code><a href="../reference/check_directory.html">check_directory()</a></code></li>
+</ul></li>
+<li>
+<code><a href="../reference/quiet.html">quiet()</a></code> to suppress messages and output from <code>x</code> (2025-12-01, Mon)</li>
+<li>add <code>subdir</code> parameter in <code>install_zip</code> and <code>install_zip_gh</code> (2025-09-09, Tue)</li>
 <li>
 <code>where</code> return the full path of a command, “” if not found (2025-09-01, Mon)
 <ul><li>internally call <code>which</code> for OSX and Linux and <code>where</code> for Windows</li>
@@ -215,7 +229,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer></div>
