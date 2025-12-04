@@ -1,5 +1,7 @@
-# yulab.utils 0.2.2.001
+# yulab.utils 0.2.2.002
 
++ `parse_ratio` to parse ratio string, e.g., "1/2" (2025-12-04, Thu)
+    - move from 'DOSE'
 + set `check_pkg` as an alias of `check_packages` (2025-12-01, Mon)
 
 # yulab.utils 0.2.2
