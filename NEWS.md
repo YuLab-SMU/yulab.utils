@@ -1,5 +1,7 @@
-# yulab.utils 0.2.2.002
+# yulab.utils 0.2.2.003
 
++ `load_OrgDb()` to load OrgDb object (2025-12-04, Thu)
+    - move from 'GOSemSim'
 + `parse_ratio` to parse ratio string, e.g., "1/2" (2025-12-04, Thu)
     - move from 'DOSE'
 + set `check_pkg` as an alias of `check_packages` (2025-12-01, Mon)
