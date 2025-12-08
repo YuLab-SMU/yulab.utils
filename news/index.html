@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">yulab.utils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2.002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2.004</span>
       </span>
     </div>
 
@@ -48,8 +48,28 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="0.2.2.002" id="yulabutils-022002">yulab.utils 0.2.2.002<a class="anchor" aria-label="anchor" href="#yulabutils-022002"></a></h2>
+<h2 class="page-header" data-toc-text="0.2.2.004" id="yulabutils-022004">yulab.utils 0.2.2.004<a class="anchor" aria-label="anchor" href="#yulabutils-022004"></a></h2>
+<ul><li>add unit test (2025-12-08, Mon)</li>
+<li>Extend cache system with TTL, pruning, persistence and memoization (2025-12-08, Mon)
 <ul><li>
+<code>update_cache_item(item, elements, ttl=)</code> sets per-entry expiration</li>
+<li>
+<code>get_cache_element(item, elements, default=, prune_expired=)</code> supports default values and auto-pruning of expired entries</li>
+<li>
+<code>with_cache(item, key, compute, ttl=)</code> computes and caches results (returns cached value on hit)</li>
+<li>
+<code>prune_cache_item(item)</code> prunes expired entries; <code>rm_cache_entry(item, key)</code> removes a single entry</li>
+<li>
+<code><a href="../reference/yulab-cache.html">cache_list_items()</a></code> and <code><a href="../reference/yulab-cache.html">cache_size()</a></code> list items and estimate total cache size</li>
+<li>
+<code>cache_save(path)</code> and <code>cache_load(path)</code> serialize and restore the cache environment</li>
+</ul></li>
+<li>update man (2025-12-08, Mon)</li>
+<li>
+<code><a href="../reference/load_OrgDb.html">load_OrgDb()</a></code> to load OrgDb object (2025-12-04, Thu)
+<ul><li>move from ‘GOSemSim’</li>
+</ul></li>
+<li>
 <code>parse_ratio</code> to parse ratio string, e.g., “1/2” (2025-12-04, Thu)
 <ul><li>move from ‘DOSE’</li>
 </ul></li>
@@ -58,9 +78,9 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.2" id="yulabutils-022">yulab.utils 0.2.2<small>2025-12-01</small><a class="anchor" aria-label="anchor" href="#yulabutils-022"></a></h2>
 <ul><li>add error handling functions (2025-12-01, Mon)
-<ul><li><code><a href="../reference/yulab_abort.html">yulab_abort()</a></code></li>
-<li><code><a href="../reference/yulab_warn.html">yulab_warn()</a></code></li>
-<li><code><a href="../reference/yulab_inform.html">yulab_inform()</a></code></li>
+<ul><li><code><a href="../reference/yulab-message.html">yulab_abort()</a></code></li>
+<li><code><a href="../reference/yulab-message.html">yulab_warn()</a></code></li>
+<li><code><a href="../reference/yulab-message.html">yulab_inform()</a></code></li>
 </ul></li>
 <li>check input validity with detailed error messages (2025-12-01, Mon)
 <ul><li><code><a href="../reference/check_input.html">check_input()</a></code></li>

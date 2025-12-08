@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">yulab.utils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2.002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2.004</span>
       </span>
     </div>
 
@@ -65,7 +65,7 @@
       </tr><tr><td>
           <p><code><a href="check_input.html">check_input()</a></code> </p>
         </td>
-        <td><p>Check input validity with detailed error messages</p></td>
+        <td><p>Validate input with type/length constraints</p></td>
       </tr><tr><td>
           <p><code><a href="check_packages.html">check_packages()</a></code> <code><a href="check_packages.html">check_pkg()</a></code> </p>
         </td>
@@ -81,7 +81,7 @@
       </tr><tr><td>
           <p><code><a href="cran-bioc-pkg.html">CRANpkg()</a></code> <code><a href="cran-bioc-pkg.html">Biocpkg()</a></code> </p>
         </td>
-        <td><p>print md text of package with link to homepage (CRAN or Bioconductor)</p></td>
+        <td><p>Markdown link to CRAN/Bioconductor</p></td>
       </tr><tr><td>
           <p><code><a href="exec.html">exec()</a></code> </p>
         </td>
@@ -97,7 +97,7 @@
       </tr><tr><td>
           <p><code><a href="github-pkg.html">Githubpkg()</a></code> </p>
         </td>
-        <td><p>print md text of package with link to github repo</p></td>
+        <td><p>Markdown link to GitHub</p></td>
       </tr><tr><td>
           <p><code><a href="has_internet.html">has_internet()</a></code> </p>
         </td>
@@ -115,9 +115,13 @@
         </td>
         <td><p>is.installed</p></td>
       </tr><tr><td>
+          <p><code><a href="load_OrgDb.html">load_OrgDb()</a></code> </p>
+        </td>
+        <td><p>load_OrgDb</p></td>
+      </tr><tr><td>
           <p><code><a href="ls2df.html">ls2df()</a></code> </p>
         </td>
-        <td><p>Convert a list of vector (e.g, gene IDs) to a data.frame object</p></td>
+        <td><p>Convert a list of vectors (e.g., gene IDs) to <code>data.frame</code></p></td>
       </tr><tr><td>
           <p><code><a href="mat2df.html">mat2df()</a></code> </p>
         </td>
@@ -161,7 +165,7 @@
       </tr><tr><td>
           <p><code><a href="regexpr-style.html">set_PCRE()</a></code> <code><a href="regexpr-style.html">set_TRE()</a></code> <code><a href="regexpr-style.html">use_perl()</a></code> <code><a href="regexpr-style.html">set_regexpr_style()</a></code> <code><a href="regexpr-style.html">auto_set_regexpr_style()</a></code> </p>
         </td>
-        <td><p>switch regular expression style (PCRE vs TRE)</p></td>
+        <td><p>Switch regular expression style (PCRE vs TRE)</p></td>
       </tr><tr><td>
           <p><code><a href="scale_range.html">scale_range()</a></code> </p>
         </td>
@@ -199,25 +203,17 @@
         </td>
         <td><p>yread</p></td>
       </tr><tr><td>
-          <p><code><a href="yulab-cache.html">initial_cache()</a></code> <code><a href="yulab-cache.html">get_cache()</a></code> <code><a href="yulab-cache.html">rm_cache()</a></code> <code><a href="yulab-cache.html">initial_cache_item()</a></code> <code><a href="yulab-cache.html">get_cache_item()</a></code> <code><a href="yulab-cache.html">rm_cache_item()</a></code> <code><a href="yulab-cache.html">update_cache_item()</a></code> <code><a href="yulab-cache.html">get_cache_element()</a></code> </p>
+          <p><code><a href="yulab-cache.html">initial_cache()</a></code> <code><a href="yulab-cache.html">get_cache()</a></code> <code><a href="yulab-cache.html">rm_cache()</a></code> <code><a href="yulab-cache.html">initial_cache_item()</a></code> <code><a href="yulab-cache.html">get_cache_item()</a></code> <code><a href="yulab-cache.html">rm_cache_item()</a></code> <code><a href="yulab-cache.html">update_cache_item()</a></code> <code><a href="yulab-cache.html">get_cache_element()</a></code> <code><a href="yulab-cache.html">prune_cache_item()</a></code> <code><a href="yulab-cache.html">cache_list_items()</a></code> <code><a href="yulab-cache.html">cache_size()</a></code> <code><a href="yulab-cache.html">cache_save()</a></code> <code><a href="yulab-cache.html">cache_load()</a></code> <code><a href="yulab-cache.html">with_cache()</a></code> </p>
         </td>
-        <td><p>cache intermediate data</p></td>
+        <td><p>Cache intermediate data</p></td>
       </tr><tr><td>
-          <p><code><a href="yulab_abort.html">yulab_abort()</a></code> </p>
+          <p><code><a href="yulab-message.html">yulab_abort()</a></code> <code><a href="yulab-message.html">yulab_warn()</a></code> <code><a href="yulab-message.html">yulab_inform()</a></code> </p>
         </td>
-        <td><p>Standardized error handling function</p></td>
-      </tr><tr><td>
-          <p><code><a href="yulab_inform.html">yulab_inform()</a></code> </p>
-        </td>
-        <td><p>Standardized info function</p></td>
+        <td><p>Standardized error handling</p></td>
       </tr><tr><td>
           <p><code><a href="yulab_msg.html">yulab_msg()</a></code> </p>
         </td>
         <td><p>yulab_msg</p></td>
-      </tr><tr><td>
-          <p><code><a href="yulab_warn.html">yulab_warn()</a></code> </p>
-        </td>
-        <td><p>Standardized warning function</p></td>
       </tr></tbody></table></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -20,6 +20,7 @@
 <url><loc>/reference/install_zip.html</loc></url>
 <url><loc>/reference/install_zip_gh.html</loc></url>
 <url><loc>/reference/is.installed.html</loc></url>
+<url><loc>/reference/load_OrgDb.html</loc></url>
 <url><loc>/reference/ls2df.html</loc></url>
 <url><loc>/reference/mat2df.html</loc></url>
 <url><loc>/reference/mat2list.html</loc></url>
@@ -42,10 +43,8 @@
 <url><loc>/reference/user_dir.html</loc></url>
 <url><loc>/reference/yread.html</loc></url>
 <url><loc>/reference/yulab-cache.html</loc></url>
+<url><loc>/reference/yulab-message.html</loc></url>
 <url><loc>/reference/yulab.utils-package.html</loc></url>
-<url><loc>/reference/yulab_abort.html</loc></url>
-<url><loc>/reference/yulab_inform.html</loc></url>
 <url><loc>/reference/yulab_msg.html</loc></url>
-<url><loc>/reference/yulab_warn.html</loc></url>
 </urlset>
 
