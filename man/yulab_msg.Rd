@@ -7,15 +7,15 @@
 yulab_msg(pkgname = NULL, n = 1)
 }
 \arguments{
-\item{pkgname}{package name}
+\item{pkgname}{Package name}
 
-\item{n}{number of citation messages}
+\item{n}{Number of citation messages}
 }
 \value{
-package message
+Package message
 }
 \description{
-Messages for R package developed by YuLab
+Messages for YuLab packages
 }
 \author{
 Guangchuang Yu

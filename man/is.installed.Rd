@@ -13,14 +13,21 @@ is.installed(packages)
 logical vector
 }
 \description{
-Check whether the input packages are installed
-}
-\details{
-This function check whether the input packages are installed
+Check whether packages are installed
 }
 \examples{
 is.installed(c("dplyr", "ggplot2"))
 }
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{mypkg}()},
+\code{\link{packageTitle}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

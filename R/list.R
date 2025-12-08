@@ -1,9 +1,9 @@
-#' rbind a list
+#' Row-bind a list
 #'
 #'
 #' @title rbindlist
-#' @param x a list that have similar elements that can be rbind to a data.frame
-#' @return data.frame
+#' @param x List with similar elements that can be row-bound
+#' @return `data.frame`
 #' @author Guangchuang Yu
 #' @export
 rbindlist <- function(x) {
@@ -11,12 +11,12 @@ rbindlist <- function(x) {
 }
 
 
-#' Convert a list of vector to a data.frame object.
+#' Convert a list of vectors to a data.frame
 #'
 #'
-#' @title Convert a list of vector (e.g, gene IDs) to a data.frame object
-#' @param inputList A list of vector
-#' @return a data.frame object.
+#' @title Convert a list of vectors (e.g., gene IDs) to `data.frame`
+#' @param inputList List of vectors
+#' @return `data.frame`
 #' @export
 ls2df <- function(inputList) {
     # ldf <- lapply(1:length(inputList), function(i) {

@@ -1,4 +1,5 @@
 #' run system command
+#' @family os-utils
 #'
 #'
 #' @title exec
@@ -52,6 +53,7 @@ where <- function(bin) {
 }
 
 #' test for internect connection via reading lines from a URL
+#' @family os-utils
 #'
 #'
 #' @title has_internet
@@ -69,10 +71,11 @@ has_internet <- function(site = "https://www.baidu.com/") {
 }
 
 which_os <- function() {
-    Sys.info()[1]
+    Sys.info()[["sysname"]]
 }
 
 #' get the user dir to save app caches, logs and data (a wrapper function of `rappdirs::user_cache_dir()`)
+#' @family os-utils
 #' 
 #' @title user_dir
 #' @param appname App name

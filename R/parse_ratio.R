@@ -1,16 +1,22 @@
-##' parse character ratio to double value, such as 1/5 to 0.2
+##' Parse character ratio to double, e.g., `1/5` → `0.2`
 ##'
 ##' 
 ##' @title parse_ratio
-##' @param ratio character vector of ratio to parse
-##' @return A numeric vector (double) of parsed ratio
+##' @param ratio Character vector of ratios
+##' @return Numeric vector
 ##' @export
 ##' @author Guangchuang Yu
 parse_ratio <- function(ratio) {
-    ratio <- sub("^\\s*", "", as.character(ratio))
-    ratio <- sub("\\s*$", "", ratio)
-    numerator <- as.numeric(sub("/\\d+$", "", ratio))
-    denominator <- as.numeric(sub("^\\d+/", "", ratio))
-    return(numerator/denominator)
+    x <- as.character(ratio)
+    x <- sub("^\\s*", "", x)
+    x <- sub("\\s*$", "", x)
+    suppressWarnings({
+        numerator <- as.numeric(sub("/\\s*\\d+$", "", x))
+        denominator <- as.numeric(sub("^\\s*\\d+\\s*/\\s*", "", x))
+    })
+    bad <- is.na(numerator) | is.na(denominator) | denominator == 0
+    res <- numerator/denominator
+    res[bad] <- NA_real_
+    res
 }
 

@@ -17,6 +17,13 @@ clipboard content, output type depends on the output of the reader
 \description{
 read clipboard
 }
+\seealso{
+Other io-utils: 
+\code{\link{o}()},
+\code{\link{show_in_excel}()},
+\code{\link{yread_tsv}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{io-utils}

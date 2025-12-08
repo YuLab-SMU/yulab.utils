@@ -5,6 +5,12 @@
 #' @importFrom utils capture.output
 #' @export
 quiet <- function(x) {
-    suppressMessages(capture.output(force(x), invisible = TRUE))
-    invisible(force(x))
+    res <- suppressMessages({
+        out <- NULL
+        capture.output({
+            out <- force(x)
+        }, file = NULL)
+        out
+    })
+    invisible(res)
 }

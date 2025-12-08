@@ -21,5 +21,8 @@ check_range(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = "value")
 Invisible TRUE if valid, throws error otherwise
 }
 \description{
-Validates that a numeric value falls within the specified range
+Check if value is within specified range
 }
+\concept{validate-utils
+
+Validates that a numeric value falls within the specified range}

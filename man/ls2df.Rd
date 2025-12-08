@@ -2,16 +2,16 @@
 % Please edit documentation in R/list.R
 \name{ls2df}
 \alias{ls2df}
-\title{Convert a list of vector (e.g, gene IDs) to a data.frame object}
+\title{Convert a list of vectors (e.g., gene IDs) to \code{data.frame}}
 \usage{
 ls2df(inputList)
 }
 \arguments{
-\item{inputList}{A list of vector}
+\item{inputList}{List of vectors}
 }
 \value{
-a data.frame object.
+\code{data.frame}
 }
 \description{
-Convert a list of vector to a data.frame object.
+Convert a list of vectors to a data.frame
 }

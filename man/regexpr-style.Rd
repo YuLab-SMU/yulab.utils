@@ -6,7 +6,7 @@
 \alias{use_perl}
 \alias{set_regexpr_style}
 \alias{auto_set_regexpr_style}
-\title{switch regular expression style (PCRE vs TRE)}
+\title{Switch regular expression style (PCRE vs TRE)}
 \usage{
 set_PCRE()
 
@@ -22,24 +22,24 @@ auto_set_regexpr_style()
 \item{style}{one of 'PCRE' or 'TRE'}
 }
 \value{
-logical value of whether use perl
+Logical indicating whether to use \code{perl}
 }
 \description{
-The \code{set_regexpr_style()} allows user to specify which style to be used,
-while the \code{auto_set_regexpr_style()} automatically set the style depdending on
-the operating system (TRE for Windows and PCRE for other OSs (Linux and Mac)).
-}
-\details{
-\code{set_PCRE()} force to use PCRE style while \code{set_TRE()} force to use TRE.
-
-Note that all these functions are not change the behavior of \code{gsub()} and \code{regexpr()}.
-The functions are just set a global option to store the user's choice of whether using \code{perl = TRUE}.
-
-Users can access the option via \code{use_perl()} and pass the return value to \code{gusb()} or \code{regexpr()} to specify the style in use.
+Switch regular expression style (PCRE vs TRE)
 }
 \references{
-\url{https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre}
+https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre
 }
 \author{
 Guangchuang Yu
 }
+\concept{regex-utils}
+\concept{regex-utils
+\itemize{
+\item \code{set_regexpr_style()} selects the style explicitly.
+\item \code{auto_set_regexpr_style()} chooses based on OS (TRE on Windows; PCRE elsewhere).
+\item \code{set_PCRE()} and \code{set_TRE()} force the style.
+}
+
+These functions do not change the behavior of \code{gsub()}/\code{regexpr()} directly.
+They set a global option that you can read via \code{use_perl()} and pass to \code{gsub()}/\code{regexpr()}.}

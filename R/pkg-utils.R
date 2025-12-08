@@ -1,11 +1,11 @@
-#' loading a package
+#' Load a package
+#' @family pkg-utils
 #'
-#' The function use 'library()' to load the package. 
-#' If the package is not installed, the function will try to install it before loading it.
+#' Uses `library()` to load `package`. If not installed, attempts installation
+#' via `rlang::check_installed()` (optionally using `BiocManager::install()`).
 #' @title pload
 #' @param package package name
-#' @param action function used to install package. 
-#' If 'action = "auto"', it will try to use 'BiocManager::install()' if it is available.
+#' @param action Installation function; `"auto"` tries `BiocManager::install()` if available
 #' @return the selected package loaded to the R session
 #' @importFrom rlang as_name
 #' @importFrom rlang enquo
@@ -33,7 +33,8 @@ pload <- function(package, action = "auto") {
 }
 
 
-#' get reverse dependencies
+#' Get reverse dependencies
+#' @family pkg-utils
 #'
 #'
 #' @title get_dependencies
@@ -74,6 +75,7 @@ get_repo <- function(repo = c("CRAN", "BioC")) {
 }
 
 #' Extract package title
+#' @family pkg-utils
 #'
 #'
 #' @title packageTitle
@@ -95,10 +97,16 @@ packageTitle <- function(pkg, repo='CRAN') {
         url <- sprintf("%s/packages/release/%s/html/%s.html", repo_url, bioc_type, pkg)
       }
 
-      ## x <- tryCatch(readLines(url), error = function(e) NULL)
-      ## if (is.null(x)) return("")
-      for (u in url) {      
-        x <- tryCatch(yread(u), error = function(e) NULL)
+      for (u in url) {
+        x <- tryCatch({
+          if (is.installed("httr2")) {
+            req <- httr2::request(u) |> httr2::req_timeout(5)
+            resp <- httr2::req_perform(req)
+            httr2::resp_body_string(resp)
+          } else {
+            yread(u)
+          }
+        }, error = function(e) NULL)
         if (!is.null(x)) {
           break()
         }
@@ -108,23 +116,27 @@ packageTitle <- function(pkg, repo='CRAN') {
         return(NA)
       }
 
-      i <- grep('^\\s*<h2>', x)
-      if (grepl("</h2>$", x[i])) {
-          xx <- x[i]
+      if (length(grep("<h2", x)) == 0) {
+        # fallback: try <title>
+        tt <- sub(".*<title>\\s*(.*?)\\s*</title>.*", "\\1", paste(x, collapse = " "))
+        title <- tt
       } else {
-          j <- grep('</h2>$', x)
-          xx <- paste(x[i:j], collapse=" ")
+        i <- grep('^\\s*<h2>', x)
+        if (grepl("</h2>$", x[i])) {
+            xx <- x[i]
+        } else {
+            j <- grep('</h2>$', x)
+            xx <- paste(x[i:j], collapse=" ")
+        }
+        title <- gsub('</h2>$', '', gsub('\\s*<h2>', '', xx))
       }
-
-      title <- gsub('</h2>$', '', gsub('\\s*<h2>', '', xx))
     }
     sub("^\\w+\\s*:\\s*", "", gsub("\n", " ", title))
 }
 
 
-#' Check whether the input packages are installed
-#'
-#' This function check whether the input packages are installed
+#' Check whether packages are installed
+#' @family pkg-utils
 #' @title is.installed
 #' @param packages package names
 #' @return logical vector
@@ -141,6 +153,7 @@ is.installed <- function(packages) {
 
 
 #' load function from package
+#' @family pkg-utils
 #'
 #'
 #' @title get_fun_from_pkg
@@ -168,7 +181,8 @@ get_fun_from_pkg <- function(pkg, fun) {
 
 
 
-#' print md text of package with link to homepage (CRAN or Bioconductor)
+#' Markdown link to CRAN/Bioconductor
+#' @family pkg-utils
 #'
 #'
 #' @rdname cran-bioc-pkg
@@ -188,7 +202,8 @@ Biocpkg <- function(pkg) {
     sprintf("[%s](http://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
 }
 
-#' print md text of package with link to github repo
+#' Markdown link to GitHub
+#' @family pkg-utils
 #'
 #'
 #' @rdname github-pkg
@@ -203,7 +218,8 @@ Githubpkg <- function(user, pkg) {
     sprintf(fmt, pkgfmt(pkg), gh, user, pkg)
 }
 
-#' print md text of link to a pakcage
+#' Markdown link to a package
+#' @family pkg-utils
 #' 
 #'
 #' @title mypkg

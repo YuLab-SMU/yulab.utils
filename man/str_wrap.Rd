@@ -7,16 +7,23 @@
 str_wrap(string, width = getOption("width"))
 }
 \arguments{
-\item{string}{input string}
+\item{string}{Input string}
 
-\item{width}{the maximum number of characters before wrapping to a new line}
+\item{width}{Maximum characters before wrapping}
 }
 \value{
-update strings with new line character inserted
+Updated strings with \code{"\\n"} inserted
 }
 \description{
-wraping long string to multiple lines
+Wrap long strings to multiple lines
+}
+\seealso{
+Other str-utils: 
+\code{\link{str_detect}()},
+\code{\link{str_extract}()},
+\code{\link{str_starts}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{str-utils}

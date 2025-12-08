@@ -29,9 +29,16 @@ the output of using the 'reader' to read the 'file_url' with parameters specifie
 \description{
 read file with caching
 }
-\details{
-This function read a file (local or url) and cache the content.
+\seealso{
+Other io-utils: 
+\code{\link{o}()},
+\code{\link{read.cb}()},
+\code{\link{show_in_excel}()}
 }
 \author{
 Yonghe Xia and Guangchuang Yu
 }
+\concept{io-utils}
+\concept{io-utils
+
+This function read a file (local or url) and cache the content.}

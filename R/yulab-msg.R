@@ -1,10 +1,10 @@
-#' Messages for R package developed by YuLab
+#' Messages for YuLab packages
 #'
 #' 
 #' @title yulab_msg
-#' @param pkgname package name
-#' @param n number of citation messages 
-#' @return package message
+#' @param pkgname Package name
+#' @param n Number of citation messages
+#' @return Package message
 #' @export
 #' @author Guangchuang Yu
 yulab_msg <- function(pkgname = NULL, n = 1) {
@@ -96,7 +96,7 @@ pkg_ref <- function(pkgname) {
     if (is.null(ref) || is.na(ref)) return(NULL)
 
     msg <- "Please cite:\n\n" 
-    str_wrap(paste0(msg, refs, "\n"))
+    str_wrap(paste0(msg, ref, "\n"))
 }
 
 

@@ -1,5 +1,14 @@
-# yulab.utils 0.2.2.003
+# yulab.utils 0.2.2.004
 
++ add unit test (2025-12-08, Mon)
++ Extend cache system with TTL, pruning, persistence and memoization (2025-12-08, Mon)
+    - `update_cache_item(item, elements, ttl=)` sets per-entry expiration
+    - `get_cache_element(item, elements, default=, prune_expired=)` supports default values and auto-pruning of expired entries
+    - `with_cache(item, key, compute, ttl=)` computes and caches results (returns cached value on hit)
+    - `prune_cache_item(item)` prunes expired entries; `rm_cache_entry(item, key)` removes a single entry
+    - `cache_list_items()` and `cache_size()` list items and estimate total cache size
+    - `cache_save(path)` and `cache_load(path)` serialize and restore the cache environment
++ update man (2025-12-08, Mon)
 + `load_OrgDb()` to load OrgDb object (2025-12-04, Thu)
     - move from 'GOSemSim'
 + `parse_ratio` to parse ratio string, e.g., "1/2" (2025-12-04, Thu)

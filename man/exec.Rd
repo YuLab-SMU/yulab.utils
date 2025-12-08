@@ -15,6 +15,12 @@ An \code{exec} instance that stores system command outputs
 \description{
 run system command
 }
+\seealso{
+Other os-utils: 
+\code{\link{has_internet}()},
+\code{\link{user_dir}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{os-utils}

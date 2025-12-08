@@ -9,7 +9,13 @@
 \alias{rm_cache_item}
 \alias{update_cache_item}
 \alias{get_cache_element}
-\title{cache intermediate data}
+\alias{prune_cache_item}
+\alias{cache_list_items}
+\alias{cache_size}
+\alias{cache_save}
+\alias{cache_load}
+\alias{with_cache}
+\title{Cache intermediate data}
 \usage{
 initial_cache()
 
@@ -23,21 +29,44 @@ get_cache_item(item)
 
 rm_cache_item(item)
 
-update_cache_item(item, elements)
+update_cache_item(item, elements, ttl = NULL)
 
-get_cache_element(item, elements)
+get_cache_element(item, elements, default = NULL, prune_expired = TRUE)
+
+prune_cache_item(item)
+
+cache_list_items()
+
+cache_size()
+
+cache_save(path)
+
+cache_load(path)
+
+with_cache(item, key, compute, ttl = NULL)
 }
 \arguments{
-\item{item}{the name of the cached item}
+\item{item}{Cache item name}
 
-\item{elements}{elements to be cached in the item}
+\item{elements}{Elements to cache}
+
+\item{ttl}{Time-to-live in seconds}
+
+\item{default}{Default value if cache element is missing}
+
+\item{prune_expired}{Logical, whether to prune expired items}
+
+\item{path}{File path to save or load cache}
+
+\item{key}{Element key}
+
+\item{compute}{Function to compute value when missing}
 }
 \value{
-return the cache environment, item or selected elements, depends on the functions.
+Cache environment, item, or selected elements
 }
 \description{
-Yulab provides a set of utilities to cache intermediate data,
-including initialize the cached item, update cached item and rmove the cached item, etc.
+Cache intermediate data
 }
 \examples{
 \dontrun{
@@ -49,7 +78,7 @@ including initialize the cached item, update cached item and rmove the cached it
  fast_fib <- function(x) {
      if (x < 2) return(1)
      res <- get_cache_element('fibonacci', as.character(x))
-     if (!is.null(res)) { 
+     if (!is.null(res)) {
          return(res)
      }
      res <- fast_fib(x-2) + fast_fib(x-1)
@@ -64,3 +93,8 @@ including initialize the cached item, update cached item and rmove the cached it
     
  }
 }
+\concept{cache-utils}
+\concept{cache-utils
+
+Utilities to cache intermediate data: initialize items, update items,
+remove items, and retrieve elements.}

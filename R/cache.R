@@ -6,32 +6,31 @@
 
 
 
+.yulabCache <- new.env(parent = emptyenv())
+
 #' @rdname yulab-cache
+#' @family cache-utils
 #' @export
 initial_cache <- function() {
-    pos <- 1
-    envir <- as.environment(pos)
-    assign(".yulabCache", new.env(), envir = envir)
+    rm(list = ls(envir = .yulabCache), envir = .yulabCache)
 }
 
 #' @rdname yulab-cache
+#' @family cache-utils
 #' @export
 get_cache <- function() {
-    if (!exists(".yulabCache", envir = .GlobalEnv)) {
-        initial_cache()
-    }
-    get(".yulabCache", envir = .GlobalEnv)
+    .yulabCache
 }
 
 #' @rdname yulab-cache
+#' @family cache-utils
 #' @export
 rm_cache <- function() {
-    if (exists(".yulabCache", envir = .GlobalEnv)) {
-        rm(".yulabCache", envir = .GlobalEnv)
-    }
+    rm(list = ls(envir = .yulabCache), envir = .yulabCache)
 }
 
 #' @rdname yulab-cache
+#' @family cache-utils
 #' @export
 initial_cache_item <- function(item) {
     env <- get_cache()
@@ -58,16 +57,22 @@ rm_cache_item <- function(item) {
     }
 }
 
-#' cache intermediate data
+#' Cache intermediate data
+#' @family cache-utils
 #'
-#' Yulab provides a set of utilities to cache intermediate data, 
-#' including initialize the cached item, update cached item and rmove the cached item, etc.
+#' Utilities to cache intermediate data: initialize items, update items,
+#' remove items, and retrieve elements.
 #' 
 #' @rdname yulab-cache
-#' @param item the name of the cached item
-#' @param elements elements to be cached in the item
-#' @return return the cache environment, item or selected elements, depends on the functions.
+#' @family cache-utils
+#' @param item Cache item name
+#' @param elements Elements to cache
+#' @param default Default value if cache element is missing
+#' @param prune_expired Logical, whether to prune expired items
+#' @param ttl Time-to-live in seconds
+#' @return Cache environment, item, or selected elements
 #' @importFrom utils modifyList
+#' @importFrom stats setNames
 #' @export
 #' @examples
 #' \dontrun{
@@ -79,7 +84,7 @@ rm_cache_item <- function(item) {
 #'  fast_fib <- function(x) {
 #'      if (x < 2) return(1)
 #'      res <- get_cache_element('fibonacci', as.character(x))
-#'      if (!is.null(res)) { 
+#'      if (!is.null(res)) {
 #'          return(res)
 #'      }
 #'      res <- fast_fib(x-2) + fast_fib(x-1)
@@ -93,7 +98,7 @@ rm_cache_item <- function(item) {
 #'  system.time(fast_fib(30)) 
 #'     
 #'  }
-update_cache_item <- function(item, elements) {
+update_cache_item <- function(item, elements, ttl = NULL) {
 
     msg <- "new elements should be stored as a named list"
     if (!inherits(elements, 'list')) {
@@ -108,6 +113,12 @@ update_cache_item <- function(item, elements) {
         stop(msg)
     }
 
+    if (!is.null(ttl)) {
+        expires <- Sys.time() + as.difftime(ttl, units = "secs")
+        elements <- lapply(elements, function(v) list(value = v, expires = expires))
+        names(elements) <- names(elements)
+    }
+
     env <- get_cache()
     res <- get_cache_item(item)
     res <- modifyList(res, elements)
@@ -115,13 +126,98 @@ update_cache_item <- function(item, elements) {
 }
 
 #' @rdname yulab-cache
+#' @family cache-utils
 #' @export
-get_cache_element <- function(item, elements) {
+get_cache_element <- function(item, elements, default = NULL, prune_expired = TRUE) {
     x <- get_cache_item(item)
+    fetch_one <- function(k) {
+        val <- x[[k]]
+        if (is.null(val)) return(default)
+        if (is.list(val) && !is.null(val$expires)) {
+            if (prune_expired && isTRUE(Sys.time() > val$expires)) {
+                rm_cache_entry(item, k)
+                return(default)
+            }
+            return(val$value)
+        }
+        val
+    }
     n <- length(elements)
-    if (n == 1) return(x[[elements]])
+    if (n == 1) return(fetch_one(elements))
+    setNames(lapply(elements, fetch_one), elements)
+}
 
-    return(x[elements])
+rm_cache_entry <- function(item, key) {
+    env <- get_cache()
+    x <- get_cache_item(item)
+    x[[key]] <- NULL
+    assign(item, x, envir = env)
+}
+
+#' @rdname yulab-cache
+#' @export
+prune_cache_item <- function(item) {
+    x <- get_cache_item(item)
+    expired <- vapply(names(x), function(k) {
+        v <- x[[k]]
+        is.list(v) && !is.null(v$expires) && isTRUE(Sys.time() > v$expires)
+    }, logical(1))
+    if (any(expired)) {
+        x[names(x)[expired]] <- NULL
+        env <- get_cache()
+        assign(item, x, envir = env)
+    }
+    invisible(TRUE)
+}
+
+#' @rdname yulab-cache
+#' @export
+cache_list_items <- function() {
+    ls(envir = get_cache())
+}
+
+#' @rdname yulab-cache
+#' @export
+cache_size <- function() {
+    env <- get_cache()
+    items <- ls(envir = env)
+    sizes <- vapply(items, function(k) utils::object.size(get(k, envir = env)), numeric(1))
+    sum(sizes)
+}
+
+#' @rdname yulab-cache
+#' @param path File path to save or load cache
+#' @export
+cache_save <- function(path) {
+    env <- get_cache()
+    obj <- as.list(env)
+    saveRDS(obj, path)
+    invisible(path)
+}
+
+#' @rdname yulab-cache
+#' @export
+cache_load <- function(path) {
+    obj <- readRDS(path)
+    env <- get_cache()
+    for (k in names(obj)) assign(k, obj[[k]], envir = env)
+    invisible(TRUE)
+}
+
+#' @rdname yulab-cache
+#' @param key Element key
+#' @param compute Function to compute value when missing
+#' @param ttl Time-to-live in seconds
+#' @export
+with_cache <- function(item, key, compute, ttl = NULL) {
+    k <- as.character(key)
+    val <- get_cache_element(item, k)
+    if (!is.null(val)) return(val)
+    res <- compute()
+    e <- list()
+    e[[k]] <- res
+    update_cache_item(item, e, ttl = ttl)
+    res
 }
 
 

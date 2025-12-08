@@ -15,6 +15,13 @@ original .data
 \description{
 Open data frame in Excel. It can be used in pipe.
 }
+\seealso{
+Other io-utils: 
+\code{\link{o}()},
+\code{\link{read.cb}()},
+\code{\link{yread_tsv}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{io-utils}

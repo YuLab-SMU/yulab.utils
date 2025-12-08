@@ -24,5 +24,8 @@ check_directory(
 Invisible TRUE if valid, throws error otherwise
 }
 \description{
-Validates directory existence and accessibility with options to create if missing
+Check if directory exists and is accessible
 }
+\concept{validate-utils
+
+Validates directory existence and accessibility with options to create if missing}

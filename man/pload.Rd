@@ -9,19 +9,18 @@ pload(package, action = "auto")
 \arguments{
 \item{package}{package name}
 
-\item{action}{function used to install package.
-If 'action = "auto"', it will try to use 'BiocManager::install()' if it is available.}
+\item{action}{Installation function; \code{"auto"} tries \code{BiocManager::install()} if available}
 }
 \value{
 the selected package loaded to the R session
 }
 \description{
-loading a package
-}
-\details{
-The function use 'library()' to load the package.
-If the package is not installed, the function will try to install it before loading it.
+Load a package
 }
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils
+
+Uses \code{library()} to load \code{package}. If not installed, attempts installation
+via \code{rlang::check_installed()} (optionally using \code{BiocManager::install()}).}

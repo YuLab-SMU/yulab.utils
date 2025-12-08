@@ -2,7 +2,7 @@
 % Please edit documentation in R/error-utils.r
 \name{check_input}
 \alias{check_input}
-\title{Check input validity with detailed error messages}
+\title{Validate input with type/length constraints}
 \usage{
 check_input(
   x,
@@ -17,21 +17,24 @@ check_input(
 \arguments{
 \item{x}{Object to check}
 
-\item{type}{Expected type (can be basic type like "numeric", "character" or class name)}
+\item{type}{Expected type (e.g., \code{"numeric"}, \code{"character"}, or class name)}
 
-\item{length}{Expected length (optional)}
+\item{length}{Expected length}
 
-\item{min_length}{Minimum length (optional)}
+\item{min_length}{Minimum length}
 
-\item{max_length}{Maximum length (optional)}
+\item{max_length}{Maximum length}
 
-\item{allow_null}{Whether NULL is allowed}
+\item{allow_null}{Whether \code{NULL} is allowed}
 
-\item{arg_name}{Name of the argument for error messages}
+\item{arg_name}{Argument name for messages}
 }
 \value{
-Invisible TRUE if valid, throws error otherwise
+Invisible \code{TRUE} on success
 }
 \description{
-Enhanced input validation with support for basic types and improved error messages
+Validate input with type/length constraints
 }
+\concept{validate-utils
+
+Enhanced input validation supporting base types and class checks.}

@@ -15,6 +15,12 @@ logical value
 \description{
 test for internect connection via reading lines from a URL
 }
+\seealso{
+Other os-utils: 
+\code{\link{exec}()},
+\code{\link{user_dir}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{os-utils}

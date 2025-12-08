@@ -9,13 +9,10 @@
 #' @export
 #' @author Guangchuang Yu \url{https://yulab-smu.top}
 load_OrgDb <- function(OrgDb) {
-    #if (is(OrgDb, "character")) {
-    #    require(OrgDb, character.only = TRUE)
-    #    OrgDb <- eval(parse(text=OrgDb))
-    #}
-    if (is(OrgDb, "character")) {
-        OrgDb <- utils::getFromNamespace(OrgDb, OrgDb)
-    } 
-    
+    if (is.character(OrgDb)) {
+        check_packages(OrgDb, "for `load_OrgDb()`")
+        # OrgDb <- utils::getFromNamespace(OrgDb, OrgDb)
+        OrgDb <- get(OrgDb, envir = asNamespace(OrgDb))
+    }
     return(OrgDb)
 }

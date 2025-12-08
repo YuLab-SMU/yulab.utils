@@ -7,13 +7,13 @@
 parse_ratio(ratio)
 }
 \arguments{
-\item{ratio}{character vector of ratio to parse}
+\item{ratio}{Character vector of ratios}
 }
 \value{
-A numeric vector (double) of parsed ratio
+Numeric vector
 }
 \description{
-parse character ratio to double value, such as 1/5 to 0.2
+Parse character ratio to double, e.g., \code{1/5} → \code{0.2}
 }
 \author{
 Guangchuang Yu

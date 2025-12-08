@@ -15,8 +15,18 @@ mypkg(pkg, url)
 md text string
 }
 \description{
-print md text of link to a pakcage
+Markdown link to a package
+}
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{is.installed}()},
+\code{\link{packageTitle}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

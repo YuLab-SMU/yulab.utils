@@ -20,6 +20,16 @@ load function from package
 \examples{
 get_fun_from_pkg('utils', 'zip')
 }
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{is.installed}()},
+\code{\link{mypkg}()},
+\code{\link{packageTitle}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

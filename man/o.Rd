@@ -21,6 +21,13 @@ open selected directory or file
 o()
 }
 }
+\seealso{
+Other io-utils: 
+\code{\link{read.cb}()},
+\code{\link{show_in_excel}()},
+\code{\link{yread_tsv}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{io-utils}

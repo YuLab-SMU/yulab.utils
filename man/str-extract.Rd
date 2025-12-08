@@ -7,16 +7,23 @@
 str_extract(string, pattern)
 }
 \arguments{
-\item{string}{input string}
+\item{string}{Input string}
 
-\item{pattern}{a regular expression to describe the pattern to extracted from the 'string'}
+\item{pattern}{Regular expression to extract}
 }
 \value{
-substring
+Substring
 }
 \description{
 Extract a substring using a pattern
 }
+\seealso{
+Other str-utils: 
+\code{\link{str_detect}()},
+\code{\link{str_starts}()},
+\code{\link{str_wrap}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{str-utils}

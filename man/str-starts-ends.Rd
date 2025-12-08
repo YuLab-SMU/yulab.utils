@@ -10,18 +10,25 @@ str_starts(string, pattern, negate = FALSE)
 str_ends(string, pattern, negate = FALSE)
 }
 \arguments{
-\item{string}{input string}
+\item{string}{Input string}
 
-\item{pattern}{pattern with which the string starts or ends}
+\item{pattern}{Pattern to match}
 
-\item{negate}{if TRUE, return non-matching elements}
+\item{negate}{If \code{TRUE}, return non-matching elements}
 }
 \value{
 a logical vector
 }
 \description{
-Detect the presence or absence of a pattern at the beginning or end of a string or string vector.
+Detect patterns at the beginning or end of strings
+}
+\seealso{
+Other str-utils: 
+\code{\link{str_detect}()},
+\code{\link{str_extract}()},
+\code{\link{str_wrap}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{str-utils}

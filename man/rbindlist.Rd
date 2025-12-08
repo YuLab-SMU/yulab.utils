@@ -7,13 +7,13 @@
 rbindlist(x)
 }
 \arguments{
-\item{x}{a list that have similar elements that can be rbind to a data.frame}
+\item{x}{List with similar elements that can be row-bound}
 }
 \value{
-data.frame
+\code{data.frame}
 }
 \description{
-rbind a list
+Row-bind a list
 }
 \author{
 Guangchuang Yu

@@ -2,7 +2,7 @@
 % Please edit documentation in R/pkg-utils.R
 \name{Githubpkg}
 \alias{Githubpkg}
-\title{print md text of package with link to github repo}
+\title{Markdown link to GitHub}
 \usage{
 Githubpkg(user, pkg)
 }
@@ -15,8 +15,18 @@ Githubpkg(user, pkg)
 md text string
 }
 \description{
-print md text of package with link to github repo
+Markdown link to GitHub
+}
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{is.installed}()},
+\code{\link{mypkg}()},
+\code{\link{packageTitle}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

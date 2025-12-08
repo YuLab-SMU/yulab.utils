@@ -1,4 +1,4 @@
-`%||%` <- function(a, b) ifelse(is.null(a), b, a)
+`%||%` <- function(a, b) if (is.null(a)) b else a
 
 .hi <- function(package = NULL, n=2L) {
     env <- sys.parent(n)
@@ -15,13 +15,13 @@
 
 get_caller_package <- function(caller) {
     if (is.character(caller)) {
-        fn <- tryCatch(eval(parse(text=caller)), error=function(e) NULL)
+        fn <- tryCatch(get(caller, mode = "function"), error = function(e) NULL)
         if (is.null(fn)) return("")
     } else {
         fn <- caller
     }
 
-    return(environmentName(environment(fn)))
+    environmentName(environment(fn))
 }
 
 .called_by_package <- function(package) {
@@ -34,6 +34,21 @@ get_caller_package <- function(caller) {
     }
   }
   return(FALSE)
+}
+
+assert_single_string <- function(x, name) {
+  if (!is.character(x) || length(x) != 1 || x == "") {
+    yulab_abort(sprintf("%s must be a single non-empty character string", name), class = "parameter_error")
+  }
+  invisible(TRUE)
+}
+
+normalize_path2 <- function(path) {
+  normalizePath(path, winslash = "/", mustWork = FALSE)
+}
+
+has_permission <- function(path, mode) {
+  file.access(path, mode) == 0
 }
 
 

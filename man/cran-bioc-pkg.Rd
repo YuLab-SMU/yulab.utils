@@ -3,7 +3,7 @@
 \name{CRANpkg}
 \alias{CRANpkg}
 \alias{Biocpkg}
-\title{print md text of package with link to homepage (CRAN or Bioconductor)}
+\title{Markdown link to CRAN/Bioconductor}
 \usage{
 CRANpkg(pkg)
 
@@ -16,8 +16,18 @@ Biocpkg(pkg)
 md text string
 }
 \description{
-print md text of package with link to homepage (CRAN or Bioconductor)
+Markdown link to CRAN/Bioconductor
+}
+\seealso{
+Other pkg-utils: 
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{is.installed}()},
+\code{\link{mypkg}()},
+\code{\link{packageTitle}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

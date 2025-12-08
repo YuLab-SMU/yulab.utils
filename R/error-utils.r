@@ -1,11 +1,16 @@
 
-#' Standardized error handling function
+#' Standardized error handling
+#' @family messages
 #'
-#' @param message Error message to display
-#' @param class Custom error class for categorization
-#' @param ... Additional context information
-#' @return No return value, throws error
+#' Provides `rlang`-based wrappers for messaging: `yulab_abort()`, `yulab_warn()`,
+#' and `yulab_inform()`.
+#'
+#' @param message Message string
+#' @param class Custom class for categorization
+#' @param ... Additional context
+#' @return No return value
 #' @importFrom rlang abort
+#' @rdname yulab-message
 #' @export
 yulab_abort <- function(message, class = "yulab_error", ...) {
     abort(
@@ -15,13 +20,8 @@ yulab_abort <- function(message, class = "yulab_error", ...) {
     )
 }
 
-#' Standardized warning function
-#'
-#' @param message Warning message to display
-#' @param class Custom warning class for categorization
-#' @param ... Additional context information
-#' @return No return value, issues warning
 #' @importFrom rlang warn
+#' @rdname yulab-message
 #' @export
 yulab_warn <- function(message, class = "yulab_warning", ...) {
     warn(
@@ -31,13 +31,8 @@ yulab_warn <- function(message, class = "yulab_warning", ...) {
     )
 }
 
-#' Standardized info function
-#'
-#' @param message Information message to display
-#' @param class Custom info class for categorization
-#' @param ... Additional context information
-#' @return No return value, displays information
 #' @importFrom rlang inform
+#' @rdname yulab-message
 #' @export
 yulab_inform <- function(message, class = "yulab_info", ...) {
     inform(
@@ -47,25 +42,24 @@ yulab_inform <- function(message, class = "yulab_info", ...) {
     )
 }
 
-#' Check input validity with detailed error messages
+#' Validate input with type/length constraints
+#' @family validate-utils
 #'
-#' Enhanced input validation with support for basic types and improved error messages
+#' Enhanced input validation supporting base types and class checks.
 #' @param x Object to check
-#' @param type Expected type (can be basic type like "numeric", "character" or class name)
-#' @param length Expected length (optional)
-#' @param min_length Minimum length (optional)
-#' @param max_length Maximum length (optional)
-#' @param allow_null Whether NULL is allowed
-#' @param arg_name Name of the argument for error messages
-#' @return Invisible TRUE if valid, throws error otherwise
+#' @param type Expected type (e.g., `"numeric"`, `"character"`, or class name)
+#' @param length Expected length
+#' @param min_length Minimum length
+#' @param max_length Maximum length
+#' @param allow_null Whether `NULL` is allowed
+#' @param arg_name Argument name for messages
+#' @return Invisible `TRUE` on success
 #' @export
 check_input <- function(x, type = NULL, length = NULL, min_length = NULL, 
                        max_length = NULL, allow_null = FALSE, arg_name = "input") {
     
     # Validate function parameters
-    if (!is.character(arg_name) || length(arg_name) != 1) {
-        yulab_abort("arg_name must be a single character string", class = "parameter_error")
-    }
+    assert_single_string(arg_name, "arg_name")
     if (!is.null(type) && (!is.character(type) || length(type) != 1)) {
         yulab_abort("type must be a single character string or NULL", class = "parameter_error")
     }
@@ -141,6 +135,7 @@ check_input <- function(x, type = NULL, length = NULL, min_length = NULL,
 }
 
 #' Check if required packages are installed with informative errors
+#' @family validate-utils
 #'
 #' Enhanced package checking with better error messages and validation
 #' @rdname check_packages
@@ -195,6 +190,7 @@ check_packages <- function(packages, reason = "for this functionality") {
 check_pkg <- check_packages
 
 #' Handle file operations with proper error messages
+#' @family validate-utils
 #'
 #' Enhanced file validation with comprehensive checks and better error messages
 #' @param path File path
@@ -203,17 +199,9 @@ check_pkg <- check_packages
 #' @return Invisible TRUE if operation can proceed, throws error otherwise
 #' @export
 check_file <- function(path, operation = "read", must_exist = TRUE) {
-    
-    # Validate input parameters
-    if (!is.character(path) || length(path) != 1 || path == "") {
-        yulab_abort("path must be a single non-empty character string", class = "parameter_error")
-    }
-    if (!is.character(operation) || length(operation) != 1) {
-        yulab_abort("operation must be a single character string", class = "parameter_error")
-    }
-    
-    # Normalize path for better error messages
-    normalized_path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+    assert_single_string(path, "path")
+    assert_single_string(operation, "operation")
+    normalized_path <- normalize_path2(path)
     
     if (must_exist) {
         if (!file.exists(path)) {
@@ -223,9 +211,8 @@ check_file <- function(path, operation = "read", must_exist = TRUE) {
             )
         }
         
-        # Additional checks for read operations
         if (grepl("read", operation, ignore.case = TRUE)) {
-            if (file.access(path, 4) != 0) {  # 4 is read permission
+            if (!has_permission(path, 4)) {
                 yulab_abort(
                     paste0("No read permission for file: ", normalized_path),
                     class = "file_permission_error"
@@ -240,8 +227,7 @@ check_file <- function(path, operation = "read", must_exist = TRUE) {
                 class = "file_overwrite_warning"
             )
             
-            # Check write permissions if file exists
-            if (file.access(path, 2) != 0) {  # 2 is write permission
+            if (!has_permission(path, 2)) {
                 yulab_abort(
                     paste0("No write permission for existing file: ", normalized_path),
                     class = "file_permission_error"
@@ -254,6 +240,7 @@ check_file <- function(path, operation = "read", must_exist = TRUE) {
 }
 
 #' Check if value is within specified range
+#' @family validate-utils
 #'
 #' Validates that a numeric value falls within the specified range
 #' @param x Numeric value to check
@@ -312,6 +299,7 @@ check_range <- function(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = 
 }
 
 #' Check if directory exists and is accessible
+#' @family validate-utils
 #'
 #' Validates directory existence and accessibility with options to create if missing
 #' @param path Directory path
@@ -321,11 +309,7 @@ check_range <- function(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = 
 #' @return Invisible TRUE if valid, throws error otherwise
 #' @export
 check_directory <- function(path, create_if_missing = FALSE, check_write_permission = TRUE, arg_name = "directory") {
-    
-    # Validate parameters
-    if (!is.character(path) || length(path) != 1 || path == "") {
-        yulab_abort("path must be a single non-empty character string", class = "parameter_error")
-    }
+    assert_single_string(path, "path")
     if (!is.logical(create_if_missing) || length(create_if_missing) != 1) {
         yulab_abort("create_if_missing must be a single logical value", class = "parameter_error")
     }
@@ -333,8 +317,7 @@ check_directory <- function(path, create_if_missing = FALSE, check_write_permiss
         yulab_abort("check_write_permission must be a single logical value", class = "parameter_error")
     }
     
-    # Normalize path
-    normalized_path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+    normalized_path <- normalize_path2(path)
     
     if (!dir.exists(path)) {
         if (create_if_missing) {
@@ -360,9 +343,8 @@ check_directory <- function(path, create_if_missing = FALSE, check_write_permiss
         }
     }
     
-    # Check write permissions if requested
     if (check_write_permission) {
-        if (file.access(path, 2) != 0) {  # 2 is write permission
+        if (!has_permission(path, 2)) {
             yulab_abort(
                 paste0("No write permission for directory: ", normalized_path),
                 class = "directory_permission_error"

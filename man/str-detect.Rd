@@ -7,18 +7,25 @@
 str_detect(string, pattern, negate = FALSE)
 }
 \arguments{
-\item{string}{input string}
+\item{string}{Input string}
 
-\item{pattern}{pattern to look for}
+\item{pattern}{Pattern to look for}
 
-\item{negate}{if TRUE, inverts the resulting boolen vector}
+\item{negate}{If \code{TRUE}, invert the result}
 }
 \value{
-logical vector
+Logical vector
 }
 \description{
-Detect the presentce/absence of a match
+Detect presence/absence of a match
+}
+\seealso{
+Other str-utils: 
+\code{\link{str_extract}()},
+\code{\link{str_starts}()},
+\code{\link{str_wrap}()}
 }
 \author{
 Guangchuang Yu
 }
+\concept{str-utils}

@@ -1,4 +1,5 @@
 #' @rdname yread
+#' @family io-utils
 #' @export
 yread_tsv <- function(file, reader = utils::read.delim, 
                 params = list(),
@@ -16,6 +17,7 @@ yread_tsv <- function(file, reader = utils::read.delim,
 
 
 #' read file with caching
+#' @family io-utils
 #' 
 #' This function read a file (local or url) and cache the content.
 #' @title yread
@@ -55,6 +57,7 @@ yread <- function(file, reader = readLines, params = list(),
 }
 
 #' read clipboard
+#' @family io-utils
 #'
 #'
 #' @title read.cb
@@ -76,6 +79,7 @@ read.cb <- function(reader = read.table, ...) {
 
 
 #' open selected directory or file
+#' @family io-utils
 #'
 #'
 #' @title o
@@ -135,6 +139,7 @@ is.rserver <- function(){
 }
 
 #' Open data frame in Excel. It can be used in pipe.
+#' @family io-utils
 #'
 #'
 #' @title show_in_excel

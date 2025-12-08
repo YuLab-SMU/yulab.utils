@@ -17,6 +17,16 @@ reverse dependencies
 \description{
 Extract package title
 }
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{is.installed}()},
+\code{\link{mypkg}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{pkg-utils}

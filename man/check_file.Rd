@@ -17,5 +17,8 @@ check_file(path, operation = "read", must_exist = TRUE)
 Invisible TRUE if operation can proceed, throws error otherwise
 }
 \description{
-Enhanced file validation with comprehensive checks and better error messages
+Handle file operations with proper error messages
 }
+\concept{validate-utils
+
+Enhanced file validation with comprehensive checks and better error messages}

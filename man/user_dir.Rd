@@ -19,6 +19,12 @@ a directory (created if not exists)
 \description{
 get the user dir to save app caches, logs and data (a wrapper function of \code{rappdirs::user_cache_dir()})
 }
+\seealso{
+Other os-utils: 
+\code{\link{exec}()},
+\code{\link{has_internet}()}
+}
 \author{
 Guangchuang Yu
 }
+\concept{os-utils}
