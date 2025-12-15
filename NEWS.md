@@ -1,5 +1,6 @@
-# yulab.utils 0.2.2.004
+# yulab.utils 0.2.3
 
++ `download_yulab_file` (2025-12-15, Mon)
 + add unit test (2025-12-08, Mon)
 + Extend cache system with TTL, pruning, persistence and memoization (2025-12-08, Mon)
     - `update_cache_item(item, elements, ttl=)` sets per-entry expiration

@@ -1,6 +1,6 @@
 Package: yulab.utils
 Title: Supporting Functions for Packages Maintained by 'YuLab-SMU'
-Version: 0.2.2.004
+Version: 0.2.3
 Authors@R: c(person("Guangchuang", "Yu", email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")))
 Description: Miscellaneous functions commonly used by 'YuLab-SMU'.
 Depends:
@@ -18,6 +18,7 @@ Suggests:
   httr2,
   jsonlite,
   openssl,
+  R.utils,
   testthat (>= 3.0.0)
 ByteCompile: true
 License: Artistic-2.0
