@@ -1,5 +1,4 @@
 #' Load a package
-#' @family pkg-utils
 #'
 #' Uses `library()` to load `package`. If not installed, attempts installation
 #' via `rlang::check_installed()` (optionally using `BiocManager::install()`).
@@ -14,6 +13,7 @@
 #' @importFrom utils getFromNamespace
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 pload <- function(package, action = "auto") {
     pkg <- as_name(enquo(package))
     if (action == "auto") {
@@ -34,7 +34,6 @@ pload <- function(package, action = "auto") {
 
 
 #' Get reverse dependencies
-#' @family pkg-utils
 #'
 #'
 #' @title get_dependencies
@@ -45,6 +44,7 @@ pload <- function(package, action = "auto") {
 #' @importFrom tools package_dependencies
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 get_dependencies <- function(pkg, repo=c("CRAN", "BioC")) {
   rp <- get_repo(repo)
 
@@ -75,7 +75,6 @@ get_repo <- function(repo = c("CRAN", "BioC")) {
 }
 
 #' Extract package title
-#' @family pkg-utils
 #'
 #'
 #' @title packageTitle
@@ -85,6 +84,7 @@ get_repo <- function(repo = c("CRAN", "BioC")) {
 #' @importFrom utils packageDescription
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 packageTitle <- function(pkg, repo='CRAN') {
     title <- tryCatch(packageDescription(pkg)$Title, error=function(e) NULL)
 
@@ -136,7 +136,6 @@ packageTitle <- function(pkg, repo='CRAN') {
 
 
 #' Check whether packages are installed
-#' @family pkg-utils
 #' @title is.installed
 #' @param packages package names
 #' @return logical vector
@@ -144,6 +143,7 @@ packageTitle <- function(pkg, repo='CRAN') {
 #' @examples
 #' is.installed(c("dplyr", "ggplot2"))
 #' @author Guangchuang Yu
+#' @family pkg-utils
 is.installed <- function(packages) {
   vapply(packages, function(package) {
     system.file(package=package) != ""
@@ -153,7 +153,6 @@ is.installed <- function(packages) {
 
 
 #' load function from package
-#' @family pkg-utils
 #'
 #'
 #' @title get_fun_from_pkg
@@ -164,6 +163,7 @@ is.installed <- function(packages) {
 #' @examples
 #' get_fun_from_pkg('utils', 'zip')
 #' @author Guangchuang Yu
+#' @family pkg-utils
 get_fun_from_pkg <- function(pkg, fun) {
     ## v1
     ##
@@ -182,7 +182,6 @@ get_fun_from_pkg <- function(pkg, fun) {
 
 
 #' Markdown link to CRAN/Bioconductor
-#' @family pkg-utils
 #'
 #'
 #' @rdname cran-bioc-pkg
@@ -190,6 +189,7 @@ get_fun_from_pkg <- function(pkg, fun) {
 #' @return md text string
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 CRANpkg <- function(pkg) {
     cran <- "https://CRAN.R-project.org/package"
     fmt <- "[%s](%s=%s)"
@@ -203,7 +203,6 @@ Biocpkg <- function(pkg) {
 }
 
 #' Markdown link to GitHub
-#' @family pkg-utils
 #'
 #'
 #' @rdname github-pkg
@@ -212,6 +211,7 @@ Biocpkg <- function(pkg) {
 #' @return md text string
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 Githubpkg <- function(user, pkg) {
     gh <- "https://github.com"
     fmt <- "[%s](%s/%s/%s)"
@@ -219,7 +219,6 @@ Githubpkg <- function(user, pkg) {
 }
 
 #' Markdown link to a package
-#' @family pkg-utils
 #' 
 #'
 #' @title mypkg
@@ -228,6 +227,7 @@ Githubpkg <- function(user, pkg) {
 #' @return md text string
 #' @export
 #' @author Guangchuang Yu
+#' @family pkg-utils
 mypkg <- function(pkg, url) {
     fmt <- "[%s](%s)"
     sprintf(fmt, pkgfmt(pkg), url)

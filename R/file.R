@@ -1,6 +1,6 @@
 #' @rdname yread
-#' @family io-utils
 #' @export
+#' @family io-utils
 yread_tsv <- function(file, reader = utils::read.delim, 
                 params = list(),
                 cache_dir = tempdir()
@@ -17,7 +17,6 @@ yread_tsv <- function(file, reader = utils::read.delim,
 
 
 #' read file with caching
-#' @family io-utils
 #' 
 #' This function read a file (local or url) and cache the content.
 #' @title yread
@@ -31,6 +30,7 @@ yread_tsv <- function(file, reader = utils::read.delim,
 #' @importFrom fs path_join
 #' @importFrom digest digest
 #' @export
+#' @family io-utils
 yread <- function(file, reader = readLines, params = list(), 
                 cache_dir = NULL) {
 
@@ -57,7 +57,6 @@ yread <- function(file, reader = readLines, params = list(),
 }
 
 #' read clipboard
-#' @family io-utils
 #'
 #'
 #' @title read.cb
@@ -67,6 +66,7 @@ yread <- function(file, reader = readLines, params = list(),
 #' @author Guangchuang Yu
 #' @importFrom utils read.table
 #' @export
+#' @family io-utils
 read.cb <- function(reader = read.table, ...) {
     os <- which_os()
     if (os == "Darwin") {
@@ -79,7 +79,6 @@ read.cb <- function(reader = read.table, ...) {
 
 
 #' open selected directory or file
-#' @family io-utils
 #'
 #'
 #' @title o
@@ -92,6 +91,7 @@ read.cb <- function(reader = read.table, ...) {
 #' }
 #' @export
 #' @author Guangchuang Yu
+#' @family io-utils
 o <- function(file=".") {
     file <- normalizePath(file)
     os <- which_os()
@@ -139,7 +139,6 @@ is.rserver <- function(){
 }
 
 #' Open data frame in Excel. It can be used in pipe.
-#' @family io-utils
 #'
 #'
 #' @title show_in_excel
@@ -147,6 +146,7 @@ is.rserver <- function(){
 #' @return original .data
 #' @export
 #' @author Guangchuang Yu
+#' @family io-utils
 show_in_excel <- function(.data) {
     f <- tempfile(fileext = '.csv')
     utils::write.csv(.data, file=f)

@@ -1,20 +1,20 @@
 #' @rdname regexpr-style
-#' @family regex-utils
 #' @export
+#' @family regex-utils
 set_PCRE <- function() {
     options(regexpr_use_perl = TRUE)
 }
 
 #' @rdname regexpr-style
-#' @family regex-utils
 #' @export
+#' @family regex-utils
 set_TRE <- function() {
     options(regexpr_use_perl = FALSE)
 }
 
 #' @rdname regexpr-style
-#' @family regex-utils
 #' @export
+#' @family regex-utils
 use_perl <- function() {
     res <- getOption("regexpr_use_perl", default = auto_set_regexpr_style())
     return(res)
@@ -22,7 +22,6 @@ use_perl <- function() {
 
 
 #' Switch regular expression style (PCRE vs TRE)
-#' @family regex-utils
 #'
 #' - `set_regexpr_style()` selects the style explicitly.
 #' - `auto_set_regexpr_style()` chooses based on OS (TRE on Windows; PCRE elsewhere).
@@ -37,6 +36,7 @@ use_perl <- function() {
 #' @references https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre
 #' @export
 #' @author Guangchuang Yu
+#' @family regex-utils
 set_regexpr_style <- function(style) {
     if (missing(style)) {
         message("style is not specific, set automatically.")

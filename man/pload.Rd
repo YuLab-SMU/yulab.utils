@@ -17,10 +17,21 @@ the selected package loaded to the R session
 \description{
 Load a package
 }
+\details{
+Uses \code{library()} to load \code{package}. If not installed, attempts installation
+via \code{rlang::check_installed()} (optionally using \code{BiocManager::install()}).
+}
+\seealso{
+Other pkg-utils: 
+\code{\link{CRANpkg}()},
+\code{\link{Githubpkg}()},
+\code{\link{get_dependencies}()},
+\code{\link{get_fun_from_pkg}()},
+\code{\link{is.installed}()},
+\code{\link{mypkg}()},
+\code{\link{packageTitle}()}
+}
 \author{
 Guangchuang Yu
 }
-\concept{pkg-utils
-
-Uses \code{library()} to load \code{package}. If not installed, attempts installation
-via \code{rlang::check_installed()} (optionally using \code{BiocManager::install()}).}
+\concept{pkg-utils}

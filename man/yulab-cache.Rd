@@ -66,7 +66,8 @@ with_cache(item, key, compute, ttl = NULL)
 Cache environment, item, or selected elements
 }
 \description{
-Cache intermediate data
+Utilities to cache intermediate data: initialize items, update items,
+remove items, and retrieve elements.
 }
 \examples{
 \dontrun{
@@ -94,7 +95,3 @@ Cache intermediate data
  }
 }
 \concept{cache-utils}
-\concept{cache-utils
-
-Utilities to cache intermediate data: initialize items, update items,
-remove items, and retrieve elements.}

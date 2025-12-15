@@ -33,8 +33,13 @@ check_input(
 Invisible \code{TRUE} on success
 }
 \description{
-Validate input with type/length constraints
+Enhanced input validation supporting base types and class checks.
 }
-\concept{validate-utils
-
-Enhanced input validation supporting base types and class checks.}
+\seealso{
+Other validate-utils: 
+\code{\link{check_directory}()},
+\code{\link{check_file}()},
+\code{\link{check_packages}()},
+\code{\link{check_range}()}
+}
+\concept{validate-utils}

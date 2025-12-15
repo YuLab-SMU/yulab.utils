@@ -24,7 +24,8 @@ Other pkg-utils:
 \code{\link{get_dependencies}()},
 \code{\link{get_fun_from_pkg}()},
 \code{\link{is.installed}()},
-\code{\link{packageTitle}()}
+\code{\link{packageTitle}()},
+\code{\link{pload}()}
 }
 \author{
 Guangchuang Yu

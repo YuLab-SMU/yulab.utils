@@ -18,8 +18,13 @@ check_pkg(packages, reason = "for this functionality")
 Invisible TRUE if all packages are available, throws error otherwise
 }
 \description{
-Check if required packages are installed with informative errors
+Enhanced package checking with better error messages and validation
 }
-\concept{validate-utils
-
-Enhanced package checking with better error messages and validation}
+\seealso{
+Other validate-utils: 
+\code{\link{check_directory}()},
+\code{\link{check_file}()},
+\code{\link{check_input}()},
+\code{\link{check_range}()}
+}
+\concept{validate-utils}

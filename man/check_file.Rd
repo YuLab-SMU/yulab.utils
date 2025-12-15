@@ -17,8 +17,13 @@ check_file(path, operation = "read", must_exist = TRUE)
 Invisible TRUE if operation can proceed, throws error otherwise
 }
 \description{
-Handle file operations with proper error messages
+Enhanced file validation with comprehensive checks and better error messages
 }
-\concept{validate-utils
-
-Enhanced file validation with comprehensive checks and better error messages}
+\seealso{
+Other validate-utils: 
+\code{\link{check_directory}()},
+\code{\link{check_input}()},
+\code{\link{check_packages}()},
+\code{\link{check_range}()}
+}
+\concept{validate-utils}

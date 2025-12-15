@@ -23,9 +23,7 @@ yulab_inform(message, class = "yulab_info", ...)
 No return value
 }
 \description{
-Standardized error handling
-}
-\concept{messages
-
 Provides \code{rlang}-based wrappers for messaging: \code{yulab_abort()}, \code{yulab_warn()},
-and \code{yulab_inform()}.}
+and \code{yulab_inform()}.
+}
+\concept{messages}

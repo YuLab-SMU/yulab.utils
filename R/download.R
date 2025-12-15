@@ -66,7 +66,7 @@ download_yulab_file <- function(destfile, urls, gzfile = FALSE, appname = NULL) 
             res <- tryCatch({
                 mydownload(furl, tpfile)
                 if (gzfile) {
-                    check_pkg_installed('R.utils')
+                    check_pkg('R.utils')
                     R.utils::gunzip(tpfile, overwrite = TRUE)
                 }
                 TRUE
@@ -75,4 +75,6 @@ download_yulab_file <- function(destfile, urls, gzfile = FALSE, appname = NULL) 
             if (res) break
         }
     }
+    
+    return(destfile)
 }

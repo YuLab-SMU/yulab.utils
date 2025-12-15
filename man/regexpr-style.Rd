@@ -25,7 +25,15 @@ auto_set_regexpr_style()
 Logical indicating whether to use \code{perl}
 }
 \description{
-Switch regular expression style (PCRE vs TRE)
+\itemize{
+\item \code{set_regexpr_style()} selects the style explicitly.
+\item \code{auto_set_regexpr_style()} chooses based on OS (TRE on Windows; PCRE elsewhere).
+\item \code{set_PCRE()} and \code{set_TRE()} force the style.
+}
+}
+\details{
+These functions do not change the behavior of \code{gsub()}/\code{regexpr()} directly.
+They set a global option that you can read via \code{use_perl()} and pass to \code{gsub()}/\code{regexpr()}.
 }
 \references{
 https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-true-vs-the-default-pcre-vs-tre
@@ -34,12 +42,3 @@ https://stackoverflow.com/questions/47240375/regular-expressions-in-base-r-perl-
 Guangchuang Yu
 }
 \concept{regex-utils}
-\concept{regex-utils
-\itemize{
-\item \code{set_regexpr_style()} selects the style explicitly.
-\item \code{auto_set_regexpr_style()} chooses based on OS (TRE on Windows; PCRE elsewhere).
-\item \code{set_PCRE()} and \code{set_TRE()} force the style.
-}
-
-These functions do not change the behavior of \code{gsub()}/\code{regexpr()} directly.
-They set a global option that you can read via \code{use_perl()} and pass to \code{gsub()}/\code{regexpr()}.}

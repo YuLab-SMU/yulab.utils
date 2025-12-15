@@ -1,6 +1,5 @@
 
 #' Standardized error handling
-#' @family messages
 #'
 #' Provides `rlang`-based wrappers for messaging: `yulab_abort()`, `yulab_warn()`,
 #' and `yulab_inform()`.
@@ -12,6 +11,7 @@
 #' @importFrom rlang abort
 #' @rdname yulab-message
 #' @export
+#' @family messages
 yulab_abort <- function(message, class = "yulab_error", ...) {
     abort(
         message = message,
@@ -43,7 +43,6 @@ yulab_inform <- function(message, class = "yulab_info", ...) {
 }
 
 #' Validate input with type/length constraints
-#' @family validate-utils
 #'
 #' Enhanced input validation supporting base types and class checks.
 #' @param x Object to check
@@ -55,6 +54,7 @@ yulab_inform <- function(message, class = "yulab_info", ...) {
 #' @param arg_name Argument name for messages
 #' @return Invisible `TRUE` on success
 #' @export
+#' @family validate-utils
 check_input <- function(x, type = NULL, length = NULL, min_length = NULL, 
                        max_length = NULL, allow_null = FALSE, arg_name = "input") {
     
@@ -135,7 +135,6 @@ check_input <- function(x, type = NULL, length = NULL, min_length = NULL,
 }
 
 #' Check if required packages are installed with informative errors
-#' @family validate-utils
 #'
 #' Enhanced package checking with better error messages and validation
 #' @rdname check_packages
@@ -143,6 +142,7 @@ check_input <- function(x, type = NULL, length = NULL, min_length = NULL,
 #' @param reason Reason why these packages are needed
 #' @return Invisible TRUE if all packages are available, throws error otherwise
 #' @export
+#' @family validate-utils
 check_packages <- function(packages, reason = "for this functionality") {
     
     # Validate input parameters
@@ -190,7 +190,6 @@ check_packages <- function(packages, reason = "for this functionality") {
 check_pkg <- check_packages
 
 #' Handle file operations with proper error messages
-#' @family validate-utils
 #'
 #' Enhanced file validation with comprehensive checks and better error messages
 #' @param path File path
@@ -198,6 +197,7 @@ check_pkg <- check_packages
 #' @param must_exist Whether the file must exist
 #' @return Invisible TRUE if operation can proceed, throws error otherwise
 #' @export
+#' @family validate-utils
 check_file <- function(path, operation = "read", must_exist = TRUE) {
     assert_single_string(path, "path")
     assert_single_string(operation, "operation")
@@ -240,7 +240,6 @@ check_file <- function(path, operation = "read", must_exist = TRUE) {
 }
 
 #' Check if value is within specified range
-#' @family validate-utils
 #'
 #' Validates that a numeric value falls within the specified range
 #' @param x Numeric value to check
@@ -250,6 +249,7 @@ check_file <- function(path, operation = "read", must_exist = TRUE) {
 #' @param arg_name Name of the argument for error messages
 #' @return Invisible TRUE if valid, throws error otherwise
 #' @export
+#' @family validate-utils
 check_range <- function(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = "value") {
     
     # Validate parameters
@@ -299,7 +299,6 @@ check_range <- function(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = 
 }
 
 #' Check if directory exists and is accessible
-#' @family validate-utils
 #'
 #' Validates directory existence and accessibility with options to create if missing
 #' @param path Directory path
@@ -308,6 +307,7 @@ check_range <- function(x, min = NULL, max = NULL, inclusive = TRUE, arg_name = 
 #' @param arg_name Name of the argument for error messages
 #' @return Invisible TRUE if valid, throws error otherwise
 #' @export
+#' @family validate-utils
 check_directory <- function(path, create_if_missing = FALSE, check_write_permission = TRUE, arg_name = "directory") {
     assert_single_string(path, "path")
     if (!is.logical(create_if_missing) || length(create_if_missing) != 1) {

@@ -9,29 +9,29 @@
 .yulabCache <- new.env(parent = emptyenv())
 
 #' @rdname yulab-cache
-#' @family cache-utils
 #' @export
+#' @family cache-utils
 initial_cache <- function() {
     rm(list = ls(envir = .yulabCache), envir = .yulabCache)
 }
 
 #' @rdname yulab-cache
-#' @family cache-utils
 #' @export
+#' @family cache-utils
 get_cache <- function() {
     .yulabCache
 }
 
 #' @rdname yulab-cache
-#' @family cache-utils
 #' @export
+#' @family cache-utils
 rm_cache <- function() {
     rm(list = ls(envir = .yulabCache), envir = .yulabCache)
 }
 
 #' @rdname yulab-cache
-#' @family cache-utils
 #' @export
+#' @family cache-utils
 initial_cache_item <- function(item) {
     env <- get_cache()
     assign(item, list(), envir = env)    
@@ -58,13 +58,11 @@ rm_cache_item <- function(item) {
 }
 
 #' Cache intermediate data
-#' @family cache-utils
 #'
 #' Utilities to cache intermediate data: initialize items, update items,
 #' remove items, and retrieve elements.
 #' 
 #' @rdname yulab-cache
-#' @family cache-utils
 #' @param item Cache item name
 #' @param elements Elements to cache
 #' @param default Default value if cache element is missing
@@ -98,6 +96,7 @@ rm_cache_item <- function(item) {
 #'  system.time(fast_fib(30)) 
 #'     
 #'  }
+#' @family cache-utils
 update_cache_item <- function(item, elements, ttl = NULL) {
 
     msg <- "new elements should be stored as a named list"

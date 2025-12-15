@@ -27,7 +27,8 @@ Other pkg-utils:
 \code{\link{get_dependencies}()},
 \code{\link{is.installed}()},
 \code{\link{mypkg}()},
-\code{\link{packageTitle}()}
+\code{\link{packageTitle}()},
+\code{\link{pload}()}
 }
 \author{
 Guangchuang Yu
