@@ -1,3 +1,15 @@
+# yulab.utils 0.2.4.001
+
++ improve chunked_array correctness/performance and API (2026-02-11, Wed)
+    - fix length() for empty chunked_array
+    - make [ support NA/negative/logical indices and speed up multi-extract
+    - make c2() preserve chunked_array type when one side is empty
+    - export as_chunked_array() and add c.chunked_array()
+
+# yulab.utils 0.2.4
+
++ stabilize cache TTL unit test for r-devel checks (2026-02-02, Mon)
+
 # yulab.utils 0.2.3
 
 + `download_yulab_file` (2025-12-15, Mon)

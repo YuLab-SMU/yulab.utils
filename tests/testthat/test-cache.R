@@ -1,9 +1,9 @@
 test_that("update_cache_item with ttl expires entries", {
   item <- paste0("ttltest_", as.integer(runif(1) * 1e6))
-  update_cache_item(item, list(a = 1), ttl = 0.01)
+  update_cache_item(item, list(a = 1), ttl = 0.2)
   val1 <- get_cache_element(item, "a")
   expect_equal(val1, 1)
-  Sys.sleep(0.05)
+  Sys.sleep(0.3)
   val2 <- get_cache_element(item, "a")
   expect_null(val2)
 })

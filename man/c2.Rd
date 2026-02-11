@@ -2,7 +2,7 @@
 % Please edit documentation in R/concat.r
 \name{c2}
 \alias{c2}
-\title{c2}
+\title{Concatenate Chunked Arrays}
 \usage{
 c2(x, y)
 }
@@ -12,13 +12,19 @@ c2(x, y)
 \item{y}{a vector or chunked_array object}
 }
 \value{
-chunked_array object
+A chunked_array object
 }
 \description{
-chunked array
+Concatenate vectors into a chunked array
 }
 \details{
-concate two vector/chunked_array into a chunked_array object
+Combine two vector or chunked_array objects into a single
+chunked_array without copying the underlying data.
+}
+\examples{
+a <- c2(1:100, 101:200)
+length(a)
+a[150]
 }
 \author{
 Guangchuang Yu
