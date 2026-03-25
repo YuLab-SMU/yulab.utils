@@ -54,6 +54,11 @@ ref_knownledge <- function() {
             "ReactomePA: an R/Bioconductor package for reactome pathway analysis and visualization.",
             "Molecular BioSystems. 2016, 12(2):477-479"
         ),
+        clusterProfiler_TIL = paste(
+            "G Yu.",
+            "Background bias in functional enrichment analysis: Insights from clusterProfiler.",
+            "The Innovation Life. 2026, 4(1):100181"
+        ),
         clusterProfiler_NP = paste(
             "S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang,",
             "Q Wang, B Liu, R Wang, W Xie, T Wu, L Xie, G Yu.",
