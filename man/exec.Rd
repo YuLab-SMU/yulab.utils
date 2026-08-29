@@ -16,9 +16,9 @@ An \code{exec} instance that stores system command outputs
 run system command
 }
 \seealso{
-Other os-utils: 
-\code{\link{has_internet}()},
-\code{\link{user_dir}()}
+Other os-utils:
+\code{\link[=has_internet]{has_internet()}},
+\code{\link[=user_dir]{user_dir()}}
 }
 \author{
 Guangchuang Yu

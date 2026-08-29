@@ -16,10 +16,10 @@ original .data
 Open data frame in Excel. It can be used in pipe.
 }
 \seealso{
-Other io-utils: 
-\code{\link{o}()},
-\code{\link{read.cb}()},
-\code{\link{yread_tsv}()}
+Other io-utils:
+\code{\link[=o]{o()}},
+\code{\link[=read.cb]{read.cb()}},
+\code{\link[=yread_tsv]{yread_tsv()}}
 }
 \author{
 Guangchuang Yu

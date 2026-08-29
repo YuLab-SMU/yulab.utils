@@ -22,10 +22,10 @@ o()
 }
 }
 \seealso{
-Other io-utils: 
-\code{\link{read.cb}()},
-\code{\link{show_in_excel}()},
-\code{\link{yread_tsv}()}
+Other io-utils:
+\code{\link[=read.cb]{read.cb()}},
+\code{\link[=show_in_excel]{show_in_excel()}},
+\code{\link[=yread_tsv]{yread_tsv()}}
 }
 \author{
 Guangchuang Yu

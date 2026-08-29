@@ -18,10 +18,10 @@ Substring
 Extract a substring using a pattern
 }
 \seealso{
-Other str-utils: 
-\code{\link{str_detect}()},
-\code{\link{str_starts}()},
-\code{\link{str_wrap}()}
+Other str-utils:
+\code{\link[=str_detect]{str_detect()}},
+\code{\link[=str_starts]{str_starts()}},
+\code{\link[=str_wrap]{str_wrap()}}
 }
 \author{
 Guangchuang Yu

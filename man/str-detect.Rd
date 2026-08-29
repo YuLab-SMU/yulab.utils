@@ -20,10 +20,10 @@ Logical vector
 Detect presence/absence of a match
 }
 \seealso{
-Other str-utils: 
-\code{\link{str_extract}()},
-\code{\link{str_starts}()},
-\code{\link{str_wrap}()}
+Other str-utils:
+\code{\link[=str_extract]{str_extract()}},
+\code{\link[=str_starts]{str_starts()}},
+\code{\link[=str_wrap]{str_wrap()}}
 }
 \author{
 Guangchuang Yu

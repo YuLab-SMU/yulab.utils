@@ -20,10 +20,10 @@ Invisible TRUE if operation can proceed, throws error otherwise
 Enhanced file validation with comprehensive checks and better error messages
 }
 \seealso{
-Other validate-utils: 
-\code{\link{check_directory}()},
-\code{\link{check_input}()},
-\code{\link{check_packages}()},
-\code{\link{check_range}()}
+Other validate-utils:
+\code{\link[=check_directory]{check_directory()}},
+\code{\link[=check_input]{check_input()}},
+\code{\link[=check_packages]{check_packages()}},
+\code{\link[=check_range]{check_range()}}
 }
 \concept{validate-utils}

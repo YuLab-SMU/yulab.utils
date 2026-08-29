@@ -27,10 +27,10 @@ Invisible TRUE if valid, throws error otherwise
 Validates directory existence and accessibility with options to create if missing
 }
 \seealso{
-Other validate-utils: 
-\code{\link{check_file}()},
-\code{\link{check_input}()},
-\code{\link{check_packages}()},
-\code{\link{check_range}()}
+Other validate-utils:
+\code{\link[=check_file]{check_file()}},
+\code{\link[=check_input]{check_input()}},
+\code{\link[=check_packages]{check_packages()}},
+\code{\link[=check_range]{check_range()}}
 }
 \concept{validate-utils}

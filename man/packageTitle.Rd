@@ -18,14 +18,14 @@ reverse dependencies
 Extract package title
 }
 \seealso{
-Other pkg-utils: 
-\code{\link{CRANpkg}()},
-\code{\link{Githubpkg}()},
-\code{\link{get_dependencies}()},
-\code{\link{get_fun_from_pkg}()},
-\code{\link{is.installed}()},
-\code{\link{mypkg}()},
-\code{\link{pload}()}
+Other pkg-utils:
+\code{\link[=CRANpkg]{CRANpkg()}},
+\code{\link[=Githubpkg]{Githubpkg()}},
+\code{\link[=get_dependencies]{get_dependencies()}},
+\code{\link[=get_fun_from_pkg]{get_fun_from_pkg()}},
+\code{\link[=is.installed]{is.installed()}},
+\code{\link[=mypkg]{mypkg()}},
+\code{\link[=pload]{pload()}}
 }
 \author{
 Guangchuang Yu

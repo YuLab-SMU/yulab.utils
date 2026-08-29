@@ -1,4 +1,4 @@
-# yulab.utils 0.2.4.001
+# yulab.utils 0.2.5
 
 + improve chunked_array correctness/performance and API (2026-02-11, Wed)
     - fix `length()` for empty chunked_array

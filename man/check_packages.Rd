@@ -21,10 +21,10 @@ Invisible TRUE if all packages are available, throws error otherwise
 Enhanced package checking with better error messages and validation
 }
 \seealso{
-Other validate-utils: 
-\code{\link{check_directory}()},
-\code{\link{check_file}()},
-\code{\link{check_input}()},
-\code{\link{check_range}()}
+Other validate-utils:
+\code{\link[=check_directory]{check_directory()}},
+\code{\link[=check_file]{check_file()}},
+\code{\link[=check_input]{check_input()}},
+\code{\link[=check_range]{check_range()}}
 }
 \concept{validate-utils}

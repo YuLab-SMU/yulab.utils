@@ -16,9 +16,9 @@ logical value
 test for internect connection via reading lines from a URL
 }
 \seealso{
-Other os-utils: 
-\code{\link{exec}()},
-\code{\link{user_dir}()}
+Other os-utils:
+\code{\link[=exec]{exec()}},
+\code{\link[=user_dir]{user_dir()}}
 }
 \author{
 Guangchuang Yu

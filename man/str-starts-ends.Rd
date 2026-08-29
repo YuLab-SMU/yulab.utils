@@ -23,10 +23,10 @@ a logical vector
 Detect patterns at the beginning or end of strings
 }
 \seealso{
-Other str-utils: 
-\code{\link{str_detect}()},
-\code{\link{str_extract}()},
-\code{\link{str_wrap}()}
+Other str-utils:
+\code{\link[=str_detect]{str_detect()}},
+\code{\link[=str_extract]{str_extract()}},
+\code{\link[=str_wrap]{str_wrap()}}
 }
 \author{
 Guangchuang Yu

@@ -20,9 +20,9 @@ a directory (created if not exists)
 get the user dir to save app caches, logs and data (a wrapper function of \code{rappdirs::user_cache_dir()})
 }
 \seealso{
-Other os-utils: 
-\code{\link{exec}()},
-\code{\link{has_internet}()}
+Other os-utils:
+\code{\link[=exec]{exec()}},
+\code{\link[=has_internet]{has_internet()}}
 }
 \author{
 Guangchuang Yu

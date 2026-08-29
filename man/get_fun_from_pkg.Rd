@@ -21,14 +21,14 @@ load function from package
 get_fun_from_pkg('utils', 'zip')
 }
 \seealso{
-Other pkg-utils: 
-\code{\link{CRANpkg}()},
-\code{\link{Githubpkg}()},
-\code{\link{get_dependencies}()},
-\code{\link{is.installed}()},
-\code{\link{mypkg}()},
-\code{\link{packageTitle}()},
-\code{\link{pload}()}
+Other pkg-utils:
+\code{\link[=CRANpkg]{CRANpkg()}},
+\code{\link[=Githubpkg]{Githubpkg()}},
+\code{\link[=get_dependencies]{get_dependencies()}},
+\code{\link[=is.installed]{is.installed()}},
+\code{\link[=mypkg]{mypkg()}},
+\code{\link[=packageTitle]{packageTitle()}},
+\code{\link[=pload]{pload()}}
 }
 \author{
 Guangchuang Yu

@@ -18,10 +18,10 @@ Updated strings with \code{"\\n"} inserted
 Wrap long strings to multiple lines
 }
 \seealso{
-Other str-utils: 
-\code{\link{str_detect}()},
-\code{\link{str_extract}()},
-\code{\link{str_starts}()}
+Other str-utils:
+\code{\link[=str_detect]{str_detect()}},
+\code{\link[=str_extract]{str_extract()}},
+\code{\link[=str_starts]{str_starts()}}
 }
 \author{
 Guangchuang Yu

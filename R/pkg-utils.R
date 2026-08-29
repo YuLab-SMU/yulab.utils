@@ -199,7 +199,7 @@ CRANpkg <- function(pkg) {
 #' @rdname cran-bioc-pkg
 #' @export
 Biocpkg <- function(pkg) {
-    sprintf("[%s](http://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
+    sprintf("[%s](https://bioconductor.org/packages/%s)", pkgfmt(pkg), pkg)
 }
 
 #' Markdown link to GitHub

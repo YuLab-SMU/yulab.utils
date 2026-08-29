@@ -18,10 +18,10 @@ clipboard content, output type depends on the output of the reader
 read clipboard
 }
 \seealso{
-Other io-utils: 
-\code{\link{o}()},
-\code{\link{show_in_excel}()},
-\code{\link{yread_tsv}()}
+Other io-utils:
+\code{\link[=o]{o()}},
+\code{\link[=show_in_excel]{show_in_excel()}},
+\code{\link[=yread_tsv]{yread_tsv()}}
 }
 \author{
 Guangchuang Yu
