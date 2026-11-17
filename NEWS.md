@@ -1,3 +1,10 @@
+# yulab.utils 0.2.6
+
++ make `download_yulab_file()` self-contained and fail loudly (2026-11-17, Tue)
+    - decompress `.gz` files with base R, no longer requiring `R.utils`
+    - raise a `download_error` when all mirrors fail, instead of returning the path of a file that was never created (which surfaced later as a confusing "file not found" from `AnnotationDbi::loadDb()`)
+    - download to a temporary file and clean it up on failure, so a partial download can never be mistaken for a cached file
+
 # yulab.utils 0.2.5
 
 + improve chunked_array correctness/performance and API (2026-02-11, Wed)
