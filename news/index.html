@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">yulab.utils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.6</span>
       </span>
     </div>
 
@@ -48,7 +48,16 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="0.2.5" id="yulabutils-025">yulab.utils 0.2.5<a class="anchor" aria-label="anchor" href="#yulabutils-025"></a></h2>
+<h2 class="page-header" data-toc-text="0.2.6" id="yulabutils-026">yulab.utils 0.2.6<a class="anchor" aria-label="anchor" href="#yulabutils-026"></a></h2>
+<ul><li>make <code><a href="../reference/download_yulab_file.html">download_yulab_file()</a></code> self-contained and fail loudly (2026-11-17, Tue)
+<ul><li>decompress <code>.gz</code> files with base R, no longer requiring <code>R.utils</code>
+</li>
+<li>raise a <code>download_error</code> when all mirrors fail, instead of returning the path of a file that was never created (which surfaced later as a confusing “file not found” from <code>AnnotationDbi::loadDb()</code>)</li>
+<li>download to a temporary file and clean it up on failure, so a partial download can never be mistaken for a cached file</li>
+</ul></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.2.5" id="yulabutils-025">yulab.utils 0.2.5<small>2026-08-29</small><a class="anchor" aria-label="anchor" href="#yulabutils-025"></a></h2>
 <ul><li>improve chunked_array correctness/performance and API (2026-02-11, Wed)
 <ul><li>fix <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code> for empty chunked_array</li>
 <li>make <code>[</code> support NA/negative/logical indices and speed up multi-extract</li>
