@@ -11,16 +11,24 @@ mydownload <- function(url, destfile) {
 decompress_gz <- function(srcfile, destfile) {
     con <- gzfile(srcfile, 'rb')
     out <- file(destfile, 'wb')
+    complete <- FALSE
+
     on.exit({
-        close(out)
-        close(con)
+        ## on Windows an open file cannot be removed, so close first
+        try(close(out), silent = TRUE)
+        try(close(con), silent = TRUE)
+        if (complete) {
+            unlink(srcfile)
+        } else {
+            ## a truncated file would be mistaken for a cached one
+            unlink(destfile)
+        }
     }, add = TRUE)
 
     while (length(chunk <- readBin(con, 'raw', 1e6L)) > 0) {
         writeBin(chunk, out)
     }
-
-    unlink(srcfile)
+    complete <- TRUE
 
     invisible(destfile)
 }
