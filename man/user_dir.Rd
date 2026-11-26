@@ -4,20 +4,34 @@
 \alias{user_dir}
 \title{user_dir}
 \usage{
-user_dir(appname = NULL, appauthor = NULL, ...)
+user_dir(
+  appname = NULL,
+  which = c("data", "config", "cache"),
+  appauthor = NULL,
+  ...
+)
 }
 \arguments{
-\item{appname}{App name}
+\item{appname}{App name (a single directory name)}
 
-\item{appauthor}{App author}
+\item{which}{one of "data", "config" or "cache", see \code{tools::R_user_dir()}}
 
-\item{...}{additional parameters}
+\item{appauthor}{ignored, kept for backward compatibility}
+
+\item{...}{passed on to \code{tools::R_user_dir()}}
 }
 \value{
 a directory (created if not exists)
 }
 \description{
-get the user dir to save app caches, logs and data (a wrapper function of \code{rappdirs::user_cache_dir()})
+get the user dir to save app caches, logs and data (a wrapper function of \code{tools::R_user_dir()})
+}
+\details{
+\code{tools::R_user_dir()} is used instead of \code{rappdirs::user_data_dir()}
+because it honors the \verb{R_USER_<which>_DIR} environment variables, with
+which \verb{R CMD check} (and CRAN) redirects all user-level directories to a
+temporary location. A directory written outside of \code{tempdir()} during
+checks violates the CRAN policy.
 }
 \seealso{
 Other os-utils:

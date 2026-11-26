@@ -78,7 +78,6 @@ importFrom(cli,cli_h2)
 importFrom(digest,digest)
 importFrom(fs,path_join)
 importFrom(methods,is)
-importFrom(rappdirs,user_data_dir)
 importFrom(rlang,
   abort,
   as_name,

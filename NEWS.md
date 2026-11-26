@@ -1,3 +1,10 @@
+# yulab.utils 0.2.7
+
++ `user_dir()` now wraps `tools::R_user_dir()` instead of `rappdirs::user_data_dir()` (2026-11-26, Thu)
+    - `R CMD check` (and CRAN) redirects `R_USER_DATA_DIR`, `R_USER_CACHE_DIR` and `R_USER_CONFIG_DIR` to a temporary location, so calling packages no longer write to `~/.local/share/<pkg>` during checks
+    - new `which` argument ("data"/"config"/"cache", default "data"); `appauthor` is kept for backward compatibility but ignored
+    - drop the `rappdirs` dependency
+
 # yulab.utils 0.2.6
 
 + make `download_yulab_file()` self-contained and fail loudly (2026-11-17, Tue)

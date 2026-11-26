@@ -74,22 +74,30 @@ which_os <- function() {
     Sys.info()[["sysname"]]
 }
 
-#' get the user dir to save app caches, logs and data (a wrapper function of `rappdirs::user_cache_dir()`)
+#' get the user dir to save app caches, logs and data (a wrapper function of `tools::R_user_dir()`)
 #' @family os-utils
 #' 
 #' @title user_dir
-#' @param appname App name
-#' @param appauthor App author
-#' @param ... additional parameters
+#' @param appname App name (a single directory name)
+#' @param which one of "data", "config" or "cache", see `tools::R_user_dir()`
+#' @param appauthor ignored, kept for backward compatibility
+#' @param ... passed on to `tools::R_user_dir()`
 #' @return a directory (created if not exists)
-#' @importFrom rappdirs user_data_dir
+#'
+#' @details
+#' `tools::R_user_dir()` is used instead of `rappdirs::user_data_dir()`
+#' because it honors the `R_USER_<which>_DIR` environment variables, with
+#' which `R CMD check` (and CRAN) redirects all user-level directories to a
+#' temporary location. A directory written outside of `tempdir()` during
+#' checks violates the CRAN policy.
 #' @export
 #' @author Guangchuang Yu
-user_dir <- function(appname = NULL, appauthor = NULL, ...) {
-    dir <- rappdirs::user_data_dir(
-        appname = appname, 
-        appauthor = appauthor, 
-        ...)
+user_dir <- function(appname = NULL, which = c("data", "config", "cache"), appauthor = NULL, ...) {
+    which <- match.arg(which)
+    if (is.null(appname)) {
+        stop("'appname' is required")
+    }
+    dir <- tools::R_user_dir(package = appname, which = which, ...)
 
     if (!dir.exists(dir)) dir.create(dir, recursive = TRUE)
     
